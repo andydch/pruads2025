@@ -35,7 +35,7 @@ class MergeImageController extends Controller
             33,
             100);
 
-        // save modified image in new format - as PNG
+        // save modified image in new format - as PNG ::
         $imageW->toPng()->save($_SERVER['DOCUMENT_ROOT'].'/assets/images/dbg/00001205-280wBg.png');
 
         // create a canvas image from a file - driver GD
