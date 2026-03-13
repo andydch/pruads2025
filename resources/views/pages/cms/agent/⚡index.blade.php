@@ -22,6 +22,10 @@ new class extends Component
     public $xlsFileAgentsAchievement;
     public $jumlahbaris = 10;
 
+    public function mount(){
+        // 
+    }
+
     public function updatingSearch(){
         $this->resetPage();
     }
@@ -162,7 +166,7 @@ new class extends Component
                 <div class="card-body">
                     <form wire:submit.prevent="uplAgents" enctype="multipart/form-data">
                         <div class="mb-3">
-                            <label class="form-label">Upload Agent. <span style="font-size: small;">(Format: Agent Code|Agent Name|Photo File Name|Active Status (without column header))</span></label>
+                            <label class="form-label">Upload Agent <span style="font-size: small;">(Format: Agent Code|Agent Name|Photo File Name|Active Status (without column header))</span></label>
                             <input type="file" class="form-control" wire:model="xlsFileAgents">
                             @error('xlsFileAgents')
                                 <div class="alert alert-danger mt-2">

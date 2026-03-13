@@ -23,9 +23,6 @@ new class extends Component
         ]);
 
         if (Auth::attempt($userLogin)){
-            // flash message
-            session()->flash('message', 'Data Achievement Berhasil Disimpan.');
-
             // redirect to index
             return redirect()->route('agent.index');
         }else{

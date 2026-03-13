@@ -11,9 +11,15 @@ class LogoutController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
         Auth::logout();
+        $request->session()->invalidate(); // Invalidate the session
+        $request->session()->regenerateToken(); // Regenerate the CSRF token
+
+        // Using the global session helper
+        session()->flush();
+
         return redirect()->route('login.login-page');
     }
 
