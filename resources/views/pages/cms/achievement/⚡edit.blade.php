@@ -1,0 +1,96 @@
+<?php
+
+use App\Models\Mst_achievement;
+use Livewire\Component;
+use Livewire\Attributes\Validate;
+
+new class extends Component
+{
+
+    public Mst_achievement $achievement;
+
+    #[Validate('required|max:255')]
+    public $name;
+
+    #[Validate('required|numeric|integer|min:1')]
+    public $order_no;
+
+    public $isActive = false;
+
+    public function mount($id)
+    {
+        $this->achievement = Mst_achievement::findOrFail($id);
+
+        // set default value from database
+        $this->name = $this->achievement->name;
+        $this->order_no = $this->achievement->order_no;
+        $this->isActive = $this->achievement->active=='Y'?true:false;
+    }
+
+    public function update()
+    {
+        $this->validate();
+
+        // update to database
+        $this->achievement->update([
+            'name'   => $this->name,
+            'order_no'   => $this->order_no,
+            'active' => $this->isActive?'Y':'N',
+            'updated_by' => 1,
+        ]);
+
+        session()->flash('message', 'Data Achievement Berhasil Diupdate.');
+
+        return redirect()->route('achievement.index');
+    }
+
+    public function render()
+    {
+        return $this->view()
+            ->layout('layouts::app')
+            ->title('Edit Achievement');
+    }
+};
+?>
+
+<div class="container mt-5 mb-5">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card border-0 rounded shadow-sm">
+                <div class="card-body">
+                    <form wire:submit.prevent="update" enctype="application/x-www-form-urlencoded">
+
+                        <div class="mb-3">
+                            <label class="form-label">Achievement Name</label>
+                            <input type="text" class="form-control" wire:model="name" maxlength="255">
+                            @error('name')
+                                <div class="alert alert-danger mt-2">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Achievement Order No</label>
+                            <input type="text" class="form-control" wire:model="order_no" maxlength="3">
+                            @error('order_no')
+                                <div class="alert alert-danger mt-2">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Active</label>
+                            <input wire:model="isActive" type="checkbox" name="isActive">
+                        </div>
+
+                        <button type="submit" class="btn btn-md btn-primary">UPDATE</button>
+                        <a href="/{{ ENV('CMS_FOLDER') }}/achievement-index" wire:navigate class="btn btn-md btn-secondary">BACK</a>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
