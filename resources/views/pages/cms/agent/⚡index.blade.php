@@ -138,7 +138,8 @@ new class extends Component
         return $this->view([
             // Get all posts with latest pagination
             'agents' => Mst_agent::when($this->search!='', function($q){
-                $q->where('name', 'LIKE', '%'.$this->search.'%');
+                $q->where('name', 'LIKE', '%'.$this->search.'%')
+                ->orWhere('agent_code', 'LIKE', '%'.$this->search.'%');
             })
             // ->latest()
             ->orderBy($this->sortColumn, $this->sortDirection)
