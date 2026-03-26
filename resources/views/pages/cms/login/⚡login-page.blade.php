@@ -13,6 +13,12 @@ new class extends Component
     #[Validate('required|max:255')]
     public $pwd;
 
+    public function mount(){
+        if (Auth::check()){
+            return redirect()->route('agent.index');
+        }
+    }
+
     public function goLgn()
     {
         $this->validate();// insert data
