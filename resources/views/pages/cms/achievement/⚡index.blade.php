@@ -3,11 +3,13 @@
 use App\Models\Mst_achievement;
 use Livewire\Component;
 use Livewire\WithPagination;
+use Livewire\Attributes\Url;
 
 new class extends Component
 {
     use WithPagination;
 
+    #[Url(history: true, keep: true)]
     public $search = '';
 
     public function delete($id)
@@ -26,13 +28,19 @@ new class extends Component
 
     public function render()
     {
+        $achievements = Mst_achievement::latest()
+        ->when($this->search!='', function($q){
+            $q->where('name', 'LIKE', '%'.$this->search.'%');
+        })
+        ->paginate(15);
+
+        $achievements->appends([
+            'search' => $this->search,
+        ]);
+
         return $this->view([
             // Get all posts with latest pagination
-            'achievements' => Mst_achievement::latest()
-            ->when($this->search!='', function($q){
-                $q->where('name', 'LIKE', '%'.$this->search.'%');
-            })
-            ->paginate(150),
+            'achievements' => $achievements,
         ])
         ->layout('layouts::app')
         ->title('Achievement List');
@@ -53,7 +61,8 @@ new class extends Component
             <!-- end flash message -->
 
             <div style="display: flex;gap: 5px;">
-                <input type="text" placeholder="search..." class="form-control" wire:model.live="search" style="width: 300px;height:37px;">
+                <input id="search" type="text" placeholder="search..." class="form-control" wire:model.live.debounce.300ms="search" 
+                    style="width: 300px;height:37px;" value="{{ $search }}">
                 <a href="/{{ ENV('CMS_FOLDER').'/achievement-create/' }}" wire:navigate
                     class="btn btn-md btn-success rounded shadow-sm border-0 mb-3">
                     ADD NEW ACHIEVEMENT

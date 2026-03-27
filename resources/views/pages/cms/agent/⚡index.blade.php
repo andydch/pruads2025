@@ -15,10 +15,12 @@ new class extends Component
     use WithPagination;
     use WithFileUploads;
 
-    #[Url(except: '')]
+    #[Url(history: true, keep: true)]
     public $search = '';
-    #[Url(except: 50)]
-    public $jumlahbaris = 50;
+    #[Url(history: true, keep: true, except: '')]
+    public $q = '';
+    #[Url(except: 10)]
+    public $jumlahbaris = 10;
 
     public $sortColumn = 'name';
     public $sortDirection = 'asc';
@@ -27,16 +29,16 @@ new class extends Component
     public $xlsFileAgentsAchievement;
 
     // public function mount(){
-    //     // 
+    //     $this->search = '';
     // }
 
-    // public function updatingJumlahbaris(){
-    //     $this->resetPage();
-    // }
+    public function updatingJumlahbaris(){
+        $this->resetPage();
+    }
 
-    // public function updatingSearch(){
-    //     $this->resetPage();
-    // }
+    public function updatingSearch(){
+        $this->resetPage();
+    }
 
     public function uplAgents(){
         $rules = [
@@ -143,16 +145,23 @@ new class extends Component
 
     public function render()
     {
+        $agents = Mst_agent::when($this->search!='', function($q){
+            $q->where('name', 'LIKE', '%'.$this->search.'%')
+            ->orWhere('agent_code', 'LIKE', '%'.$this->search.'%');
+        })
+        // ->latest()
+        ->orderBy($this->sortColumn, $this->sortDirection)
+        ->paginate($this->jumlahbaris);
+
+        $agents->appends([
+            'search' => $this->search,
+            'jumlahbaris' => $this->jumlahbaris,
+            'q' => $this->q,
+        ]);
+
         return $this->view([
             // Get all posts with latest pagination
-            // 'search'=>$this->search,
-            'agents' => Mst_agent::when($this->search!='', function($q){
-                $q->where('name', 'LIKE', '%'.$this->search.'%')
-                ->orWhere('agent_code', 'LIKE', '%'.$this->search.'%');
-            })
-            // ->latest()
-            ->orderBy($this->sortColumn, $this->sortDirection)
-            ->paginate($this->jumlahbaris),
+            'agents' => $agents,
         ])
         ->layout('layouts::app')
         ->title('Agents List');
@@ -231,7 +240,8 @@ new class extends Component
             </div>
 
             <div wire:key="searchV" style="display: flex;gap: 5px;padding-top: 10px;padding-bottom: 10px;">
-                <input type="text" placeholder="search..." class="form-control" wire:model.live.prevent="search" style="width: 300px;height:37px;">
+                <input id="search" type="text" placeholder="search..." class="form-control" wire:model.live.debounce.300ms="search" 
+                    style="width: 300px;height:37px;" value="{{ $search }}">
                 <select class="mb-3 w-15 mr-3" wire:model.live="jumlahbaris" style="height: 35px;">
                     <option value="5">5</option>
                     <option value="10">10</option>

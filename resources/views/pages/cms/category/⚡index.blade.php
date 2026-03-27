@@ -3,11 +3,13 @@
 use App\Models\Mst_category;
 use Livewire\Component;
 use Livewire\WithPagination;
+use Livewire\Attributes\Url;
 
 new class extends Component
 {
     use WithPagination;
 
+    #[Url(history: true, keep: true)]
     public $search = '';
 
     public function delete($id)
@@ -26,13 +28,19 @@ new class extends Component
 
     public function render()
     {
+        $categories = Mst_category::latest()
+        ->when($this->search!='', function($q){
+            $q->where('name', 'LIKE', '%'.$this->search.'%');
+        })
+        ->paginate(15);
+
+        $categories->appends([
+            'search' => $this->search,
+        ]);
+
         return $this->view([
             // Get all posts with latest pagination
-            'categories' => Mst_category::latest()
-            ->when($this->search!='', function($q){
-                $q->where('name', 'LIKE', '%'.$this->search.'%');
-            })
-            ->paginate(150),
+            'categories' => $categories,
         ])
         ->layout('layouts::app')
         ->title('Categories List');
@@ -53,7 +61,8 @@ new class extends Component
             <!-- end flash message -->
 
             <div style="display: flex;gap: 5px;">
-                <input type="text" placeholder="search..." class="form-control" wire:model.live="search" style="width: 300px;height:37px;">
+                <input id="search" type="text" placeholder="search..." class="form-control" wire:model.live.debounce.300ms="search" 
+                    style="width: 300px;height:37px;" value="{{ $search }}">
                 <a href="/{{ ENV('CMS_FOLDER').'/category-create/' }}" wire:navigate
                     class="btn btn-md btn-success rounded shadow-sm border-0 mb-3">
                     ADD NEW CATEGORY
