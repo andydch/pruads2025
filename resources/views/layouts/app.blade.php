@@ -80,7 +80,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0" role="search">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0" role="searchx">
                         <a href="https://koidigi.com" target="_blank" class="btn btn-success">KOIdigital</a>
                     </ul>
                 </div>

@@ -32,7 +32,7 @@ new class extends Component
             ->when($this->search!='', function($q){
                 $q->where('name', 'LIKE', '%'.$this->search.'%');
             })
-            ->paginate(15),
+            ->paginate(150),
         ])
         ->layout('layouts::app')
         ->title('Achievement List');

@@ -7,6 +7,7 @@ use App\Imports\AgentAchievementImport;
 use Livewire\Component;
 use Livewire\WithPagination;
 use Livewire\WithFileUploads;
+use Livewire\Attributes\Url;
 use Maatwebsite\Excel\Facades\Excel;
 
 new class extends Component
@@ -14,21 +15,28 @@ new class extends Component
     use WithPagination;
     use WithFileUploads;
 
-    public $search = '';
+    #[Url(except: '')]
+    public $searchX = '';
+    #[Url(except: 50)]
+    public $jumlahbaris = 50;
+
     public $sortColumn = 'name';
     public $sortDirection = 'asc';
     public $xlsFileAgents;
     public $xlsFileAgentsCategory;
     public $xlsFileAgentsAchievement;
-    public $jumlahbaris = 10;
 
-    public function mount(){
-        // 
-    }
+    // public function mount(){
+    //     // 
+    // }
 
-    public function updatingSearch(){
-        $this->resetPage();
-    }
+    // public function updatingJumlahbaris(){
+    //     $this->resetPage();
+    // }
+
+    // public function updatingSearch(){
+    //     $this->resetPage();
+    // }
 
     public function uplAgents(){
         $rules = [
@@ -137,9 +145,10 @@ new class extends Component
     {
         return $this->view([
             // Get all posts with latest pagination
-            'agents' => Mst_agent::when($this->search!='', function($q){
-                $q->where('name', 'LIKE', '%'.$this->search.'%')
-                ->orWhere('agent_code', 'LIKE', '%'.$this->search.'%');
+            // 'search'=>$this->searchX,
+            'agents' => Mst_agent::when($this->searchX!='', function($q){
+                $q->where('name', 'LIKE', '%'.$this->searchX.'%')
+                ->orWhere('agent_code', 'LIKE', '%'.$this->searchX.'%');
             })
             // ->latest()
             ->orderBy($this->sortColumn, $this->sortDirection)
@@ -221,8 +230,8 @@ new class extends Component
                 </div>
             </div>
 
-            <div style="display: flex;gap: 5px;padding-top: 10px;padding-bottom: 10px;">
-                <input type="text" placeholder="search..." class="form-control" wire:model.live="search" style="width: 300px;height:37px;">
+            <div wire:key="searchV" style="display: flex;gap: 5px;padding-top: 10px;padding-bottom: 10px;">
+                <input type="text" placeholder="search..." class="form-control" wire:model.live.prevent="searchX" style="width: 300px;height:37px;">
                 <select class="mb-3 w-15 mr-3" wire:model.live="jumlahbaris" style="height: 35px;">
                     <option value="5">5</option>
                     <option value="10">10</option>
