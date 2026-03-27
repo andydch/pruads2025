@@ -16,7 +16,7 @@ new class extends Component
     use WithFileUploads;
 
     #[Url(except: '')]
-    public $searchX = '';
+    public $search = '';
     #[Url(except: 50)]
     public $jumlahbaris = 50;
 
@@ -145,10 +145,10 @@ new class extends Component
     {
         return $this->view([
             // Get all posts with latest pagination
-            // 'search'=>$this->searchX,
-            'agents' => Mst_agent::when($this->searchX!='', function($q){
-                $q->where('name', 'LIKE', '%'.$this->searchX.'%')
-                ->orWhere('agent_code', 'LIKE', '%'.$this->searchX.'%');
+            // 'search'=>$this->search,
+            'agents' => Mst_agent::when($this->search!='', function($q){
+                $q->where('name', 'LIKE', '%'.$this->search.'%')
+                ->orWhere('agent_code', 'LIKE', '%'.$this->search.'%');
             })
             // ->latest()
             ->orderBy($this->sortColumn, $this->sortDirection)
@@ -231,7 +231,7 @@ new class extends Component
             </div>
 
             <div wire:key="searchV" style="display: flex;gap: 5px;padding-top: 10px;padding-bottom: 10px;">
-                <input type="text" placeholder="search..." class="form-control" wire:model.live.prevent="searchX" style="width: 300px;height:37px;">
+                <input type="text" placeholder="search..." class="form-control" wire:model.live.prevent="search" style="width: 300px;height:37px;">
                 <select class="mb-3 w-15 mr-3" wire:model.live="jumlahbaris" style="height: 35px;">
                     <option value="5">5</option>
                     <option value="10">10</option>
