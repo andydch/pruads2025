@@ -6,9 +6,10 @@ use App\Http\Middleware\CheckAuthMiddleware;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::livewire('/', 'pages::main.template');
 
 Route::group(
     [
