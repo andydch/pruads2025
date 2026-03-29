@@ -12,6 +12,10 @@ new class extends Component
     #[Url(history: true, keep: true)]
     public $search = '';
 
+    public function updatingSearch(){
+        $this->resetPage();
+    }
+
     public function delete($id)
     {
         $category = Mst_category::findOrFail($id);
@@ -83,7 +87,7 @@ new class extends Component
                         <tbody>
                             @forelse ($categories as $category)
                                 <tr>
-                                    <td>{{ $category->name.' (ID: '.$category->id.')' }}</td>
+                                    <td>{{ ucwords(strtolower($category->name)).' (ID: '.$category->id.')' }}</td>
                                     <td>{{ $category->active }}</td>
                                     <td>{{ $category->updated_at }}</td>
                                     <td class="text-center">

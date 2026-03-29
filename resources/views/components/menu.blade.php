@@ -5,7 +5,7 @@
             <i class="fa fa-caret-down"></i>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <li><a class="dropdown-item" wire:navigate href="#">Top Agency Recognition X </a></li>
+            <li><a class="dropdown-item" wire:navigate href="#">Top Agency Recognition</a></li>
             <li><a class="dropdown-item" wire:navigate href="#">⁠Multibillion Builders</a></li>
             <li><a class="dropdown-item" wire:navigate href="#">The President’s Club </a></li>
             <li><a class="dropdown-item" wire:navigate href="#">Million Dollar Round Table  </a></li>

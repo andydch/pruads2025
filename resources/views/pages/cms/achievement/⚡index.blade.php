@@ -12,6 +12,10 @@ new class extends Component
     #[Url(history: true, keep: true)]
     public $search = '';
 
+    public function updatingSearch(){
+        $this->resetPage();
+    }
+
     public function delete($id)
     {
         $achievement = Mst_achievement::findOrFail($id);
@@ -84,7 +88,7 @@ new class extends Component
                         <tbody>
                             @forelse ($achievements as $achievement)
                                 <tr>
-                                    <td>{{ $achievement->name.' (ID: '.$achievement->id.')' }}</td>
+                                    <td>{{ ucwords(strtolower($achievement->name)).' (ID: '.$achievement->id.')' }}</td>
                                     <td>{{ $achievement->order_no }}</td>
                                     <td>{{ $achievement->active }}</td>
                                     <td>{{ $achievement->updated_at }}</td>

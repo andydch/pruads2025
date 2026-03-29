@@ -288,7 +288,7 @@ new class extends Component
                                         @endphp
                                         @foreach ($categories as $category)
                                             @php
-                                                $cats .= $category->category_name.' (ID: '.$category->category_id.')<br/>';
+                                                $cats .= ucwords(strtolower($category->category_name)).' (ID: '.$category->category_id.')<br/>';
                                             @endphp
                                         @endforeach
                                         {!! $cats !!}
@@ -309,7 +309,7 @@ new class extends Component
                                         @endphp
                                         @foreach ($achievements as $achievement)
                                             @php
-                                                $ach .= $achievement->achievement_name.' (ID: '.$achievement->achievement_id.')<br/>';
+                                                $ach .= ucwords(strtolower($achievement->achievement_name)).' (ID: '.$achievement->achievement_id.')<br/>';
                                             @endphp
                                         @endforeach
                                         {!! $ach !!}

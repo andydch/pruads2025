@@ -8,7 +8,7 @@
     @livewireStyles
 
     <meta name="description" content="">
-    <meta name="author" content="soukhinkhan">
+    <meta name="author" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Place favicon.ico in the root directory -->
 
@@ -192,106 +192,106 @@
 
     <x-modal-view />
 
-@livewireScripts
-<!-- JS here -->
-<script src="{{ asset('assets') }}/js/vendor/jquery-3.7.1.min.js"></script>
-<script src="{{ asset('assets') }}/js/vendor/chroma.min.js"></script>
-<script src="{{ asset('assets') }}/js/plugins/waypoints.min.js"></script>
-<script src="{{ asset('assets') }}/js/vendor/bootstrap.bundle.min.js"></script>
-<script src="{{ asset('assets') }}/js/plugins/meanmenu.min.js"></script>
-<script src="{{ asset('assets') }}/js/plugins/swiper.min.js"></script>
-<script src="{{ asset('assets') }}/js/plugins/gsap.js"></script>
-<script src="{{ asset('assets') }}/js/plugins/ScrollSmoother.js"></script>
-<script src="{{ asset('assets') }}/js/plugins/ScrollToPlugin.js"></script>
-<script src="{{ asset('assets') }}/js/plugins/ScrollTrigger.js"></script>
-<script src="{{ asset('assets') }}/js/plugins/SplitText.js"></script>
-<script src="{{ asset('assets') }}/js/plugins/wow.js"></script>
-<script src="{{ asset('assets') }}/js/vendor/magnific-popup.min.js"></script>
-<script src="{{ asset('assets') }}/js/vendor/type.js"></script>
-<script src="{{ asset('assets') }}/js/vendor/vanilla-tilt.js"></script>
-<script src="{{ asset('assets') }}/js/plugins/nice-select.min.js"></script>
-<script src="{{ asset('assets') }}/js/vendor/odometer.min.js"></script>
-<script src="{{ asset('assets') }}/js/vendor/jquery-ui.min.js"></script>
-<script src="{{ asset('assets') }}/js/vendor/jquery.counterup.min.js"></script>
-<script src="{{ asset('assets') }}/js/vendor/jarallax.min.js"></script>
-<script src="{{ asset('assets') }}/js/plugins/parallax-scroll.js"></script>
-<script src="{{ asset('assets') }}/js/plugins/jquery.countdown.min.js"></script>
-<script src="{{ asset('assets') }}/js/plugins/isotope-docs.min.js"></script>
-<script src="{{ asset('assets') }}/js/vendor/ajax-form.js"></script>
+    @livewireScripts
+    <!-- JS here -->
+    <script src="{{ asset('assets') }}/js/vendor/jquery-3.7.1.min.js"></script>
+    <script src="{{ asset('assets') }}/js/vendor/chroma.min.js"></script>
+    <script src="{{ asset('assets') }}/js/plugins/waypoints.min.js"></script>
+    <script src="{{ asset('assets') }}/js/vendor/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset('assets') }}/js/plugins/meanmenu.min.js"></script>
+    <script src="{{ asset('assets') }}/js/plugins/swiper.min.js"></script>
+    <script src="{{ asset('assets') }}/js/plugins/gsap.js"></script>
+    <script src="{{ asset('assets') }}/js/plugins/ScrollSmoother.js"></script>
+    <script src="{{ asset('assets') }}/js/plugins/ScrollToPlugin.js"></script>
+    <script src="{{ asset('assets') }}/js/plugins/ScrollTrigger.js"></script>
+    <script src="{{ asset('assets') }}/js/plugins/SplitText.js"></script>
+    <script src="{{ asset('assets') }}/js/plugins/wow.js"></script>
+    <script src="{{ asset('assets') }}/js/vendor/magnific-popup.min.js"></script>
+    <script src="{{ asset('assets') }}/js/vendor/type.js"></script>
+    <script src="{{ asset('assets') }}/js/vendor/vanilla-tilt.js"></script>
+    <script src="{{ asset('assets') }}/js/plugins/nice-select.min.js"></script>
+    <script src="{{ asset('assets') }}/js/vendor/odometer.min.js"></script>
+    <script src="{{ asset('assets') }}/js/vendor/jquery-ui.min.js"></script>
+    <script src="{{ asset('assets') }}/js/vendor/jquery.counterup.min.js"></script>
+    <script src="{{ asset('assets') }}/js/vendor/jarallax.min.js"></script>
+    <script src="{{ asset('assets') }}/js/plugins/parallax-scroll.js"></script>
+    <script src="{{ asset('assets') }}/js/plugins/jquery.countdown.min.js"></script>
+    <script src="{{ asset('assets') }}/js/plugins/isotope-docs.min.js"></script>
+    <script src="{{ asset('assets') }}/js/vendor/ajax-form.js"></script>
 
-<script src="{{ asset('assets') }}/js/popper.min.js"></script>
-<script src="{{ asset('assets') }}/js/html2canvas.js"></script>
-<script src="{{ asset('assets') }}/js/filesaver.min.js"></script>
-<script src="{{ asset('assets') }}/js/aos.min.js"></script>
+    <script src="{{ asset('assets') }}/js/popper.min.js"></script>
+    <script src="{{ asset('assets') }}/js/html2canvas.js"></script>
+    <script src="{{ asset('assets') }}/js/filesaver.min.js"></script>
+    <script src="{{ asset('assets') }}/js/aos.min.js"></script>
 
-<script src="{{ asset('assets') }}/js/main.js"></script>
-<!--H2 hero animation js-->
-<script src="{{ asset('assets') }}/js/vendor/imagesloaded.pkgd.min.js"></script>
-<script src="{{ asset('assets') }}/js/vendor/text-animation.min.js"></script>
-<script src="{{ asset('assets') }}/js/vendor/scripts.js"></script>
+    <script src="{{ asset('assets') }}/js/main.js"></script>
+    <!--H2 hero animation js-->
+    <script src="{{ asset('assets') }}/js/vendor/imagesloaded.pkgd.min.js"></script>
+    <script src="{{ asset('assets') }}/js/vendor/text-animation.min.js"></script>
+    <script src="{{ asset('assets') }}/js/vendor/scripts.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-<script>
-    function displayModal(nama){
-        // Inisialisasi modal
-        const myModal = new bootstrap.Modal(document.getElementById('myModal'));
-        
-        // Memanggil/membuka modal
-        myModal.show();
+    <script>
+        function displayModal(nama){
+            // Inisialisasi modal
+            const myModal = new bootstrap.Modal(document.getElementById('myModal'));
+            
+            // Memanggil/membuka modal
+            myModal.show();
 
-        // Menutup modal
-        // myModal.hide();
+            // Menutup modal
+            // myModal.hide();
 
-        $('#agent_name_modal').text(nama);
-        // $('#agent_name_modal').html(nama);
-    }
-
-    function myCopyFunction(valCopy) {
-        /* Get the text field */
-        var copyText = document.getElementById(valCopy);
-
-        /* Select the text field */
-        copyText.select();
-        copyText.setSelectionRange(0, 99999); /* For mobile devices */
-
-        if (typeof (navigator.clipboard) == 'undefined') {
-            alert("Tautan tidak bisa disalin. \nSilakan lakukan secara manual!");
-        }else{
-            /* Copy the text inside the text field - navigator.clipboard di https */
-            navigator.clipboard.writeText(copyText.value);
-
-            /* Alert the copied text */
-            alert("Tautan sudah disalin: \n"+copyText.value);
+            $('#agent_name_modal').text(nama);
+            // $('#agent_name_modal').html(nama);
         }
-    }
 
-    function mySaveImg(img) {
-        var a = document.createElement('a');
-        a.href = img;
-        a.download = img;
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-    }
+        function myCopyFunction(valCopy) {
+            /* Get the text field */
+            var copyText = document.getElementById(valCopy);
 
-    function dowloadImage(elID){
-        let scrollPos = $(window).scrollTop();
-        $(window).scrollTop(0);
-        html2canvas(document.getElementById("area-"+elID), {
-            allowTaint: true,
-            useCORS: true
-        }).then(
-            canvas => {
-                $(window).scrollTop(scrollPos);
-                canvas.toBlob(function(blob) {
-                    saveAs(blob, "profile-agent-"+elID+".png");
-                });
-        });
-        return false;
-    }
-</script>
+            /* Select the text field */
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+            if (typeof (navigator.clipboard) == 'undefined') {
+                alert("Tautan tidak bisa disalin. \nSilakan lakukan secara manual!");
+            }else{
+                /* Copy the text inside the text field - navigator.clipboard di https */
+                navigator.clipboard.writeText(copyText.value);
+
+                /* Alert the copied text */
+                alert("Tautan sudah disalin: \n"+copyText.value);
+            }
+        }
+
+        function mySaveImg(img) {
+            var a = document.createElement('a');
+            a.href = img;
+            a.download = img;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+
+        function dowloadImage(elID){
+            let scrollPos = $(window).scrollTop();
+            $(window).scrollTop(0);
+            html2canvas(document.getElementById("area-"+elID), {
+                allowTaint: true,
+                useCORS: true
+            }).then(
+                canvas => {
+                    $(window).scrollTop(scrollPos);
+                    canvas.toBlob(function(blob) {
+                        saveAs(blob, "profile-agent-"+elID+".png");
+                    });
+            });
+            return false;
+        }
+    </script>
 
 </body>
 </html>

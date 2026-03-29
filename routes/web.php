@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\cms\LogoutController;
 use App\Http\Controllers\dbg\MergeImageController;
+use App\Http\Controllers\main\DisplayAgentController;
 use App\Http\Middleware\CheckAuthMiddleware;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
@@ -10,6 +11,7 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 Route::livewire('/', 'pages::main.template');
+Route::resource('/display-agent/{slug}', DisplayAgentController::class)->except(['create','store','show','edit','update','destroy']);;
 
 Route::group(
     [
@@ -70,6 +72,6 @@ Route::group(
         // posts edit
         Route::livewire('/post-edit/{id}', 'pages::posts.edit')->name('posts.edit');
 
-        Route::resource('/merge-img', MergeImageController::class);
+        Route::resource('/merge-img', MergeImageController::class)->except(['create','store','show','edit','update','destroy']);
     }
 );
