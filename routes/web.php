@@ -56,6 +56,8 @@ Route::group(
             Artisan::call('optimize:clear');
             return 'Optimize successfully!';
         });
+
+        Route::livewire('/view-agent', 'pages::oth.view-agent');
     }
 );
 
