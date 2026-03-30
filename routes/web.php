@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::livewire('/', 'pages::main.template');
+Route::livewire('/idx', 'pages::main.template');
 Route::resource('/display-agent/{slug}', DisplayAgentController::class)->except(['create','store','show','edit','update','destroy']);;
 
 Route::group(
