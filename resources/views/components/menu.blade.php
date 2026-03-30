@@ -6,13 +6,13 @@
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <li><a class="dropdown-item" wire:navigate href="#">Top Agency Recognition</a></li>
-            <li><a class="dropdown-item" wire:navigate href="#">⁠Multibillion Builders</a></li>
+            <li><a class="dropdown-item" wire:navigate href="{{ url('/idx?q=million-dollar-round-table') }}">⁠Multi-Billion Builders</a></li>
             <li><a class="dropdown-item" wire:navigate href="#">The President’s Club </a></li>
             <li><a class="dropdown-item" wire:navigate href="#">Million Dollar Round Table  </a></li>
             <li><a class="dropdown-item" wire:navigate href="#">President’s Cabinet’s Club  </a></li>
             <li><a class="dropdown-item" wire:navigate href="#">Double Star Club  </a></li>
             <li><a class="dropdown-item" wire:navigate href="#">Star Club  </a></li>
-            <li><a class="dropdown-item" wire:navigate href="#">Top AB & AAB Regional </a></li>
+            <li><a class="dropdown-item" wire:navigate href="#">Top Regional</a></li>
             <li><a class="dropdown-item" wire:navigate href="#">Promotion </a></li>
         </ul>
     </div> 

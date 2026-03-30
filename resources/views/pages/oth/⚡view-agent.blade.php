@@ -170,7 +170,8 @@ new class extends Component
                 ->where('active', 'Y');
             });
         })
-        ->when($this->q!='top-agency-recognition' && 
+        ->when($this->q!='pru' && 
+            $this->q!='top-agency-recognition' && 
             $this->q!='multi-billion-builder' && 
             $this->q!='million-dollar-round-table' && 
             $this->q!='court-of-the-table' && 

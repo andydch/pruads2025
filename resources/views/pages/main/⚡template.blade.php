@@ -9,10 +9,14 @@ new class extends Component
 {
     use WithPagination;
 
-    #[Url(history: true, keep: true)]
+    #[Url(history: true, keep: true, except: '')]
     public $search = '';
     #[Url(history: true, keep: true, except: '')]
     public $q = '';
+
+    public function cari(){
+        $this->resetPage();
+    }
 
     public function updatingSearch(){
         $this->resetPage();
