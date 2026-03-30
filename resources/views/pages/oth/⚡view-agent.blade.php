@@ -1,13 +1,9 @@
 <?php
 
 use App\Models\Mst_agent;
-use App\Imports\AgentImport;
-use App\Imports\AgentCategoryImport;
-use App\Imports\AgentAchievementImport;
 use Livewire\Component;
 use Livewire\WithPagination;
 use Livewire\Attributes\Url;
-use Maatwebsite\Excel\Facades\Excel;
 
 new class extends Component
 {
@@ -274,25 +270,31 @@ new class extends Component
                                         {!! $cats !!}
                                     </td>
                                     <td>
-                                        @php
-                                            $ach = '';
-                                            $achievements = \App\Models\Mst_agent_achievement::leftJoin('mst_achievements AS ma', 'mst_agent_achievements.achievement_id', '=', 'ma.id')
-                                            ->select(
-                                                'ma.id AS achievement_id',
-                                                'ma.name AS achievement_name',
-                                            )
-                                            ->where('mst_agent_achievements.agent_id', '=', $agent->id)
-                                            ->where('mst_agent_achievements.active', '=', 'Y')
-                                            ->where('ma.active', '=', 'Y')
-                                            ->orderBy('ma.order_no', 'ASC')
-                                            ->get();
-                                        @endphp
-                                        @foreach ($achievements as $achievement)
+                                        @if ($q!='top-agency-recognition' && 
+                                            $q!='multi-billion-builder' && 
+                                            $q!='the-presidents-club-leader' && 
+                                            $q!='the-presidents-club-producer' && 
+                                            $q!='top-regional')
                                             @php
-                                                $ach .= ucwords(strtolower($achievement->achievement_name)).'<br/>';
+                                                $ach = '';
+                                                $achievements = \App\Models\Mst_agent_achievement::leftJoin('mst_achievements AS ma', 'mst_agent_achievements.achievement_id', '=', 'ma.id')
+                                                ->select(
+                                                    'ma.id AS achievement_id',
+                                                    'ma.name AS achievement_name',
+                                                )
+                                                ->where('mst_agent_achievements.agent_id', '=', $agent->id)
+                                                ->where('mst_agent_achievements.active', '=', 'Y')
+                                                ->where('ma.active', '=', 'Y')
+                                                ->orderBy('ma.order_no', 'ASC')
+                                                ->get();
                                             @endphp
-                                        @endforeach
-                                        {!! $ach !!}
+                                            @foreach ($achievements as $achievement)
+                                                @php
+                                                    $ach .= ucwords(strtolower($achievement->achievement_name)).'<br/>';
+                                                @endphp
+                                            @endforeach
+                                            {!! $ach !!}
+                                        @endif
                                     </td>
                                     <td>{{ $agent->active }}</td>
                                 </tr>

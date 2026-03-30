@@ -35,6 +35,23 @@
 </head>
 
 <style>
+    .page-link {
+        color: #ea1c2e;
+        border: 1px solid #dee2e6;
+        font-size: 16px;
+    }
+
+    .active > .page-link {
+        color: #fff;
+        border-color: #ea1c2e;
+        background-color: #ea1c2e;
+        font-size: 16px;
+    }
+
+    p.small.text-muted {
+        font-size: 80%;
+    }
+
     .dropdown-toggle{
         width: auto; background-color: #ffffff; 
         display: flex; font-size:16px; padding-left:50px; padding-right:50px;
@@ -222,7 +239,7 @@
     <script src="{{ asset('assets') }}/js/popper.min.js"></script>
     <script src="{{ asset('assets') }}/js/html2canvas.js"></script>
     <script src="{{ asset('assets') }}/js/filesaver.min.js"></script>
-    <script src="{{ asset('assets') }}/js/aos.min.js"></script>
+    <script src="{{ asset('assets') }}/js/aos.js"></script>
 
     <script src="{{ asset('assets') }}/js/main.js"></script>
     <!--H2 hero animation js-->
