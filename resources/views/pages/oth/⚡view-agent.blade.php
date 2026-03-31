@@ -248,9 +248,9 @@ new class extends Component
                                         <img src="{{ Storage::disk('public')->exists('agents/'.$agent->photo)?asset('storage/agents/'.$agent->photo):asset('assets/images/blank.png') }}"
                                             alt="{{ $agent->photo }}" width="100">
                                     </td>
-                                    <td>{{ ucwords(strtolower($agent->name)).' ('.$agent->agent_code.')' }}</td>
+                                    <td>{{ $agent->name.' ('.$agent->agent_code.')' }}</td>
                                     <td>
-                                        @if ($q!='top-agency-recognition' && 
+                                        {{-- @if ($q!='top-agency-recognition' && 
                                             $q!='multi-billion-builder' && 
                                             $q!='the-presidents-club-leader' && 
                                             $q!='the-presidents-club-producer' && 
@@ -274,10 +274,10 @@ new class extends Component
                                                 @endphp
                                             @endforeach
                                             {!! $cats !!}
-                                        @endif
+                                        @endif --}}
                                     </td>
                                     <td>
-                                        @if ($q!='top-agency-recognition' && 
+                                        {{-- @if ($q!='top-agency-recognition' && 
                                             $q!='multi-billion-builder' && 
                                             $q!='the-presidents-club-leader' && 
                                             $q!='the-presidents-club-producer' && 
@@ -301,7 +301,7 @@ new class extends Component
                                                 @endphp
                                             @endforeach
                                             {!! $ach !!}
-                                        @endif
+                                        @endif --}}
                                     </td>
                                     <td>{{ $agent->active }}</td>
                                 </tr>
