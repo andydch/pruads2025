@@ -250,25 +250,31 @@ new class extends Component
                                     </td>
                                     <td>{{ ucwords(strtolower($agent->name)).' ('.$agent->agent_code.')' }}</td>
                                     <td>
-                                        @php
-                                            $cats = '';
-                                            $categories = \App\Models\Mst_agent_category::leftJoin('mst_categories AS mc', 'mst_agent_categories.category_id', '=', 'mc.id')
-                                            ->select(
-                                                'mc.id AS category_id',
-                                                'mc.name AS category_name',
-                                            )
-                                            ->where('mst_agent_categories.agent_id', '=', $agent->id)
-                                            ->where('mst_agent_categories.active', '=', 'Y')
-                                            ->where('mc.active', '=', 'Y')
-                                            ->orderBy('mc.name', 'ASC')
-                                            ->get();
-                                        @endphp
-                                        @foreach ($categories as $category)
+                                        @if ($q!='top-agency-recognition' && 
+                                            $q!='multi-billion-builder' && 
+                                            $q!='the-presidents-club-leader' && 
+                                            $q!='the-presidents-club-producer' && 
+                                            $q!='top-regional')
                                             @php
-                                                $cats .= ucwords(strtolower($category->category_name)).'<br/>';
+                                                $cats = '';
+                                                $categories = \App\Models\Mst_agent_category::leftJoin('mst_categories AS mc', 'mst_agent_categories.category_id', '=', 'mc.id')
+                                                ->select(
+                                                    'mc.id AS category_id',
+                                                    'mc.name AS category_name',
+                                                )
+                                                ->where('mst_agent_categories.agent_id', '=', $agent->id)
+                                                ->where('mst_agent_categories.active', '=', 'Y')
+                                                ->where('mc.active', '=', 'Y')
+                                                ->orderBy('mc.name', 'ASC')
+                                                ->get();
                                             @endphp
-                                        @endforeach
-                                        {!! $cats !!}
+                                            @foreach ($categories as $category)
+                                                @php
+                                                    $cats .= ucwords(strtolower($category->category_name)).'<br/>';
+                                                @endphp
+                                            @endforeach
+                                            {!! $cats !!}
+                                        @endif
                                     </td>
                                     <td>
                                         @if ($q!='top-agency-recognition' && 
