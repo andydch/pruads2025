@@ -137,28 +137,31 @@
             <div class="testimonial-4__wrapper col-md-6 m-auto f-height" style="background:url({{ url('/assets/imgs/bg_popup2.png') }}); background-size:cover;">
                 <div align="center" class="m-auto" >
                     <div><img src="{{ url('/assets/imgs/logo_popup.png') }}" width="50%" class="mb-5" alt=""></div>
-                    <img src="{{ url('/assets/imgs/foto_agent.png') }}" width="160" alt="">
+                    <img src="{{ Storage::disk('public')->exists('agents/'.$agent->photo)?asset('storage/agents/'.$agent->photo):asset('assets/images/blank.png') }}"
+                        alt="{{ $agent->photo }}" style="width: 50%;">
                 </div>
                                             
-            <div class="team-details__content text-center">
-                <div class="text-black mt-4" align="center" style="font-family:'FSAlbertPro'; font-size:18px;line-height:18px;">
-                    <span id="agent_name_modal" style="font-weight: bold;">adch</span>
-                    {{-- <strong>Lily Halim</strong> --}}
-                </div>
-                <div class="mt-2 text-black m-auto" style="font-size:16px; line-height:16px;">Great Achievers</div>
-                <div class="text-black m-auto mt-4" style="font-size:15px; line-height:16px;">
-                    {{-- <span id="agent_achievement_modal"></span>  --}}
-                    Agency of the Year 2025<br>
-                    Top Leader Builder 2024<br>
-                    Million Dollar Round Table<br>
-                    The President's Club - Leader<br>
-                    President's Cabinet's Club - Leader<br>
-                    Star Club - Producer
+                <div class="team-details__content text-center">
+                    <div class="text-black mt-4" align="center" style="font-family:'FSAlbertPro'; font-size:18px;line-height:18px;">
+                        <strong>{{ $agent->name }}</strong>
+                    </div>
+                    <div class="mt-2 text-black m-auto" style="font-size:16px; line-height:16px;">Great Achievers</div>
+                    <div class="text-black m-auto mt-4" style="font-size:15px; line-height:16px;">
+                        @php
+                            $ach_s = '';
+                        @endphp
+                        @foreach ($ach as $a)
+                            @php
+                                $ach_s .= ucwords(strtolower($a->achievement_name)).'<br/>';
+                            @endphp
+                        @endforeach
+                        {!! $ach_s !!}
+                    </div>  
                 </div>  
-            </div>  
                                     
-            <div class="mb-5 text-black mt-4" align="center" style="font-family:'FSAlbertPro'; font-size:16px;line-height:16px;">
-                <strong>Selamat atas pencapaian Anda, <br>Great Achievers Prudential Indonesia di 2025!</strong>
+                <div class="mb-5 text-black mt-4" align="center" style="font-family:'FSAlbertPro'; font-size:16px;line-height:16px;">
+                    <strong>Selamat atas pencapaian Anda, <br>Great Achievers Prudential Indonesia di 2025!</strong>
+                </div>
             </div>
         </div>
     </div>
