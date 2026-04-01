@@ -100,6 +100,7 @@
     .besarboard {width:100%;}
     .transparan {background:url(assets/imgs/bg_trans.png); border-radius:15px;}
     .tulisan_tac {height:40px;}
+    /* .popup-width {width:50%;} */
     /* ukuran layar > 800px */
 
     @media (min-width: 800px) { 
@@ -114,6 +115,10 @@
         .transparan {background:url(assets/imgs/bg_trans.png); border-radius:15px;}
         .tulisan_tac {height:40px;}
     }
+    
+    @media (max-width: 810px) { 
+        /* .popup-width {width:90%;} */
+    }
 
     @media only screen and (max-device-width: 480px) {
         .cari { font-size:13px; width:150px;}
@@ -125,6 +130,7 @@
         .ucapan {text-align:center;width:100%;}
         .besarboard {width:30%; margin: auto; display: block; }
         .tulisan_tac {width:80%;}
+        /* .popup-width {width:90%;} */
     }
 </style>
 
@@ -254,7 +260,7 @@
             <!-- Modal body -->
             <div class="modal-body" id="area-download-photo">
                 <div class="row">
-                    <div class="testimonial-4__wrapper col-md-6 m-auto" style="background:url(assets/imgs/bg_popup2.png); background-size:cover;">
+                    <div class="testimonial-4__wrapper col-md-6 m-auto popup-width" style="background:url(assets/imgs/bg_popup2.png); background-size:cover;background-position: center;">
                         <div align="center" class="m-auto" >
                             <div><img src="assets/imgs/logo_popup.png" width="50%" class="mb-5" alt=""></div>
                             <span id="photo-agent"></span>
@@ -291,16 +297,16 @@
                         <img id="download-photo" onClick="dowloadImage('download-photo');" src="assets/imgs/b_download.png" width="120" alt="" style="cursor: pointer;" />
                     </div>
                                             
-                    </div>
                 </div>
             </div>
-
-            <!-- Modal footer -->
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-            </div>
-      
         </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+      
+        {{-- </div> --}}
     </div>
 </div>    
 <!-- Modal -->
@@ -360,7 +366,8 @@
 
             $('#agent_name_modal').text(nama);
             $('#agent_achievement_modal').html(achievement);
-            $('#photo-agent').html('<img src="'+photo+'" width="160" alt="">');
+            $('#photo-agent').html('<img src="'+photo+'" alt="" style="width:50%;">');
+            // $('#photo-agent').html('<img src="'+photo+'" width="160" alt="">');
             $('#fb-link').attr('href', 'https://www.facebook.com/sharer/sharer.php?u={{ url('/display-agent/') }}/'+slug);
             $('#twit-link').attr('href', 'https://twitter.com/intent/tweet?&url={{ url('/display-agent/') }}/'+slug);
             $('#wa-link').attr('href', 'whatsapp://send?text=Coba%20cek%20laman%20Prudential%20Achiever%20ini!%20{{ url('/display-agent/') }}/'+slug);
