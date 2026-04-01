@@ -169,11 +169,11 @@ h6 {
   @color declaration
   */
   --rr-common-white: #FFFFFF;
-  --rr-common-black: #000000;
+  --rr-common-black: #373A36;
   --rr-common-placeholder: #4A5764;
   --rr-body-primary: #fff;
   --rr-theme-primary: #ec1e31;
-  --rr-heading-primary: #453030;
+  --rr-heading-primary: #373A36;
   --rr-text-body: rgba(5, 5, 19, 0.6);
   --rr-text-primary: #151515;
   --rr-shadow-primary: 0px 30px 60px 0px rgba(0, 15, 32, 0.1);
@@ -2178,7 +2178,7 @@ section {
   font-size: 100px !important;
   font-weight: 600;
   line-height: 100px;
-  color: #453030;
+  color: #373A36;
   text-transform: uppercase;
   margin-bottom: 0;
   font-family: var(--rr-ff-heading);
@@ -2244,7 +2244,7 @@ section {
   font-style: italic;
   font-weight: 400;
   line-height: 1;
-  color: #453030 !important;
+  color: #373A36 !important;
   text-transform: uppercase;
   margin: 0 !important;
 }
@@ -2355,7 +2355,7 @@ section {
   font-size: 18px;
   font-weight: 600;
   line-height: 27px;
-  color: #453030;
+  color: #373A36;
   text-transform: uppercase;
 }
 @media (max-width: 575px) {
@@ -2370,7 +2370,7 @@ section {
   margin-left: 5px;
   border-radius: 30px;
   display: inline-block;
-  background-color: #453030;
+  background-color: #373A36;
 }
 .breadcrumb-section.border-bottom {
   border-bottom: 1px solid rgba(21, 21, 21, 0.14);
@@ -2502,7 +2502,7 @@ section {
   font-size: 140px;
   font-weight: 600;
   line-height: 1;
-  color: #453030;
+  color: #373A36;
   margin-top: 14px;
   text-transform: uppercase;
 }
@@ -2542,7 +2542,7 @@ section {
   text-transform: uppercase;
 }
 .breadcrumb-section .breadcrumb__item a span {
-  color: #453030;
+  color: #373A36;
 }
 .breadcrumb-section__shape__wrap {
   display: flex;
@@ -2642,7 +2642,7 @@ section {
   font-size: 44px;
   font-weight: 600;
   line-height: 66px;
-  color: #453030;
+  color: #373A36;
   margin-bottom: 0;
   text-transform: uppercase;
   font-family: var(--rr-ff-heading);
@@ -7737,7 +7737,7 @@ body .ui-tooltip {
   }
 }
 .blog10__filter .active {
-  color: #453030;
+  color: #373A36;
 }
 .blog10__filter button {
   font-family: var(--rr-ff-heading);
@@ -8160,7 +8160,7 @@ body .ui-tooltip {
   font-size: 50px;
   line-height: 42px;
   text-transform: uppercase;
-  color: #453030;
+  color: #373A36;
   padding-bottom: 25px;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -8195,7 +8195,7 @@ body .ui-tooltip {
   padding-bottom: 73px;
 }
 .blogpost11__content-code-post {
-  background: #453030;
+  background: #373A36;
   border-radius: 10px;
   padding: 39px 40px 36px 40px;
   display: flex;
@@ -8285,7 +8285,7 @@ body .ui-tooltip {
   font-size: 50px;
   line-height: 42px;
   text-transform: uppercase;
-  color: #453030;
+  color: #373A36;
   padding-bottom: 22px;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -8318,7 +8318,7 @@ body .ui-tooltip {
   font-size: 30px;
   line-height: 42px;
   text-transform: uppercase;
-  color: #453030;
+  color: #373A36;
   padding-bottom: 5px;
 }
 .blogpost11__content-item .content p {
@@ -8339,7 +8339,7 @@ body .ui-tooltip {
   font-size: 30px;
   line-height: 42px;
   text-transform: uppercase;
-  color: #453030;
+  color: #373A36;
   padding-bottom: 5px;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -8435,7 +8435,7 @@ body .ui-tooltip {
   font-size: 20px;
   line-height: 42px;
   text-transform: uppercase;
-  color: #453030;
+  color: #373A36;
 }
 @media only screen and (min-width: 576px) and (max-width: 767px) {
   .blogpost11__tag-wrapper .postbox-tag span {
@@ -8499,7 +8499,7 @@ body .ui-tooltip {
   font-size: 30px;
   line-height: 42px;
   text-transform: uppercase;
-  color: #453030;
+  color: #373A36;
   margin-bottom: 20px;
 }
 @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -8681,7 +8681,7 @@ body .ui-tooltip {
   transform: rotate(45deg);
 }
 .blog-list__content-tag {
-  background: #453030;
+  background: #373A36;
   border-radius: 6px;
   padding: 0px 14px;
   display: inline-block;
@@ -8736,7 +8736,7 @@ body .ui-tooltip {
   font-size: 40px;
   line-height: 52px;
   text-transform: uppercase;
-  color: #453030;
+  color: #373A36;
   padding-bottom: 96px;
   border-bottom: 1px solid rgba(69, 48, 48, 0.14);
   width: 100%;
@@ -8788,11 +8788,11 @@ body .ui-tooltip {
   }
 }
 .blog-list__title a {
-  background: linear-gradient(#453030 0%, #453030 98%);
+  background: linear-gradient(#373A36 0%, #373A36 98%);
   background-size: 0 2px;
   background-repeat: no-repeat;
   background-position: left 100%;
-  color: #453030;
+  color: #373A36;
   transition: all 0.3s ease-in-out;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 992px), only screen and (min-width: 576px) and (max-width: 767px), (max-width:450px) {
@@ -8801,7 +8801,7 @@ body .ui-tooltip {
   }
 }
 .blog-list__title a:hover {
-  color: #453030;
+  color: #373A36;
   background-size: 100% 2px;
 }
 
@@ -9286,7 +9286,7 @@ body .ui-tooltip {
   margin-top: 25px;
 }
 .footer-2__top-part-form .rr-subscribe-form .form-control {
-  background: transparent;
+  background: #ffffff;
   color: #656565;
   font-family: var(--rr-ff-heading);
   font-weight: var(--rr-fw-regular);
@@ -9316,17 +9316,17 @@ body .ui-tooltip {
 }
 .footer-2__top-part-form .rr-subscribe-form .form-control:focus {
   box-shadow: none;
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid #ec1e31;
 }
 .footer-2__top-part-form .rr-subscribe-form .form-control-1 {
   background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  border: 1px solid #ec1e31;
   border-radius: 0;
 }
 .footer-2__top-part-form .rr-subscribe-form .form-check-input {
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  border: 1px solid #ec1e31;
   margin-right: 5px;
-  background-color: transparent;
+  background-color: #ffffff;
 }
 .footer-2__top-part-form .rr-subscribe-form .form-check-input:focus {
   box-shadow: none;
@@ -9875,7 +9875,7 @@ body .ui-tooltip {
   font-size: 18px;
   font-weight: 600;
   line-height: 1;
-  color: #453030;
+  color: #373A36;
   text-transform: uppercase;
   font-family: var(--rr-ff-heading);
 }
@@ -9959,7 +9959,7 @@ body .ui-tooltip {
   grid-row: 2;
 }
 .portfolio-section__item.item-4 .portfolio-section__content {
-  background: #453030;
+  background: #373A36;
 }
 .portfolio-section__item.item-4 .portfolio-section__content h4 {
   color: var(--rr-common-white);
@@ -10064,7 +10064,7 @@ body .ui-tooltip {
   font-size: 100px;
   line-height: 80px;
   text-transform: uppercase;
-  color: #453030;
+  color: #373A36;
 }
 @media only screen and (min-width: 576px) and (max-width: 767px) {
   .services-section .section__title-wrapper .section__title-wrapper-title {
@@ -10085,7 +10085,7 @@ body .ui-tooltip {
   font-size: 90px;
   line-height: 120px;
   text-transform: uppercase;
-  color: #453030;
+  color: #373A36;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .services-section .section__title-wrapper .section__title-wrapper-title span {
@@ -10129,7 +10129,7 @@ body .ui-tooltip {
   font-size: 34px;
   font-weight: 600;
   line-height: 1;
-  color: #453030;
+  color: #373A36;
   text-transform: uppercase;
   margin-top: 58px;
   margin-bottom: 21px;
@@ -10191,7 +10191,7 @@ body .ui-tooltip {
   margin-bottom: 0px;
 }
 .services-section .services__tab__wrapper .nav-link.active .services__tab__title {
-  color: #453030;
+  color: #373A36;
   width: 680px;
   margin-left: -50px;
 }
@@ -10202,7 +10202,7 @@ body .ui-tooltip {
 }
 .services-section .services__tab__wrapper .nav-link.active .services__tab__title::before {
   width: 680px;
-  background-color: #453030;
+  background-color: #373A36;
 }
 @media (max-width: 575px) {
   .services-section .services__tab__wrapper .nav-link.active .services__tab__title::before {
@@ -10316,7 +10316,7 @@ body .ui-tooltip {
   font-size: 30px;
   font-weight: 600;
   line-height: 42px;
-  color: #453030;
+  color: #373A36;
   margin-bottom: 30px;
   text-transform: uppercase;
 }
@@ -10408,7 +10408,7 @@ body .ui-tooltip {
   font-size: 30px;
   font-weight: 600;
   line-height: 42px;
-  color: #453030;
+  color: #373A36;
   margin-bottom: 28px;
   text-transform: uppercase;
   font-family: var(--rr-ff-heading);
@@ -10553,7 +10553,7 @@ body .ui-tooltip {
   font-size: 60px;
   font-weight: 600;
   line-height: 74px;
-  color: #453030;
+  color: #373A36;
   text-transform: uppercase;
   margin-bottom: 40px;
   font-family: var(--rr-ff-heading);
@@ -10589,7 +10589,7 @@ body .ui-tooltip {
   font-size: 18px;
   font-weight: 600;
   line-height: 1;
-  color: #453030;
+  color: #373A36;
   font-family: var(--rr-ff-heading);
   padding: 24px 20px 22px 24px;
   text-transform: uppercase;
@@ -10606,7 +10606,7 @@ body .ui-tooltip {
   box-shadow: inherit;
 }
 .faq-section__content .accordion-button:not(.collapsed) {
-  color: #453030;
+  color: #373A36;
   line-height: 1;
   padding: 17px 20px 12px 24px;
   text-transform: uppercase;
@@ -10641,7 +10641,7 @@ body .ui-tooltip {
 .faq-section__content .accordion-button:not(.collapsed)::after {
   background-image: inherit;
   content: "\f106";
-  background-color: #453030;
+  background-color: #373A36;
   color: var(--rr-common-white);
 }
 .faq-section__content .accordion-body {
@@ -10681,7 +10681,7 @@ body .ui-tooltip {
   font-size: 140px;
   font-weight: 600;
   line-height: 1;
-  color: #453030;
+  color: #373A36;
   display: flex;
   align-items: center;
   column-gap: 20px;
@@ -10706,7 +10706,7 @@ body .ui-tooltip {
 .title-slider__title a {
   width: 90px;
   height: 90px;
-  background: #453030;
+  background: #373A36;
   color: #fff;
   display: inline-flex;
   align-items: center;
@@ -10766,7 +10766,7 @@ body .ui-tooltip {
   font-size: 16px;
   font-weight: 500;
   line-height: 30px;
-  color: #453030;
+  color: #373A36;
   margin-right: 4px;
   text-transform: uppercase;
   font-family: var(--rr-ff-heading);
@@ -10785,19 +10785,19 @@ body .ui-tooltip {
   color: #8B7D7A;
 }
 .team-details__content {
-  margin-left: 0px;
+  margin-left: 0px; font-family:'FSAlbertPro';
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 992px), only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
   .team-details__content {
-    margin-left: 0;
+    margin-left: 0; font-size:16px; line-height:16px;
   }
 }
 .team-details__name {
   font-size: 30px;
   font-weight: 600;
   line-height: 40px;
-  color: #453030;
-  text-transform: uppercase;
+  color: #373A36;
+  /*text-transform: uppercase;*/
   font-family: var(--rr-ff-heading);
 }
 @media (max-width: 575px) {
@@ -10819,7 +10819,7 @@ body .ui-tooltip {
   font-size: 22px;
   font-weight: 600;
   line-height: 32px;
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
   color: rgba(69, 48, 48, 0.7);
   font-family: var(--rr-ff-heading);
 }
@@ -10918,7 +10918,7 @@ body .ui-tooltip {
   font-size: 22px;
   font-weight: 500;
   line-height: 1;
-  color: #453030;
+  color: #373A36;
   margin-right: 2px;
   text-transform: uppercase;
   font-family: var(--rr-ff-heading);
@@ -11177,7 +11177,7 @@ body .ui-tooltip {
 .service1__item .divider {
   width: 270px;
   height: 4px;
-  background: #453030;
+  background: #373A36;
   opacity: 0.14;
   border-radius: 20px;
   display: inline-block;
@@ -11195,7 +11195,7 @@ body .ui-tooltip {
   font-size: 14px;
   line-height: 21px;
   text-transform: uppercase;
-  color: #453030;
+  color: #373A36;
   background: rgba(69, 48, 48, 0.1);
   border-radius: 20px;
   padding: 7px 12px;
@@ -11216,15 +11216,15 @@ body .ui-tooltip {
   }
 }
 .service1-title a {
-  background: linear-gradient(#453030 0%, #453030 98%);
+  background: linear-gradient(#373A36 0%, #373A36 98%);
   background-size: 0 4px;
   background-repeat: no-repeat;
   background-position: left 100%;
-  color: #453030;
+  color: #373A36;
   transition: all 0.3s ease-in-out;
 }
 .service1-title a:hover {
-  color: #453030;
+  color: #373A36;
   background-size: 100% 5px;
 }
 
@@ -11283,7 +11283,7 @@ body .ui-tooltip {
   font-size: 24px;
   line-height: 34px;
   text-transform: uppercase;
-  color: #453030;
+  color: #373A36;
   display: block;
   width: 100%;
 }
@@ -11299,15 +11299,15 @@ body .ui-tooltip {
   }
 }
 .blog1__item-title a {
-  background: linear-gradient(#453030 0%, #453030 98%);
+  background: linear-gradient(#373A36 0%, #373A36 98%);
   background-size: 0 2px;
   background-repeat: no-repeat;
   background-position: left 100%;
-  color: #453030;
+  color: #373A36;
   transition: all 0.3s ease-in-out;
 }
 .blog1__item-title a:hover {
-  color: #453030;
+  color: #373A36;
   background-size: 100% 2px;
 }
 .blog1__item-meta ul li {
@@ -11496,7 +11496,7 @@ body .ui-tooltip {
   font-size: 54px;
   font-weight: var(--rr-fw-sbold);
   line-height: 60px;
-  color: #453030;
+  color: #373A36;
   text-transform: uppercase;
   font-family: var(--rr-ff-heading);
 }
@@ -11694,7 +11694,7 @@ body .ui-tooltip {
   font-style: italic;
   font-weight: 400;
   line-height: 1;
-  color: #453030;
+  color: #373A36;
   text-transform: uppercase;
 }
 @media (max-width: 575px) {
@@ -11791,7 +11791,7 @@ body .ui-tooltip {
   font-weight: 500;
   line-height: 27px;
   text-align: center;
-  color: #453030;
+  color: #373A36;
   margin-bottom: 15px;
 }
 .experience-section .experience__wrapper .experience-thumb img {
@@ -11856,20 +11856,22 @@ body .ui-tooltip {
 }
 .team-section__item {
   background: #ffffff; border:1px solid #eb9a9b;
-  padding: 20px 20px;
-  padding-bottom: 20px;
+  padding-top: 10px; text-align:center; padding-left:3px; padding-right:3px;
+  padding-bottom: 10px;
   position: relative;
   overflow: hidden;
   width: 100%;
-  height: 280px;
+  height: 210px;
   transition: 0.6s;
-  border-radius: 20px 20px 20px 20px;
+  border-radius: 15px;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 992px), only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
   .team-section__item {
-    height: 350px;
-    padding: 20px 0px;
-    padding-bottom: 0;
+	width:150px;
+    height: 160px; 
+    padding-top: 5px; padding-left:3px; padding-right:3px;
+    padding-bottom: 0; 
+	text-align:center;
   }
 }
 .team-section__item:hover {
@@ -11880,84 +11882,85 @@ body .ui-tooltip {
   width: 100%;
   height: 100%;
 }
-.team-section__item:hover .team-section__thumb img {
-  border-radius: 20px 20px 10px 20px; 
+.team-section__item:hover .team-section__thumb img { background-color:#ffffff; width:80%; height:auto; 
+  /*border-radius: 15px; */  
+ 
 }
 .team-section__item:hover .team-section__content {
   position: relative; text-align:center;
   /*left: 20px;*/
-  bottom:100px;
-   background: #db1516;
-  border-radius: 20px; padding:15px; width:95%; margin:auto;
+  bottom:73px;
+  /* bottom:78px; */
+   background: #ffffff; border:1px solid #db1516;
+  border-radius: 15px; padding:10px; width:95%; margin:auto;
   
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 992px), only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
   .team-section__item:hover .team-section__content {
     left: 0px;
     bottom: 80px;
-	 background: #db1516;
-  border-radius: 20px; padding:15px; width:95%; margin:auto;
+	 background: #ffffff; border:1px solid #db1516;
+  border-radius: 15px; padding:10px; width:95%; margin:auto;
   }
 }
 .team-section__item:hover .team-section__content .team-section__title {
   margin-top: 0;
   text-align:center;
-  color: #fff;
+  color: #373a36;
 }
 .team-section__item:hover .team-section__content .team-section__position {
-  color: #fff; text-align:center;
+  color: #586770; text-align:center;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 992px), only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
   .team-section__content {
-    margin-left: 20px;
-    margin-bottom: 20px;
+    margin-left: 0px;
+    margin-bottom: 5px;
   }
   
 
 }
 .team-section__thumb {
-  width: 180px;
-  height: 180px;
+  width: 180px;background:#ffffff;
+  height: 130px;
   margin: 0 auto;
   transition: 0.6s;
 }
 
 @media only screen and (max-device-width: 480px) {
 	  .team-section__thumb {
-	  width: 250px;
-	  height: 250px;
+	  width: 120px;
+	  height: 100px;
 	  margin: 0 auto;
 	  transition: 0.6s;
 	}
 }
 .team-section__thumb img {
-  width: 100%; background:#ffffff;
-  height: 100%;
-  object-fit: cover;
+  width: 75%; 
+  height: auto;
+  /*object-fit: cover;
   /*border-radius: 500px;*/
 }
 .team-section__title {
   font-family: var(--rr-ff-heading);
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   line-height: 1;
-  color: #453030;
-  text-transform: uppercase;
+  color: #373A36;
   margin-bottom: 5px;
   margin-top: 5px;
   transition: 0.3s; text-align:center;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 992px), only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
   .team-section__title {
-    margin-top: 5px;text-align:center;
+    margin-top: 0px;text-align:center; font-size: 12px;
   }
 }
 .team-section__position {
   font-family: var(--rr-ff-heading);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
   line-height: 1;
-  color: rgba(69, 48, 48, 0.7); text-align:center;
+  color: #5B6770; text-align:center;
 }
 .team-section__social {
   position: absolute;
@@ -12087,7 +12090,7 @@ body .ui-tooltip {
   font-size: 20px;
   font-weight: 600;
   line-height: 60px;
-  color: #453030;
+  color: #373A36;
   text-transform: uppercase;
   font-family: var(--rr-ff-heading);
   transition: 0.3s all ease-in-out;
@@ -12156,7 +12159,7 @@ body .ui-tooltip {
   align-items: center;
   justify-content: center;
   font-size: 17px;
-  color: #453030;
+  color: #373A36;
   border-radius: 6px;
 }
 .award-section__link > span i {
@@ -12187,7 +12190,7 @@ body .ui-tooltip {
 }
 .award-section__item:hover .award-section__link span {
   color: #fff;
-  background-color: #453030;
+  background-color: #373A36;
 }
 .award-section__item:hover .award-section__link span i {
   transform: rotate(0);
@@ -13314,7 +13317,7 @@ body .ui-tooltip {
   font-weight: var(--rr-ff-medium);
   font-size: 15px;
   text-transform: uppercase;
-  color: #453030;
+  color: #373A36;
   position: relative;
 }
 @media only screen and (min-width: 768px) and (max-width: 992px) {
@@ -13332,7 +13335,7 @@ body .ui-tooltip {
   content: "";
   width: 6px;
   height: 6px;
-  background: #453030;
+  background: #373A36;
   border-radius: 1px;
   display: block;
   position: absolute;
@@ -13407,7 +13410,7 @@ body .ui-tooltip {
   font-size: 30px;
   line-height: 42px;
   text-transform: uppercase;
-  color: #453030;
+  color: #373A36;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .our-team__item-content .our-team-title {
@@ -13525,7 +13528,7 @@ body .ui-tooltip {
   font-size: 30px;
   line-height: 42px;
   text-transform: uppercase;
-  color: #453030;
+  color: #373A36;
   padding-bottom: 16px;
 }
 @media (max-width:320px) {
@@ -13599,7 +13602,7 @@ body .ui-tooltip {
   font-weight: var(--rr-fw-medium);
   font-size: 18px;
   line-height: 30px;
-  color: #453030;
+  color: #373A36;
 }
 @media (max-width:320px) {
   .career-details__sidebar .apply-form ul li {
@@ -13706,7 +13709,7 @@ body .ui-tooltip {
   font-size: 34px;
   font-weight: 600;
   line-height: 42px;
-  color: #453030;
+  color: #373A36;
   text-transform: uppercase;
   margin-bottom: 10px;
 }
@@ -14121,7 +14124,7 @@ body .ui-tooltip {
   font-size: 60px;
   line-height: 74px;
   text-transform: uppercase;
-  color: #453030;
+  color: #373A36;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .brandshiping__title {
@@ -14236,7 +14239,7 @@ body .ui-tooltip {
   font-size: 16px;
   line-height: 24px;
   text-transform: uppercase;
-  color: #453030;
+  color: #373A36;
   position: relative;
   padding-left: 55px;
 }
@@ -14381,7 +14384,7 @@ body .ui-tooltip {
   margin-bottom: 40px;
 }
 .project-section-3 .section__title-wrapper-title {
-  color: #453030;
+  color: #373A36;
 }
 .project-section-3 .project-section-2__item {
   background: #EEE7DF;
@@ -14472,7 +14475,7 @@ body .ui-tooltip {
   font-family: var(--rr-ff-heading);
 }
 .project-client-details__list__item li span {
-  color: #453030;
+  color: #373A36;
 }
 .project-client-details__thumb {
   margin: 0 160px;

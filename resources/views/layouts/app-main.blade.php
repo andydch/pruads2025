@@ -8,7 +8,7 @@
     @livewireStyles
 
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content="soukhinkhan">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Place favicon.ico in the root directory -->
 
@@ -16,22 +16,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     {{-- <link href="../css2?family=Sofia&display=swap" rel="stylesheet"> --}}
     <!-- CSS here -->
-    <link rel="stylesheet" href="{{ asset('assets') }}/css/vendor/bootstrap.min.css">
-    <link rel="stylesheet" href="{{ asset('assets') }}/css/vendor/animate.min.css">
-    <link rel="stylesheet" href="{{ asset('assets') }}/css/vendor/odometer.min.css">
-    <link rel="stylesheet" href="{{ asset('assets') }}/css/plugins/swiper.min.css">
-    <link rel="stylesheet" href="{{ asset('assets') }}/css/vendor/magnific-popup.css">
-    <link rel="stylesheet" href="{{ asset('assets') }}/css/vendor/fontawesome-pro.css"> 
-    <link rel="stylesheet" href="{{ asset('assets') }}/css/vendor/spacing.css">
-    <link rel="stylesheet" href="{{ asset('assets') }}/css/vendor/custom-font.css">
-    <link rel="stylesheet" href="{{ asset('assets') }}/css/main.css">
-    <link rel="stylesheet" href="{{ asset('assets') }}/css/aos.css">
+    <!-- CSS here -->
+    <link rel="stylesheet" href="{{ url('/assets/css/vendor/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url('/assets/css/vendor/animate.min.css') }}">
+    <link rel="stylesheet" href="{{ url('/assets/css/vendor/odometer.min.css') }}">
+    <link rel="stylesheet" href="{{ url('/assets/css/plugins/swiper.min.css') }}">
+    <link rel="stylesheet" href="{{ url('/assets/css/vendor/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ url('/assets/css/vendor/fontawesome-pro.css') }}"> 
+    <link rel="stylesheet" href="{{ url('/assets/css/vendor/spacing.css') }}">
+    <link rel="stylesheet" href="{{ url('/assets/css/vendor/custom-font.css') }}">
+    <link rel="stylesheet" href="{{ url('/assets/css/main.css') }}">
     <!-- text animation  -->
-    <link rel="stylesheet" href="{{ asset('assets') }}/css/content.css">
+    <link rel="stylesheet" href="{{ url('/assets/css/content.css') }}">
     <!----->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!----->
-     
+
 </head>
 
 <style>
@@ -91,20 +91,28 @@
 
     @media (min-width: 800px) { 
         .cari {width:300px;}
-        .bg_ucapan {background: url({{ asset('assets') }}/imgs/img_bg_board.png) fixed top no-repeat;background-size:cover;}
-        .bg_thanks {background: url({{ asset('assets') }}/imgs/bg_thanks.png) fixed top no-repeat; background-size:cover;}
-        .lebarthanks {width:90%;}
+        .bg_ucapan {background: url(assets/imgs/img_bg_board.png) fixed top no-repeat;background-size:cover; padding-top:50px;}
+        .bg_thanks {background: url(assets/imgs/bg_thanks.png) fixed top no-repeat; background-size:cover;}
+        .bg_agen {background: url(assets/imgs/bgrd_pruad02a.jpg) top center; margin-top:-50px;}
+        .lebarthanks {width:90%; margin-top:30px;}
         .lebarlogo {width:60%;}
+        .ucapan {text-align:left;width:90%;}
+        .besarboard {width:100%;}
+        .transparan {background:url(assets/imgs/bg_trans.png); border-radius:15px;}
+        .tulisan_tac {height:40px;}
     }
 
     @media only screen and (max-device-width: 480px) {
         .cari { font-size:13px; width:150px;}
-        .bg_ucapan {background: url({{ asset('assets') }}/imgs/img_bg_board.png) fixed top;background-size:contain;}
-        .bg_thanks {background: url({{ asset('assets') }}/imgs/bg_thanks.png) center no-repeat; background-size:cover;}
+        .bg_ucapan {background: url(assets/imgs/img_bg_board.png) bottom; background-size:contain;padding-top:20px;}
+        .bg_thanks {background: url(assets/imgs/bg_thanks.png) bottom center no-repeat; background-size:cover;}
+        .bg_agen {background: url(assets/imgs/bgrd_pruad_mobile01.jpg) top center;}
         .lebarthanks {width:100%;}
         .lebarlogo {width:80%;}
+        .ucapan {text-align:center;width:100%;}
+        .besarboard {width:30%; margin: auto; display: block; }
+        .tulisan_tac {width:80%;}
     }
-
 </style>
 
 <body>
@@ -115,11 +123,11 @@
             <div class="container">
                 <div class="mega__menu-wrapper p-relative">
                     <div class="header__main header-3__main">
-                            <div align="center">
-                                <div class="logo">
-                                    <img src="{{ asset('assets') }}/imgs/img_header.png" class="lebarlogo" alt="">
-                                </div>
+                        <div align="center">
+                            <div class="logo">
+                                <img src="assets/imgs/img_header.png" class="lebarlogo" alt="">
                             </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -136,133 +144,215 @@
     </div> --}}
     <!-- Header area end -->
 
-    <!-- Body main wrapper start -->
-    <div id="smooth-wrapper">
-        <div id="smooth-content">
-            <main>
+<!-- Body main wrapper start -->
+<div id="smooth-wrapper">
+    <div id="smooth-content">
+        <main>
+            
+            <!-- Banner area start -->
+            <section id="hero" class="banner-2__area p-relative overflow-hidden z-1 bg_thanks">
+                <div class="container custom-container-3">
+                    <div class="row">
+                        <div class="col-12">
+                            <div align="center" id="hero-caption" class="parallax-scroll-caption banner-2__content p-relative">
+                                <img src="assets/imgs/img_text_thanks_1.png" class="lebarthanks" alt=""/>                              
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="project-section-2__area project-section-2  bg_ucapan">
+                <div class="container-fluid">
+                    <div class="project-section-2__wrapper">
+                        <div class="project-section-2__item project-panel">
+                            <div class="row m-0 p-0">
+                               <div class="col-md-3 m-0 p-0">
+                                	<img src="assets/imgs/img_tony_2025a.png" class="besarboard" alt=""/> 
+                                </div>
+                                <div class="col-md-9 m-0 p-0">
+                                     <img src="assets/imgs/text_tony_2025.png" class="ucapan" alt=""/> 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-section-2__item project-panel">
+                            <div class="row m-0 p-0">
+                                <div class="col-md-3 m-0 p-0">
+                                	<img src="assets/imgs/img_iskandar_2025a.png"  class="besarboard" alt=""/> 
+                                </div>
+                                <div class="col-md-9 m-0 p-0">
+                                     <img src="assets/imgs/text_iskandar_2025.png" class="ucapan" alt=""/> 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-section-2__item project-panel">
+                            <div class="row m-0 p-0">
+                                 <div class="col-md-3 m-0 p-0">
+                                	<img src="assets/imgs/img_rusli_2025a.png" class="besarboard" alt=""/> 
+                                </div>
+                                <div class="col-md-9 m-0 p-0">
+                                     <img src="assets/imgs/text_rusli_2025.png" class="ucapan" alt=""/> 
+                                </div>
+                            </div>
+                        </div>
+ 			            <div class="project-section-2__item project-panel">
+                            <div class="row m-0 p-0">
+                                 <div class="col-md-3 m-0 p-0">
+                                	<img src="assets/imgs/img_nazsul_2025a.png"  class="besarboard" alt=""/> 
+                                </div>
+                                <div class="col-md-9 m-0 p-0">
+                                     <img src="assets/imgs/text_nazsul_2025.png" class="ucapan" alt=""/> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 
-                <!-- Banner area start -->
-                <section id="hero" class="banner-2__area p-relative overflow-hidden z-1 bg_thanks">
-                    <div class="container custom-container-3">
-                        <div class="row">
-                            <div class="col-12">
-                                <div align="center" id="hero-caption" class="parallax-scroll-caption banner-2__content p-relative">
-                                    <img src="{{ asset('assets') }}/imgs/img_text_thanks_1.png" class="lebarthanks"  alt=""/>                              
-                                </div>
-                            </div>
+                <div class="project-panel-area"></div>
+                <div class="project-section-2__area btn-wrap pb-50 pt-50">
+                    <a href="#" class="rr-btn before-btn">Download Production Ad 2025</a>
+                </div>
+                <div class="project-panel-area"></div>
+                
+            </section>
+            <!--  -->
+
+            {{ $slot }}
+
+        </main>
+    </div>
+</div>
+
+{{-- scroll up --}}
+<div id="scroll-percentage"><span id="scroll-percentage-value"></span></div>
+
+<!-- Modal -->
+<!-- The Modal -->
+<div class="modal" id="agentModal">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">&nbsp;</h4>
+                <button type="button" class="btn-close" data-dismiss="modal"></button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body" id="area-download-photo">
+                <div class="row">
+                    <div class="testimonial-4__wrapper col-md-6 m-auto" style="background:url(assets/imgs/bg_popup2.png); background-size:cover;">
+                        <div align="center" class="m-auto" >
+                            <div><img src="assets/imgs/logo_popup.png" width="50%" class="mb-5" alt=""></div>
+                            <span id="photo-agent"></span>
                         </div>
-                    </div>
-                </section>
-
-                <section class="project-section-2__area project-section-2  bg_ucapan">
-                    <div class="container-fluid">
-                        <div class="project-section-2__wrapper">
-                            <div class="project-section-2__item project-panel">
-                                <div class="row">
-                                <div class="col-md-5">
-                                        <img src="{{ asset('assets') }}/imgs/img_tony_2025.png" width="100%" alt=""/> 
-                                    </div>
-                                    <div align="center" class="col-md-7">
-                                        <img src="{{ asset('assets') }}/imgs/text_tony_2025.png" width="90%" alt=""/> 
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="project-section-2__item project-panel">
-                                <div class="row">
-                                    <div class="col-md-5">
-                                        <img src="{{ asset('assets') }}/imgs/img_iskandar_2025.png" width="100%" alt=""/> 
-                                    </div>
-                                    <div align="center" class="col-md-7">
-                                        <img src="{{ asset('assets') }}/imgs/text_iskandar_2025.png" width="90%" alt=""/> 
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="project-section-2__item project-panel">
-                                <div class="row">
-                                    <div class="col-md-5">
-                                        <img src="{{ asset('assets') }}/imgs/img_rusli_2025.png" width="100%" alt=""/> 
-                                    </div>
-                                    <div align="center" class="col-md-7">
-                                        <img src="{{ asset('assets') }}/imgs/text_rusli_2025.png" width="90%" alt=""/> 
-                                    </div>
-                                </div>
-                            </div>
+                                                    
+                    <div class="team-details__content text-center">
+                        <div class="text-black mt-4" align="center" style="font-family:'FSAlbertPro'; font-size:18px;line-height:12px;">
+                            <span id="agent_name_modal" style="font-weight: bold;"></span>
                         </div>
+                        <div class="mt-2 text-black m-auto" style="font-size:16px; line-height:18px;">Great Achievers</div>
+                        <div class="text-black m-auto mt-4" style="font-size:13px; line-height:16px;">
+                            <span id="agent_achievement_modal"></span>
+                        </div>  
+                    </div>  
+                                            
+                    <div class="mb-5 text-black mt-4" align="center" style="font-family:'FSAlbertPro'; font-size:16px;line-height:16px;">
+                        <strong>Selamat atas pencapaian Anda, <br>Great Achievers Prudential Indonesia di 2025!</strong>
                     </div>
-                    
-                    <div class="project-panel-area"></div>
-                    <div class="project-section-2__area btn-wrap pb-50">
-                        <a href="#" class="rr-btn before-btn">Download Production Ad 2025</a>
+                </div>
+            </div>
+                                  
+            <div class="m-auto mt-5 mb-100" style="font-family:'FSAlbertPro'">
+                <div align="center">
+                    <a id="fb-link" href="#" target="_new"><img src="assets/imgs/s-fb.png" width="120" alt=""/></a>
+                    <a id="twit-link" href="#" target="_new"><img src="assets/imgs/s-tw.png" width="120" alt=""/></a>
+                    <a id="wa-link" href="#" target="_new"><img src="assets/imgs/s-wa.png" width="120" alt=""/></a>
+                    <a id="in-link" href="#" target="_new"><img src="assets/imgs/s-linkedin.png" width="120" alt=""/></a>
+                                        
+                    <div class="mt-2">   
+                        or link <form action="#" class="rr-subscribe-form cari form-check-inline">
+                            <input id="url-agent-link" type="text" class=" form-control text-center" value="">
+                        </form>&nbsp;&nbsp;
+                        <img onclick="myCopyFunction('url-agent-link');" src="assets/imgs/b_copylink.png" width="120" alt="" style="cursor: pointer;" />&nbsp;
+                        <img id="download-photo" onClick="dowloadImage('download-photo');" src="assets/imgs/b_download.png" width="120" alt="" style="cursor: pointer;" />
                     </div>
-                    
-                    <div class="project-panel-area"></div>
-                </section>
-                <!--  -->
+                                            
+                    </div>
+                </div>
+            </div>
 
-                {{ $slot }}
-
-            </main>
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+      
         </div>
     </div>
+</div>    
+<!-- Modal -->
 
-    <div id="scroll-percentage"><span id="scroll-percentage-value"></span></div>
+@livewireScripts
+<!-- JS here -->
+<script src="{{ url('/assets/js/vendor/jquery-3.7.1.min.js') }}"></script>
+<script src="{{ url('/assets/js/vendor/chroma.min.js') }}"></script>
+<script src="{{ url('/assets/js/plugins/waypoints.min.js') }}"></script>
+<script src="{{ url('/assets/js/vendor/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ url('/assets/js/plugins/meanmenu.min.js') }}"></script>
+<script src="{{ url('/assets/js/plugins/swiper.min.js') }}"></script>
+<script src="{{ url('/assets/js/plugins/gsap.js') }}"></script>
+<script src="{{ url('/assets/js/plugins/ScrollSmoother.js') }}"></script>
+<script src="{{ url('/assets/js/plugins/ScrollToPlugin.js') }}"></script>
+<script src="{{ url('/assets/js/plugins/ScrollTrigger.js') }}"></script>
+<script src="{{ url('/assets/js/plugins/SplitText.js') }}"></script>
+<script src="{{ url('/assets/js/plugins/wow.js') }}"></script>
+<script src="{{ url('/assets/js/vendor/magnific-popup.min.js') }}"></script>
+<script src="{{ url('/assets/js/vendor/type.js') }}"></script>
+<script src="{{ url('/assets/js/vendor/vanilla-tilt.js') }}"></script>
+<script src="{{ url('/assets/js/plugins/nice-select.min.js') }}"></script>
+<script src="{{ url('/assets/js/vendor/odometer.min.js') }}"></script>
+<script src="{{ url('/assets/js/vendor/jquery-ui.min.js') }}"></script>
+<script src="{{ url('/assets/js/vendor/jquery.counterup.min.js') }}"></script>
+<script src="{{ url('/assets/js/vendor/jarallax.min.js') }}"></script>
+<script src="{{ url('/assets/js/plugins/parallax-scroll.js') }}"></script>
+<script src="{{ url('/assets/js/plugins/jquery.countdown.min.js') }}"></script>
+<script src="{{ url('/assets/js/plugins/isotope-docs.min.js') }}"></script>
+<script src="{{ url('/assets/js/vendor/ajax-form.js') }}"></script>
 
-    <x-modal-view />
+<script src="{{ url('/assets/js/popper.min.js') }}"></script>
+<script src="{{ url('/assets/js/html2canvas.js') }}"></script>
+<script src="{{ url('/assets/js/filesaver.min.js') }}"></script>
+<script src="{{ url('/assets/js/aos.js') }}"></script>
 
-    @livewireScripts
-    <!-- JS here -->
-    <script src="{{ asset('assets') }}/js/vendor/jquery-3.7.1.min.js"></script>
-    <script src="{{ asset('assets') }}/js/vendor/chroma.min.js"></script>
-    <script src="{{ asset('assets') }}/js/plugins/waypoints.min.js"></script>
-    <script src="{{ asset('assets') }}/js/vendor/bootstrap.bundle.min.js"></script>
-    <script src="{{ asset('assets') }}/js/plugins/meanmenu.min.js"></script>
-    <script src="{{ asset('assets') }}/js/plugins/swiper.min.js"></script>
-    <script src="{{ asset('assets') }}/js/plugins/gsap.js"></script>
-    <script src="{{ asset('assets') }}/js/plugins/ScrollSmoother.js"></script>
-    <script src="{{ asset('assets') }}/js/plugins/ScrollToPlugin.js"></script>
-    <script src="{{ asset('assets') }}/js/plugins/ScrollTrigger.js"></script>
-    <script src="{{ asset('assets') }}/js/plugins/SplitText.js"></script>
-    <script src="{{ asset('assets') }}/js/plugins/wow.js"></script>
-    <script src="{{ asset('assets') }}/js/vendor/magnific-popup.min.js"></script>
-    <script src="{{ asset('assets') }}/js/vendor/type.js"></script>
-    <script src="{{ asset('assets') }}/js/vendor/vanilla-tilt.js"></script>
-    <script src="{{ asset('assets') }}/js/plugins/nice-select.min.js"></script>
-    <script src="{{ asset('assets') }}/js/vendor/odometer.min.js"></script>
-    <script src="{{ asset('assets') }}/js/vendor/jquery-ui.min.js"></script>
-    <script src="{{ asset('assets') }}/js/vendor/jquery.counterup.min.js"></script>
-    <script src="{{ asset('assets') }}/js/vendor/jarallax.min.js"></script>
-    <script src="{{ asset('assets') }}/js/plugins/parallax-scroll.js"></script>
-    <script src="{{ asset('assets') }}/js/plugins/jquery.countdown.min.js"></script>
-    <script src="{{ asset('assets') }}/js/plugins/isotope-docs.min.js"></script>
-    <script src="{{ asset('assets') }}/js/vendor/ajax-form.js"></script>
+<script src="{{ url('/assets/js/main.js') }}"></script>
+<!--H2 hero animation js-->
+<script src="{{ url('/assets/js/vendor/imagesloaded.pkgd.min.js') }}"></script>
+<script src="{{ url('/assets/js/vendor/text-animation.min.js') }}"></script>
+<script src="{{ url('/assets/js/vendor/scripts.js') }}"></script>
+<!---->
 
-    <script src="{{ asset('assets') }}/js/popper.min.js"></script>
-    <script src="{{ asset('assets') }}/js/html2canvas.js"></script>
-    <script src="{{ asset('assets') }}/js/filesaver.min.js"></script>
-    <script src="{{ asset('assets') }}/js/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    <script src="{{ asset('assets') }}/js/main.js"></script>
-    <!--H2 hero animation js-->
-    <script src="{{ asset('assets') }}/js/vendor/imagesloaded.pkgd.min.js"></script>
-    <script src="{{ asset('assets') }}/js/vendor/text-animation.min.js"></script>
-    <script src="{{ asset('assets') }}/js/vendor/scripts.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-    <script>
-        function displayModal(nama){
+<script>
+        function displayModal(nama, achievement, slug, photo){
             // Inisialisasi modal
-            const myModal = new bootstrap.Modal(document.getElementById('myModal'));
+            const agentModal = new bootstrap.Modal(document.getElementById('agentModal'));
             
             // Memanggil/membuka modal
-            myModal.show();
+            agentModal.show();
 
             // Menutup modal
-            // myModal.hide();
+            // agentModal.hide();
 
             $('#agent_name_modal').text(nama);
-            // $('#agent_name_modal').html(nama);
+            $('#agent_achievement_modal').html(achievement);
+            $('#photo-agent').html('<img src="'+photo+'" width="160" alt="">');
+            $('#fb-link').attr('href', 'https://www.facebook.com/sharer/sharer.php?u={{ url('/display-agent/') }}/'+slug);
+            $('#twit-link').attr('href', 'https://twitter.com/intent/tweet?&url={{ url('/display-agent/') }}/'+slug);
+            $('#wa-link').attr('href', 'whatsapp://send?text=Coba%20cek%20laman%20Prudential%20Achiever%20ini!%20{{ url('/display-agent/') }}/'+slug);
+            $('#in-link').attr('href', 'https://www.linkedin.com/shareArticle?mini=true&?&url={{ url('/display-agent/') }}/'+slug);
+            $('#url-agent-link').val('{{ url('/display-agent/') }}/'+slug);
         }
 
         function myCopyFunction(valCopy) {
@@ -311,4 +401,5 @@
     </script>
 
 </body>
+
 </html>

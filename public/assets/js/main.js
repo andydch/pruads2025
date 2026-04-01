@@ -1045,29 +1045,80 @@ window.addEventListener('resize', () => {
 
     
     // project panel start
-    gsap.registerPlugin(ScrollTrigger);
+   // gsap.registerPlugin(ScrollTrigger);
 
-    if (window.innerWidth > 768) { 
-        let projectPanels = document.querySelectorAll('.project-panel');
+   // if (window.innerWidth > 600) { 
+   //     let projectPanels = document.querySelectorAll('.project-panel');
 
-        projectPanels.forEach((section) => {
-            gsap.to(section, {
-                scrollTrigger: {
-                    trigger: section,           
-                    pin: section,              
-                    scrub: 1,                  
-                    start: 'top 10%',           
-                    end: 'bottom 95%',          
-                    endTrigger: '.project-panel-area', 
-                    pinSpacing: false,          
-                    markers: false              
-                },
-            });
-        });
-    } else {
+      //  projectPanels.forEach((section) => {
+        //    gsap.to(section, {
+        //        scrollTrigger: {
+         //           trigger: section,           
+         //           pin: section,              
+          //          scrub: 1,                  
+          //          start: 'top 50%',           
+           //         end: 'bottom 90%',          
+            //        endTrigger: '.project-panel-area', 
+             //       pinSpacing: false,          
+              //      markers: false              
+              //  },
+           // });
+       // });
+   // } else {
         console.log("Scroll animation is disabled for mobile devices.");
-    }
+   // }
     // project panel end
+	
+	
+	let mm = gsap.matchMedia();
+
+mm.add({
+  // Tentukan breakpoint di sini
+  isDesktop: "(min-width: 800px)",
+  isMobile: "(max-width: 799px)"
+}, (context) => {
+  // Ambil variabel kondisi dari atas
+  let { isDesktop, isMobile } = context.conditions;
+  let projectPanels = document.querySelectorAll('.project-panel');
+
+  projectPanels.forEach((section) => {
+    if (isDesktop) {
+      // --- LOGIKA KHUSUS DESKTOP (Stacking/Pinning) ---
+      gsap.to(section, {
+        scrollTrigger: {
+          trigger: section,
+          pin: true,
+          scrub: 1,
+          start: "top 20%",
+          endTrigger: ".project-panel-area",
+          end: "bottom 90%",
+          pinSpacing: false
+        }
+      });
+    }
+
+    if (isMobile) {
+            // --- LOGIKA MOBILE: Efek Muncul (Fade-in & Slide) ---
+            // Kita tidak pakai 'pin' agar tidak mengganggu momentum scroll jari
+            gsap.from(section, {
+                opacity: 0,
+                y: 30,
+                duration: 0.8,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top 85%",    // Animasi mulai saat panel terlihat 15% dari bawah
+                    toggleActions: "play none none reverse", // Play saat masuk, reverse saat keluar
+                }
+     });
+    }
+  });
+
+  return () => { 
+    // Opsional: Kode bersih-bersih jika diperlukan saat pindah breakpoint
+  };
+});
+	
 
     // Team Hover Js
     function Team_animation() {
