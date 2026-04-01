@@ -142,7 +142,7 @@ new class extends Component
 
                 <div class="row m-auto">
                     @forelse ($agents as $agent)
-                        <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6 m-auto">
+                        <div class="col-xl-2 col-lg-2 col-md-3 col-sm-6 col-6 m-auto">
                             <div class="team-section__item mb-30">
                                 <div class="team-section__thumb">
                                     <img src="{{ Storage::disk('public')->exists('agents/'.$agent->photo)?asset('storage/agents/'.$agent->photo):asset('assets/images/blank.png') }}"
