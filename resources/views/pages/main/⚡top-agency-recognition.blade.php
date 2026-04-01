@@ -94,7 +94,7 @@ new class extends Component
 
             <div class="team-section__wrapper pl-5 pr-5">
                 <div class="row m-auto">
-                    <div class="col-lg-2 col-md-2 col-sm-3 col-6 m-auto">
+                    <div class="col-lg-2 col-md-2 col-sm-3 col-6 m-auto" style="justify-content: center;display: grid;">
                         <div class="team-section__item mb-30">
                             <div class="team-section__thumb" >
                                 <img src="{{ Storage::disk('public')->exists('agents/'.$agentAOY->photo)?asset('storage/agents/'.$agentAOY->photo):asset('assets/images/blank.png') }}"

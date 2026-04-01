@@ -11926,6 +11926,15 @@ body .ui-tooltip {
   transition: 0.6s;
 }
 
+@media only screen and (max-device-width: 900px) {
+  .team-section__thumb {
+	  width: 120px;
+	  height: 100px;
+	  margin: 0 auto;
+	  transition: 0.6s;
+	}
+}
+
 @media only screen and (max-device-width: 480px) {
 	  .team-section__thumb {
 	  width: 120px;
@@ -11934,6 +11943,7 @@ body .ui-tooltip {
 	  transition: 0.6s;
 	}
 }
+
 .team-section__thumb img {
   width: 75%; 
   height: auto;

@@ -89,6 +89,19 @@
         padding: 10px;
     }
 
+    /* ukuran layar > 800px */
+    .cari {width:300px;}
+    .bg_ucapan {background: url(assets/imgs/img_bg_board.png) fixed top no-repeat;background-size:cover; padding-top:50px;}
+    .bg_thanks {background: url(assets/imgs/bg_thanks.png) fixed top no-repeat; background-size:cover;}
+    .bg_agen {background: url(assets/imgs/bgrd_pruad02a.jpg) top center; margin-top:-50px;}
+    .lebarthanks {width:90%; margin-top:30px;}
+    .lebarlogo {width:60%;}
+    .ucapan {text-align:left;width:90%;}
+    .besarboard {width:100%;}
+    .transparan {background:url(assets/imgs/bg_trans.png); border-radius:15px;}
+    .tulisan_tac {height:40px;}
+    /* ukuran layar > 800px */
+
     @media (min-width: 800px) { 
         .cari {width:300px;}
         .bg_ucapan {background: url(assets/imgs/img_bg_board.png) fixed top no-repeat;background-size:cover; padding-top:50px;}
