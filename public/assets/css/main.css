@@ -11889,18 +11889,18 @@ body .ui-tooltip {
 .team-section__item:hover .team-section__content {
   position: relative; text-align:center;
   /*left: 20px;*/
-  bottom:73px;
+  bottom:83px;
   /* bottom:78px; */
    background: #ffffff; border:1px solid #db1516;
-  border-radius: 15px; padding:10px; width:95%; margin:auto;
+  border-radius: 15px; padding:8px; width:95%; margin:auto;
   
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 992px), only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
   .team-section__item:hover .team-section__content {
     left: 0px;
     bottom: 80px;
-	 background: #ffffff; border:1px solid #db1516;
-  border-radius: 15px; padding:10px; width:95%; margin:auto;
+	  background: #ffffff; border:1px solid #db1516;
+    border-radius: 15px; padding:5px; width:95%; margin:auto;
   }
 }
 .team-section__item:hover .team-section__content .team-section__title {

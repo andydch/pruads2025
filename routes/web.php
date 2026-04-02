@@ -11,8 +11,9 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 Route::livewire('/top-agency-recognition', 'pages::main.top-agency-recognition');
-Route::livewire('/idx', 'pages::main.template');
+Route::livewire('/multibillion-builder', 'pages::main.multibillion-builder');
 Route::resource('/display-agent/{slug}', DisplayAgentController::class)->except(['create','store','show','edit','update','destroy']);;
+Route::livewire('/idx', 'pages::main.template');
 
 Route::group(
     [
