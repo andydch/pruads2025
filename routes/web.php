@@ -10,9 +10,16 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::livewire('/top-agency-recognition', 'pages::main.top-agency-recognition');
-Route::livewire('/multibillion-builder', 'pages::main.multibillion-builder');
-Route::resource('/display-agent/{slug}', DisplayAgentController::class)->except(['create','store','show','edit','update','destroy']);;
+Route::livewire('/tar', 'pages::main.top-agency-recognition')->name('top-agency-recognition');
+Route::livewire('/mbb', 'pages::main.multibillion-builder')->name('multibillion-builders');
+Route::livewire('/tpc', 'pages::main.the-presidents-club')->name('the-presidents-club');
+Route::livewire('/mdrt', 'pages::main.million-dollar-round-table')->name('million-dollar-round-table');
+Route::livewire('/pcc', 'pages::main.presidents-cabinets-club')->name('presidents-cabinets-club');
+Route::livewire('/dsc', 'pages::main.double-star-club')->name('double-star-club');
+Route::livewire('/sc', 'pages::main.star-club')->name('star-club');
+Route::livewire('/tro', 'pages::main.top-regional')->name('top-regional');
+Route::livewire('/pro', 'pages::main.promotion')->name('promotion');
+Route::resource('/display-agent/{slug}', DisplayAgentController::class)->except(['create','store','show','edit','update','destroy']);
 Route::livewire('/idx', 'pages::main.template');
 
 Route::group(

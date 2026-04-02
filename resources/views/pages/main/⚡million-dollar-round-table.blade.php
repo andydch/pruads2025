@@ -11,12 +11,18 @@ new class extends Component
 
     #[Url(history: true, keep: true, except: '')]
     public $search = '';
+    #[Url(history: true, keep: true, except: '')]
+    public $q = '';
 
     public function cari(){
         $this->resetPage();
     }
 
     public function updatingSearch(){
+        $this->resetPage();
+    }
+
+    public function updatingQ(){
         $this->resetPage();
     }
 
@@ -32,11 +38,37 @@ new class extends Component
             'slug as agent_slug',
             'photo',
         )
-        ->whereIn('id', function($q){
-            $q->select('agent_id')
-            ->from('mst_agent_categories')
-            ->where('category_id', 4)
-            ->where('active', 'Y');
+        ->when($this->q=='cot', function($query) {
+            $query->whereIn('id', function($query1) {
+                $query1->select('agent_id')
+                ->from('mst_agent_achievements')
+                ->where('achievement_id', 9)
+                ->where('active', 'Y');
+            });
+        })
+        ->when($this->q=='mdrt', function($query) {
+            $query->whereIn('id', function($query1) {
+                $query1->select('agent_id')
+                ->from('mst_agent_achievements')
+                ->where('achievement_id', 12)
+                ->where('active', 'Y');
+            });
+        })
+        ->when($this->q=='tot', function($query) {
+            $query->whereIn('id', function($query1) {
+                $query1->select('agent_id')
+                ->from('mst_agent_achievements')
+                ->where('achievement_id', 44)
+                ->where('active', 'Y');
+            });
+        })
+        ->when($this->q!='tot' && $this->q!='cot' && $this->q!='mdrt', function($query) {
+            $query->whereIn('id', function($query1) {
+                $query1->select('agent_id')
+                ->from('mst_agent_achievements')
+                ->whereIn('achievement_id', [9, 12, 44])
+                ->where('active', 'Y');
+            });
         })
         ->when($this->search!='', function($q){
             $q->where('name', 'LIKE', '%'.$this->search.'%')
@@ -55,7 +87,7 @@ new class extends Component
             'agents' => $agents,
         ])
         ->layout('layouts::app-main')
-        ->title('MULTIBILLION BUILDERS');
+        ->title('MILLION DOLLAR ROUND TABLE');
     }
 };
 ?>
@@ -68,7 +100,21 @@ new class extends Component
             <x-menu />
             
             <div align="center" class="mb-30">
-                <img src="assets/imgs/b_mbb.png" class="tulisan_tac" alt=""/> 
+                <img src="assets/imgs/b_mdrt.png" class="tulisan_tac" alt=""/> 
+            </div>
+
+            <div class="d-flex justify-content-center align-items-center mb-30">
+                <div class="dropdown">
+                    <button class="btn btn-outline-danger dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-expanded="false">
+                        <span>Please Select</span>&nbsp;&nbsp;
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="{{ route('million-dollar-round-table').'?q=tot' }}">Top of The Table </a></li>
+                        <li><a class="dropdown-item" href="{{ route('million-dollar-round-table').'?q=cot' }}">Court of The Table </a></li>
+                        <li><a class="dropdown-item" href="{{ route('million-dollar-round-table').'?q=mdrt' }}">Million Dollar Round Table </a></li>
+                    </ul>
+                </div> 
             </div>
 
             <div class="team-section__wrapper pl-5 pr-5 pb-15">

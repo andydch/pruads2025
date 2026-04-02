@@ -11,12 +11,18 @@ new class extends Component
 
     #[Url(history: true, keep: true, except: '')]
     public $search = '';
+    #[Url(history: true, keep: true, except: '')]
+    public $q = '';
 
     public function cari(){
         $this->resetPage();
     }
 
     public function updatingSearch(){
+        $this->resetPage();
+    }
+
+    public function updatingQ(){
         $this->resetPage();
     }
 
@@ -32,14 +38,22 @@ new class extends Component
             'slug as agent_slug',
             'photo',
         )
-        ->whereIn('id', function($q){
-            $q->select('agent_id')
+        ->whereIn('id', function($query){
+            $query->select('agent_id')
             ->from('mst_agent_categories')
-            ->where('category_id', 4)
+            ->when($this->q=='l', function($query1) {
+                $query1->where('category_id', 1);
+            })
+            ->when($this->q=='p', function($query1) {
+                $query1->where('category_id', 2);
+            })
+            ->when($this->q!='l' && $this->q!='p', function($query1) {
+                $query1->whereIn('category_id', [1, 2]);
+            })
             ->where('active', 'Y');
         })
-        ->when($this->search!='', function($q){
-            $q->where('name', 'LIKE', '%'.$this->search.'%')
+        ->when($this->search!='', function($query){
+            $query->where('name', 'LIKE', '%'.$this->search.'%')
             ->orWhere('agent_code', 'LIKE', '%'.$this->search.'%');
         })
         ->where('active', 'Y')
@@ -55,7 +69,7 @@ new class extends Component
             'agents' => $agents,
         ])
         ->layout('layouts::app-main')
-        ->title('MULTIBILLION BUILDERS');
+        ->title('DOUBLE STAR CLUB');
     }
 };
 ?>
@@ -68,7 +82,20 @@ new class extends Component
             <x-menu />
             
             <div align="center" class="mb-30">
-                <img src="assets/imgs/b_mbb.png" class="tulisan_tac" alt=""/> 
+                <img src="assets/imgs/b_dsc.png" class="tulisan_tac" alt=""/> 
+            </div>
+
+            <div class="d-flex justify-content-center align-items-center mb-30">
+                <div class="dropdown">
+                    <button class="btn btn-outline-danger dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-expanded="false">
+                        <span>Please Select</span>&nbsp;&nbsp;
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="{{ route('double-star-club').'?q=l' }}">Leader </a></li>
+                        <li><a class="dropdown-item" href="{{ route('double-star-club').'?q=p' }}">Producer </a></li>
+                    </ul>
+                </div> 
             </div>
 
             <div class="team-section__wrapper pl-5 pr-5 pb-15">

@@ -12,98 +12,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Place favicon.ico in the root directory -->
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com" data-navigate-track>
+    <link rel="preconnect" href="https://fonts.gstatic.com" data-navigate-track>
     {{-- <link href="../css2?family=Sofia&display=swap" rel="stylesheet"> --}}
     <!-- CSS here -->
-    <!-- CSS here -->
-    <link rel="stylesheet" href="{{ url('/assets/css/vendor/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ url('/assets/css/vendor/animate.min.css') }}">
-    <link rel="stylesheet" href="{{ url('/assets/css/vendor/odometer.min.css') }}">
-    <link rel="stylesheet" href="{{ url('/assets/css/plugins/swiper.min.css') }}">
-    <link rel="stylesheet" href="{{ url('/assets/css/vendor/magnific-popup.css') }}">
-    <link rel="stylesheet" href="{{ url('/assets/css/vendor/fontawesome-pro.css') }}"> 
-    <link rel="stylesheet" href="{{ url('/assets/css/vendor/spacing.css') }}">
-    <link rel="stylesheet" href="{{ url('/assets/css/vendor/custom-font.css') }}">
-    <link rel="stylesheet" href="{{ url('/assets/css/main.css') }}">
+    <link rel="stylesheet" href="{{ url('/assets/css/vendor/bootstrap.min.css') }}" data-navigate-track>
+    <link rel="stylesheet" href="{{ url('/assets/css/vendor/animate.min.css') }}" data-navigate-track>
+    <link rel="stylesheet" href="{{ url('/assets/css/vendor/odometer.min.css') }}" data-navigate-track>
+    <link rel="stylesheet" href="{{ url('/assets/css/plugins/swiper.min.css') }}" data-navigate-track>
+    <link rel="stylesheet" href="{{ url('/assets/css/vendor/magnific-popup.css') }}" data-navigate-track>
+    <link rel="stylesheet" href="{{ url('/assets/css/vendor/fontawesome-pro.css') }}" data-navigate-track> 
+    <link rel="stylesheet" href="{{ url('/assets/css/vendor/spacing.css') }}" data-navigate-track>
+    <link rel="stylesheet" href="{{ url('/assets/css/vendor/custom-font.css') }}" data-navigate-track>
+    <link rel="stylesheet" href="{{ url('/assets/css/main.css') }}" data-navigate-track>
     <!-- text animation  -->
-    <link rel="stylesheet" href="{{ url('/assets/css/content.css') }}">
+    <link rel="stylesheet" href="{{ url('/assets/css/content.css') }}" data-navigate-track>
     <!----->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" data-navigate-track>
     <!----->
 
-</head>
-
-<style>
-    .page-link {
-        color: #ea1c2e;
-        border: 1px solid #dee2e6;
-        font-size: 16px;
-    }
-
-    .active > .page-link {
-        color: #fff;
-        border-color: #ea1c2e;
-        background-color: #ea1c2e;
-        font-size: 16px;
-    }
-
-    p.small.text-muted {
-        font-size: 80%;
-    }
-
-    .dropdown-toggle{
-        width: auto; background-color: #ffffff; 
-        display: flex; font-size:16px; padding-left:50px; padding-right:50px;
-        justify-content: space-between; color:#656565;
-        align-items: center;
-        height: 50px;
-        border: 1px solid #ec1e31;
-        border-radius:10px;
-    }
-
-    .dropdown-toggle:focus{
-        box-shadow: none !important;
-    }
-
-    .dropdown-toggle::after {
-        display: none;
-    }
-
-    .dropdown-menu{
-        width: auto;font-size:18px; background-color:#74c5c2; 
-            border: 0px solid #ec1e31; border-radius:10px;
-            padding-left:40px; padding-right:40px;
-        transform: translate3d(0px, 50px, 0px) !important;
-    }
-
-    .dropdown-item:focus, .dropdown-item:hover {
-        color: #ec1e31;
-        background: transparent;
-        padding: 10px;
-    }
-
-    .dropdown-item {
-        display: block;color:#ffffff; 
-        width: 100%;
-        padding: 10px;
-    }
-
-    /* ukuran layar > 800px */
-    .cari {width:300px;}
-    .bg_ucapan {background: url(assets/imgs/img_bg_board.png) fixed top no-repeat;background-size:cover; padding-top:50px;}
-    .bg_thanks {background: url(assets/imgs/bg_thanks.png) fixed top no-repeat; background-size:cover;}
-    .bg_agen {background: url(assets/imgs/bgrd_pruad02a.jpg) top center; margin-top:-50px;}
-    .lebarthanks {width:90%; margin-top:30px;}
-    .lebarlogo {width:60%;}
-    .ucapan {text-align:left;width:90%;}
-    .besarboard {width:100%;}
-    .transparan {background:url(assets/imgs/bg_trans.png); border-radius:15px;}
-    .tulisan_tac {height:40px;}
-    /* .popup-width {width:50%;} */
-    /* ukuran layar > 800px */
-
-    @media (min-width: 800px) { 
+    <style>
+        .page-link {
+            color: #ea1c2e;
+            border: 1px solid #dee2e6;
+            font-size: 16px;
+        }
+    
+        .active > .page-link {
+            color: #fff;
+            border-color: #ea1c2e;
+            background-color: #ea1c2e;
+            font-size: 16px;
+        }
+    
+        p.small.text-muted {
+            font-size: 80%;
+        }
+    
+        .dropdown-toggle{
+            width: auto; background-color: #ffffff; 
+            display: flex; font-size:16px; padding-left:50px; padding-right:50px;
+            justify-content: space-between; color:#656565;
+            align-items: center;
+            height: 50px;
+            border: 1px solid #ec1e31;
+            border-radius:10px;
+        }
+    
+        .dropdown-toggle:focus{
+            box-shadow: none !important;
+        }
+    
+        .dropdown-toggle::after {
+            display: none;
+        }
+    
+        .dropdown-menu{
+            width: auto;font-size:18px; background-color:#74c5c2; 
+                border: 0px solid #ec1e31; border-radius:10px;
+                padding-left:40px; padding-right:40px;
+            transform: translate3d(0px, 50px, 0px) !important;
+        }
+    
+        .dropdown-item:focus, .dropdown-item:hover {
+            color: #ec1e31;
+            background: transparent;
+            padding: 10px;
+        }
+    
+        .dropdown-item {
+            display: block;color:#ffffff; 
+            width: 100%;
+            padding: 10px;
+        }
+    
+        .dropdown-item.active {
+            background-color: #dc3545;
+        }
+    
+        /* ukuran layar > 800px */
         .cari {width:300px;}
         .bg_ucapan {background: url(assets/imgs/img_bg_board.png) fixed top no-repeat;background-size:cover; padding-top:50px;}
         .bg_thanks {background: url(assets/imgs/bg_thanks.png) fixed top no-repeat; background-size:cover;}
@@ -114,25 +101,99 @@
         .besarboard {width:100%;}
         .transparan {background:url(assets/imgs/bg_trans.png); border-radius:15px;}
         .tulisan_tac {height:40px;}
-    }
+        /* .popup-width {width:50%;} */
+        /* ukuran layar > 800px */
     
-    @media (max-width: 810px) { 
-        /* .popup-width {width:90%;} */
-    }
+        @media (min-width: 800px) { 
+            .cari {width:300px;}
+            .bg_ucapan {background: url(assets/imgs/img_bg_board.png) fixed top no-repeat;background-size:cover; padding-top:50px;}
+            .bg_thanks {background: url(assets/imgs/bg_thanks.png) fixed top no-repeat; background-size:cover;}
+            .bg_agen {background: url(assets/imgs/bgrd_pruad02a.jpg) top center; margin-top:-50px;}
+            .lebarthanks {width:90%; margin-top:30px;}
+            .lebarlogo {width:60%;}
+            .ucapan {text-align:left;width:90%;}
+            .besarboard {width:100%;}
+            .transparan {background:url(assets/imgs/bg_trans.png); border-radius:15px;}
+            .tulisan_tac {height:40px;}
+        }
+        
+        @media (max-width: 810px) { 
+            /* .popup-width {width:90%;} */
+        }
+    
+        @media only screen and (max-device-width: 480px) {
+            .cari { font-size:13px; width:150px;}
+            .bg_ucapan {background: url(assets/imgs/img_bg_board.png) bottom; background-size:contain;padding-top:20px;}
+            .bg_thanks {background: url(assets/imgs/bg_thanks.png) bottom center no-repeat; background-size:cover;}
+            .bg_agen {background: url(assets/imgs/bgrd_pruad_mobile01.jpg) top center;}
+            .lebarthanks {width:100%;}
+            .lebarlogo {width:80%;}
+            .ucapan {text-align:center;width:100%;}
+            .besarboard {width:30%; margin: auto; display: block; }
+            .tulisan_tac {width:80%;}
+            /* .popup-width {width:90%;} */
+        }
 
-    @media only screen and (max-device-width: 480px) {
-        .cari { font-size:13px; width:150px;}
-        .bg_ucapan {background: url(assets/imgs/img_bg_board.png) bottom; background-size:contain;padding-top:20px;}
-        .bg_thanks {background: url(assets/imgs/bg_thanks.png) bottom center no-repeat; background-size:cover;}
-        .bg_agen {background: url(assets/imgs/bgrd_pruad_mobile01.jpg) top center;}
-        .lebarthanks {width:100%;}
-        .lebarlogo {width:80%;}
-        .ucapan {text-align:center;width:100%;}
-        .besarboard {width:30%; margin: auto; display: block; }
-        .tulisan_tac {width:80%;}
-        /* .popup-width {width:90%;} */
-    }
-</style>
+        /* dropdown di top regional */
+        /* Kontainer untuk membungkus elemen Select */
+        .flat-select-container {
+            position: relative;
+            width: 300px;
+        }
+
+        /* Desain kotak Select Flat */
+        .flat-select {
+            /* Mematikan gaya 3D dan panah bawaan dari browser */
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            
+            width: 100%;
+            background-color: #fff; /* Warna dasar solid (Midnight Blue) */
+            color: #656565; /* Teks putih */
+            padding: 15px 45px 15px 20px;
+            font-size: 16px;
+            font-weight: 500;
+            
+            /* Rata: Tanpa border, tanpa shadow, sudut lancip 0px */
+            border: none;
+            border-radius: 15px; 
+            outline: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            border: 1px solid #dc3545;
+        }
+
+        /* Perubahan warna saat kotak select diklik/fokus */
+        .flat-select:focus, .flat-select:hover {
+            background-color: #dc3545; 
+			color: #fff;
+            border: 1px solid #dc3545;
+        }
+
+        /* Membuat Ikon Panah Kustom (Flat) */
+        /* Karena panah bawaan browser dimatikan, kita buat panah sendiri menggunakan CSS */
+        .flat-select-container::after {
+            content: '\25BC'; /* Kode unik untuk simbol panah bawah ▼ */
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            color: #fff; /* Warna aksen hijau toska */
+            font-size: 14px;
+            /* Penting: Agar klik tembus ke elemen select di bawahnya */
+            pointer-events: none; 
+        }
+
+        /* Desain untuk anak (Option) */
+        .flat-select option {
+            background-color: #ffffff; /* Warna latar putih solid */
+            color: #656565; /* Teks gelap */
+            padding: 10px; /* Catatan: Padding pada tag option tidak didukung di semua browser */
+        }
+        /* dropdown di top regional */
+    </style>
+</head>
 
 <body>
 
@@ -313,112 +374,116 @@
 
 @livewireScripts
 <!-- JS here -->
-<script src="{{ url('/assets/js/vendor/jquery-3.7.1.min.js') }}"></script>
-<script src="{{ url('/assets/js/vendor/chroma.min.js') }}"></script>
-<script src="{{ url('/assets/js/plugins/waypoints.min.js') }}"></script>
-<script src="{{ url('/assets/js/vendor/bootstrap.bundle.min.js') }}"></script>
-<script src="{{ url('/assets/js/plugins/meanmenu.min.js') }}"></script>
-<script src="{{ url('/assets/js/plugins/swiper.min.js') }}"></script>
-<script src="{{ url('/assets/js/plugins/gsap.js') }}"></script>
-<script src="{{ url('/assets/js/plugins/ScrollSmoother.js') }}"></script>
-<script src="{{ url('/assets/js/plugins/ScrollToPlugin.js') }}"></script>
-<script src="{{ url('/assets/js/plugins/ScrollTrigger.js') }}"></script>
-<script src="{{ url('/assets/js/plugins/SplitText.js') }}"></script>
-<script src="{{ url('/assets/js/plugins/wow.js') }}"></script>
-<script src="{{ url('/assets/js/vendor/magnific-popup.min.js') }}"></script>
-<script src="{{ url('/assets/js/vendor/type.js') }}"></script>
-<script src="{{ url('/assets/js/vendor/vanilla-tilt.js') }}"></script>
-<script src="{{ url('/assets/js/plugins/nice-select.min.js') }}"></script>
-<script src="{{ url('/assets/js/vendor/odometer.min.js') }}"></script>
-<script src="{{ url('/assets/js/vendor/jquery-ui.min.js') }}"></script>
-<script src="{{ url('/assets/js/vendor/jquery.counterup.min.js') }}"></script>
-<script src="{{ url('/assets/js/vendor/jarallax.min.js') }}"></script>
-<script src="{{ url('/assets/js/plugins/parallax-scroll.js') }}"></script>
-<script src="{{ url('/assets/js/plugins/jquery.countdown.min.js') }}"></script>
-<script src="{{ url('/assets/js/plugins/isotope-docs.min.js') }}"></script>
-<script src="{{ url('/assets/js/vendor/ajax-form.js') }}"></script>
+<script src="{{ url('/assets/js/vendor/jquery-3.7.1.min.js') }}" data-navigate-track></script>
+<script src="{{ url('/assets/js/vendor/chroma.min.js') }}" data-navigate-track></script>
+<script src="{{ url('/assets/js/plugins/waypoints.min.js') }}" data-navigate-track></script>
+<script src="{{ url('/assets/js/vendor/bootstrap.bundle.min.js') }}" data-navigate-track></script>
+<script src="{{ url('/assets/js/plugins/meanmenu.min.js') }}" data-navigate-track></script>
+<script src="{{ url('/assets/js/plugins/swiper.min.js') }}" data-navigate-track></script>
+<script src="{{ url('/assets/js/plugins/gsap.js') }}" data-navigate-track></script>
+<script src="{{ url('/assets/js/plugins/ScrollSmoother.js') }}" data-navigate-track></script>
+<script src="{{ url('/assets/js/plugins/ScrollToPlugin.js') }}" data-navigate-track></script>
+<script src="{{ url('/assets/js/plugins/ScrollTrigger.js') }}" data-navigate-track></script>
+<script src="{{ url('/assets/js/plugins/SplitText.js') }}" data-navigate-track></script>
+<script src="{{ url('/assets/js/plugins/wow.js') }}" data-navigate-track></script>
+<script src="{{ url('/assets/js/vendor/magnific-popup.min.js') }}" data-navigate-track></script>
+<script src="{{ url('/assets/js/vendor/type.js') }}" data-navigate-track></script>
+<script src="{{ url('/assets/js/vendor/vanilla-tilt.js') }}" data-navigate-track></script>
+<script src="{{ url('/assets/js/plugins/nice-select.min.js') }}" data-navigate-track></script>
+<script src="{{ url('/assets/js/vendor/odometer.min.js') }}" data-navigate-track></script>
+<script src="{{ url('/assets/js/vendor/jquery-ui.min.js') }}" data-navigate-track></script>
+<script src="{{ url('/assets/js/vendor/jquery.counterup.min.js') }}" data-navigate-track></script>
+<script src="{{ url('/assets/js/vendor/jarallax.min.js') }}" data-navigate-track></script>
+<script src="{{ url('/assets/js/plugins/parallax-scroll.js') }}" data-navigate-track></script>
+<script src="{{ url('/assets/js/plugins/jquery.countdown.min.js') }}" data-navigate-track></script>
+<script src="{{ url('/assets/js/plugins/isotope-docs.min.js') }}" data-navigate-track></script>
+<script src="{{ url('/assets/js/vendor/ajax-form.js') }}" data-navigate-track></script>
 
-<script src="{{ url('/assets/js/popper.min.js') }}"></script>
-<script src="{{ url('/assets/js/html2canvas.js') }}"></script>
-<script src="{{ url('/assets/js/filesaver.min.js') }}"></script>
-<script src="{{ url('/assets/js/aos.js') }}"></script>
+<script src="{{ url('/assets/js/popper.min.js') }}" data-navigate-track></script>
+<script src="{{ url('/assets/js/html2canvas.js') }}" data-navigate-track></script>
+<script src="{{ url('/assets/js/filesaver.min.js') }}" data-navigate-track></script>
+<script src="{{ url('/assets/js/aos.js') }}" data-navigate-track></script>
 
-<script src="{{ url('/assets/js/main.js') }}"></script>
+<script src="{{ url('/assets/js/main.js') }}" data-navigate-track></script>
 <!--H2 hero animation js-->
-<script src="{{ url('/assets/js/vendor/imagesloaded.pkgd.min.js') }}"></script>
-<script src="{{ url('/assets/js/vendor/text-animation.min.js') }}"></script>
-<script src="{{ url('/assets/js/vendor/scripts.js') }}"></script>
+<script src="{{ url('/assets/js/vendor/imagesloaded.pkgd.min.js') }}" data-navigate-track></script>
+<script src="{{ url('/assets/js/vendor/text-animation.min.js') }}" data-navigate-track></script>
+<script src="{{ url('/assets/js/vendor/scripts.js') }}" data-navigate-track></script>
 <!---->
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js" data-navigate-track></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" data-navigate-track></script>
 
-<script>
-        function displayModal(nama, achievement, slug, photo){
-            // Inisialisasi modal
-            const agentModal = new bootstrap.Modal(document.getElementById('agentModal'));
-            
-            // Memanggil/membuka modal
-            agentModal.show();
+<script data-navigate-track>
+    function goRegionalArea(no){
+        // alert(no.length==1?'0'+no:no);
+        location.href = "{{ route('top-regional').'?q=reg' }}"+(no.length==1?'0'+no:no);
+    }
+    function displayModal(nama, achievement, slug, photo){
+        // Inisialisasi modal
+        const agentModal = new bootstrap.Modal(document.getElementById('agentModal'));
+        
+        // Memanggil/membuka modal
+        agentModal.show();
 
-            // Menutup modal
-            // agentModal.hide();
+        // Menutup modal
+        // agentModal.hide();
 
-            $('#agent_name_modal').text(nama);
-            $('#agent_achievement_modal').html(achievement);
-            $('#photo-agent').html('<img src="'+photo+'" alt="" style="width:50%;">');
-            // $('#photo-agent').html('<img src="'+photo+'" width="160" alt="">');
-            $('#fb-link').attr('href', 'https://www.facebook.com/sharer/sharer.php?u={{ url('/display-agent/') }}/'+slug);
-            $('#twit-link').attr('href', 'https://twitter.com/intent/tweet?&url={{ url('/display-agent/') }}/'+slug);
-            $('#wa-link').attr('href', 'whatsapp://send?text=Coba%20cek%20laman%20Prudential%20Achiever%20ini!%20{{ url('/display-agent/') }}/'+slug);
-            $('#in-link').attr('href', 'https://www.linkedin.com/shareArticle?mini=true&?&url={{ url('/display-agent/') }}/'+slug);
-            $('#url-agent-link').val('{{ url('/display-agent/') }}/'+slug);
+        $('#agent_name_modal').text(nama);
+        $('#agent_achievement_modal').html(achievement);
+        $('#photo-agent').html('<img src="'+photo+'" alt="" style="width:50%;">');
+        // $('#photo-agent').html('<img src="'+photo+'" width="160" alt="">');
+        $('#fb-link').attr('href', 'https://www.facebook.com/sharer/sharer.php?u={{ url('/display-agent/') }}/'+slug);
+        $('#twit-link').attr('href', 'https://twitter.com/intent/tweet?&url={{ url('/display-agent/') }}/'+slug);
+        $('#wa-link').attr('href', 'whatsapp://send?text=Coba%20cek%20laman%20Prudential%20Achiever%20ini!%20{{ url('/display-agent/') }}/'+slug);
+        $('#in-link').attr('href', 'https://www.linkedin.com/shareArticle?mini=true&?&url={{ url('/display-agent/') }}/'+slug);
+        $('#url-agent-link').val('{{ url('/display-agent/') }}/'+slug);
+    }
+
+    function myCopyFunction(valCopy) {
+        /* Get the text field */
+        var copyText = document.getElementById(valCopy);
+
+        /* Select the text field */
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+        if (typeof (navigator.clipboard) == 'undefined') {
+            alert("Tautan tidak bisa disalin. \nSilakan lakukan secara manual!");
+        }else{
+            /* Copy the text inside the text field - navigator.clipboard di https */
+            navigator.clipboard.writeText(copyText.value);
+
+            /* Alert the copied text */
+            alert("Tautan sudah disalin: \n"+copyText.value);
         }
+    }
 
-        function myCopyFunction(valCopy) {
-            /* Get the text field */
-            var copyText = document.getElementById(valCopy);
+    function mySaveImg(img) {
+        var a = document.createElement('a');
+        a.href = img;
+        a.download = img;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+    }
 
-            /* Select the text field */
-            copyText.select();
-            copyText.setSelectionRange(0, 99999); /* For mobile devices */
-
-            if (typeof (navigator.clipboard) == 'undefined') {
-                alert("Tautan tidak bisa disalin. \nSilakan lakukan secara manual!");
-            }else{
-                /* Copy the text inside the text field - navigator.clipboard di https */
-                navigator.clipboard.writeText(copyText.value);
-
-                /* Alert the copied text */
-                alert("Tautan sudah disalin: \n"+copyText.value);
-            }
-        }
-
-        function mySaveImg(img) {
-            var a = document.createElement('a');
-            a.href = img;
-            a.download = img;
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-        }
-
-        function dowloadImage(elID){
-            let scrollPos = $(window).scrollTop();
-            $(window).scrollTop(0);
-            html2canvas(document.getElementById("area-"+elID), {
-                allowTaint: true,
-                useCORS: true
-            }).then(
-                canvas => {
-                    $(window).scrollTop(scrollPos);
-                    canvas.toBlob(function(blob) {
-                        saveAs(blob, "profile-agent-"+elID+".png");
-                    });
-            });
-            return false;
-        }
-    </script>
+    function dowloadImage(elID){
+        let scrollPos = $(window).scrollTop();
+        $(window).scrollTop(0);
+        html2canvas(document.getElementById("area-"+elID), {
+            allowTaint: true,
+            useCORS: true
+        }).then(
+            canvas => {
+                $(window).scrollTop(scrollPos);
+                canvas.toBlob(function(blob) {
+                    saveAs(blob, "profile-agent-"+elID+".png");
+                });
+        });
+        return false;
+    }
+</script>
 
 </body>
 

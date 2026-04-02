@@ -212,7 +212,7 @@ new class extends Component
                 <img src="assets/imgs/img_text_top_agent_recognition.png" class="tulisan_tac" alt=""/> 
             </div>
 
-            <div class="team-section__wrapper pl-5 pr-5">
+            <div class="team-section__wrapper pl-5 pr-5 pb-15">
                 <div class="row m-auto">
                         <div class="col-lg-2 col-md-2 col-sm-3 col-6 m-auto">
                         <div class="team-section__item mb-30">
@@ -231,7 +231,7 @@ new class extends Component
 
                 <div class="row m-auto">
                     @forelse ($agents as $agent)
-                        <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-12 m-auto">
+                        <div class="{{ ENV("GRID_AGENTS") }}" style="justify-content: center;display: grid;">
                             <div class="team-section__item mb-30">
                                 <div class="team-section__thumb">
                                     <img src="{{ url('/assets/imgs/foto_agent.png') }}" alt="">
