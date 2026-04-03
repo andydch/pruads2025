@@ -178,21 +178,21 @@ new class extends Component
                 <div class="flat-select-container">
                     <select id="top-regional-area" class="flat-select" name="kategori_pilihan" onchange="goRegionalArea(this.value);">
                         <option value="" disabled selected>Please Select Area</option>
-                        <option value="5">{{ ucwords(strtolower('JAKARTA 1')) }}</option>
-                        <option value="6">{{ ucwords(strtolower('JAKARTA 2')) }}</option>
-                        <option value="7">{{ ucwords(strtolower('JAKARTA 3')) }}</option>
-                        <option value="8">{{ ucwords(strtolower('JAKARTA 4')) }}</option>
-                        <option value="9">{{ ucwords(strtolower('JAKARTA 5')) }}</option>
-                        <option value="10">{{ ucwords(strtolower('JAKARTA 6')) }}</option>
-                        <option value="11">{{ ucwords(strtolower('JAKARTA 7')) }}</option>
-                        <option value="15">{{ ucwords(strtolower('JAKARTA SYARIAH')) }}</option>
-                        <option value="14">{{ ucwords(strtolower('WEST JAVA')) }}</option>
-                        <option value="2">{{ ucwords(strtolower('CENTRAL JAVA & KALIMANTAN')) }}</option>
-                        <option value="3">{{ ucwords(strtolower('EAST JAVA 1')) }}</option>
-                        <option value="4">{{ ucwords(strtolower('EAST JAVA 2')) }}</option>
-                        <option value="12">{{ ucwords(strtolower('SUMATERA 1')) }}</option>
-                        <option value="13">{{ ucwords(strtolower('SUMATERA 2')) }}</option>
-                        <option value="1">{{ ucwords(strtolower('BALI EAST ISLANDS')) }}</option>
+                        <option {{ $q=='reg05'?'selected':'' }} value="5">{{ ucwords(strtolower('JAKARTA 1')) }}</option>
+                        <option {{ $q=='reg06'?'selected':'' }} value="6">{{ ucwords(strtolower('JAKARTA 2')) }}</option>
+                        <option {{ $q=='reg07'?'selected':'' }} value="7">{{ ucwords(strtolower('JAKARTA 3')) }}</option>
+                        <option {{ $q=='reg08'?'selected':'' }} value="8">{{ ucwords(strtolower('JAKARTA 4')) }}</option>
+                        <option {{ $q=='reg09'?'selected':'' }} value="9">{{ ucwords(strtolower('JAKARTA 5')) }}</option>
+                        <option {{ $q=='reg10'?'selected':'' }} value="10">{{ ucwords(strtolower('JAKARTA 6')) }}</option>
+                        <option {{ $q=='reg11'?'selected':'' }} value="11">{{ ucwords(strtolower('JAKARTA 7')) }}</option>
+                        <option {{ $q=='reg15'?'selected':'' }} value="15">{{ ucwords(strtolower('JAKARTA SYARIAH')) }}</option>
+                        <option {{ $q=='reg14'?'selected':'' }} value="14">{{ ucwords(strtolower('WEST JAVA')) }}</option>
+                        <option {{ $q=='reg02'?'selected':'' }} value="2">{{ ucwords(strtolower('CENTRAL JAVA & KALIMANTAN')) }}</option>
+                        <option {{ $q=='reg03'?'selected':'' }} value="3">{{ ucwords(strtolower('EAST JAVA 1')) }}</option>
+                        <option {{ $q=='reg04'?'selected':'' }} value="4">{{ ucwords(strtolower('EAST JAVA 2')) }}</option>
+                        <option {{ $q=='reg12'?'selected':'' }} value="12">{{ ucwords(strtolower('SUMATERA 1')) }}</option>
+                        <option {{ $q=='reg13'?'selected':'' }} value="13">{{ ucwords(strtolower('SUMATERA 2')) }}</option>
+                        <option {{ $q=='reg01'?'selected':'' }} value="1">{{ ucwords(strtolower('BALI EAST ISLANDS')) }}</option>
                     </select>
                 </div>
             </div>

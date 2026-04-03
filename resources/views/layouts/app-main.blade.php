@@ -151,17 +151,21 @@
             width: 100%;
             background-color: #fff; /* Warna dasar solid (Midnight Blue) */
             color: #656565; /* Teks putih */
-            padding: 15px 45px 15px 20px;
+            padding: 10px 45px 15px 20px;
             font-size: 16px;
             font-weight: 500;
+            text-align: center;
             
             /* Rata: Tanpa border, tanpa shadow, sudut lancip 0px */
             border: none;
-            border-radius: 15px; 
+            border-radius: 10px; 
             outline: none;
             cursor: pointer;
             transition: background-color 0.3s ease;
             border: 1px solid #dc3545;
+            height: 50px;
+
+            content: '\25BC'; /* Kode unik untuk simbol panah bawah ▼ */
         }
 
         /* Perubahan warna saat kotak select diklik/fokus */
@@ -173,11 +177,22 @@
 
         /* Membuat Ikon Panah Kustom (Flat) */
         /* Karena panah bawaan browser dimatikan, kita buat panah sendiri menggunakan CSS */
+        .flat-select-container::before {
+            content: '\25BC'; /* Kode unik untuk simbol panah bawah ▼ */
+            position: absolute;
+            top: 50%;
+            right: 70px;
+            transform: translateY(-50%);
+            color: #656565; /* Warna aksen hijau toska */
+            font-size: 14px;
+            /* Penting: Agar klik tembus ke elemen select di bawahnya */
+            pointer-events: none; 
+        }
         .flat-select-container::after {
             content: '\25BC'; /* Kode unik untuk simbol panah bawah ▼ */
             position: absolute;
             top: 50%;
-            right: 20px;
+            right: 70px;
             transform: translateY(-50%);
             color: #fff; /* Warna aksen hijau toska */
             font-size: 14px;
@@ -186,9 +201,14 @@
         }
 
         /* Desain untuk anak (Option) */
+        .flat-select:focus, .flat-select:hover option {
+            background-color: #ffffff; /* Warna latar putih solid */
+            color: #656565;
+            padding: 10px; /* Catatan: Padding pada tag option tidak didukung di semua browser */
+        }
         .flat-select option {
             background-color: #ffffff; /* Warna latar putih solid */
-            color: #656565; /* Teks gelap */
+            color: #dc3545; /* Teks gelap */
             padding: 10px; /* Catatan: Padding pada tag option tidak didukung di semua browser */
         }
         /* dropdown di top regional */
