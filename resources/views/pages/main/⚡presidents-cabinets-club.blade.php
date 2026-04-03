@@ -86,7 +86,7 @@ new class extends Component
                 <img src="assets/imgs/b_pcc.png" class="tulisan_tac" alt=""/> 
             </div>
 
-            <div class="d-flex justify-content-center align-items-center mb-30">
+            {{-- <div class="d-flex justify-content-center align-items-center mb-30">
                 <div class="dropdown">
                     <button class="btn btn-outline-danger dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-expanded="false">
                         <span>Please Select</span>&nbsp;&nbsp;
@@ -97,6 +97,16 @@ new class extends Component
                         <li><a class="dropdown-item" href="{{ route('presidents-cabinets-club').'?q=p' }}">Producer </a></li>
                     </ul>
                 </div> 
+            </div> --}}
+
+            <div class="d-flex justify-content-center align-items-center mb-30">
+                <div class="flat-select-container">
+                    <select id="top-regional-area" class="flat-select" name="kategori_pilihan" onchange="goSubCategory('{{ route('presidents-cabinets-club').'?q=' }}'+this.value);">
+                        <option value="" disabled selected>Please Select</option>
+                        <option {{ $q=='l'?'selected':'' }} value="l">{{ ucwords(strtolower('LEADER')) }}</option>
+                        <option {{ $q=='p'?'selected':'' }} value="p">{{ ucwords(strtolower('PRODUCER')) }}</option>
+                    </select>
+                </div>
             </div>
 
             <div class="team-section__wrapper pl-5 pr-5 pb-15">

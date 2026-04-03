@@ -436,9 +436,13 @@
 
 <script data-navigate-track>
     function goRegionalArea(no){
-        // alert(no.length==1?'0'+no:no);
         location.href = "{{ route('top-regional').'?q=reg' }}"+(no.length==1?'0'+no:no);
     }
+
+    function goSubCategory(no){
+        location.href = no;
+    }
+
     function displayModal(nama, achievement, slug, photo){
         // Inisialisasi modal
         const agentModal = new bootstrap.Modal(document.getElementById('agentModal'));
