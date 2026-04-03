@@ -125,6 +125,7 @@ new class extends Component
 
         $agents->appends([
             'search' => $this->search,
+            'q' => $this->q,
         ]);
 
         return $this->view([
