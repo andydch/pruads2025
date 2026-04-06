@@ -152,7 +152,8 @@
                         @endphp
                         @foreach ($ach as $a)
                             @php
-                                $ach_s .= ucwords(strtolower($a->achievement_name)).'<br/>';
+                                $ach_s .= $a->achievement_name.'<br/>';
+                                // $ach_s .= ucwords(strtolower($a->achievement_name)).'<br/>';
                             @endphp
                         @endforeach
                         {!! $ach_s !!}

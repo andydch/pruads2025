@@ -118,7 +118,8 @@ new class extends Component
                             @endphp
                             @foreach ($achievements as $achievement)
                                 @php
-                                    $ach .= ucwords(strtolower($achievement->achievement_name)).'<br/>';
+                                    $ach .= $achievement->achievement_name.'<br/>';
+                                    // $ach .= ucwords(strtolower($achievement->achievement_name)).'<br/>';
                                     $achCounter++;
                                 @endphp
                             @endforeach
@@ -133,7 +134,8 @@ new class extends Component
                             <a onclick="displayModal('{{ $agentAOY->agent_name }}', '{{ $ach.$br }}', '{{ $agentAOY->agent_slug }}', '{{ $photo }}')" style="cursor: pointer;">
                                 <div class="team-section__content">
                                     <h3 class="team-section__title">{{ $agentAOY->agent_name }}</h3>
-                                    <p class="team-section__position">{{ ucwords(strtolower($agentAOY->achievement_name)) }}</p>
+                                    <p class="team-section__position">{{ $agentAOY->achievement_name }}</p>
+                                    {{-- <p class="team-section__position">{{ ucwords(strtolower($agentAOY->achievement_name)) }}</p> --}}
                                 </div>
                             </a>
                         </div>
@@ -166,7 +168,8 @@ new class extends Component
                                 @endphp
                                 @foreach ($achievements as $achievement)
                                     @php
-                                        $ach .= ucwords(strtolower($achievement->achievement_name)).'<br/>';
+                                        $ach .= $achievement->achievement_name.'<br/>';
+                                        // $ach .= ucwords(strtolower($achievement->achievement_name)).'<br/>';
                                         $achCounter++;
                                     @endphp
                                 @endforeach
@@ -181,7 +184,8 @@ new class extends Component
                                 <a onclick="displayModal('{{ $agent->agent_name }}', '{{ $ach.$br }}', '{{ $agent->agent_slug }}', '{{ $photo }}')" style="cursor: pointer;">
                                     <div class="team-section__content">
                                         <h3 class="team-section__title">{{ $agent->agent_name }}</h3>
-                                        <p class="team-section__position">{{ ucwords(strtolower($agent->achievement_name)) }}</p>
+                                        <p class="team-section__position">{{ $agent->achievement_name }}</p>
+                                        {{-- <p class="team-section__position">{{ ucwords(strtolower($agent->achievement_name)) }}</p> --}}
                                     </div>
                                 </a>
                             </div>

@@ -88,7 +88,8 @@ new class extends Component
                         <tbody>
                             @forelse ($achievements as $achievement)
                                 <tr>
-                                    <td>{{ ucwords(strtolower($achievement->name)).' (ID: '.$achievement->id.')' }}</td>
+                                    <td>{{ $achievement->name.' (ID: '.$achievement->id.')' }}</td>
+                                    {{-- <td>{{ ucwords(strtolower($achievement->name)).' (ID: '.$achievement->id.')' }}</td> --}}
                                     <td>{{ $achievement->order_no }}</td>
                                     <td>{{ $achievement->active }}</td>
                                     <td>{{ $achievement->updated_at }}</td>
