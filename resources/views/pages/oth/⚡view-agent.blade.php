@@ -38,9 +38,11 @@ new class extends Component
 
     public function render()
     {
-        $agents = Mst_agent::when($this->search!='', function($q){
-            $q->where('name', 'LIKE', '%'.$this->search.'%')
-            ->orWhere('agent_code', 'LIKE', '%'.$this->search.'%');
+        $agents = Mst_agent::when($this->search!='', function($query){
+            $query->where(function($query1) {
+                $query1->where('name', 'LIKE', '%'.$this->search.'%')
+                ->orWhere('agent_code', 'LIKE', '%'.$this->search.'%');
+            });
         })
         ->when($this->q=='top-agency-recognition', function($q){
             $q->whereIn('id', function($q1) {
