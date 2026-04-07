@@ -70,9 +70,11 @@ new class extends Component
                 ->where('active', 'Y');
             });
         })
-        ->when($this->search!='', function($q){
-            $q->where('name', 'LIKE', '%'.$this->search.'%')
-            ->orWhere('agent_code', 'LIKE', '%'.$this->search.'%');
+        ->when($this->search!='', function($query){
+            $query->where(function($query1) {
+                $query1->where('name', 'LIKE', '%'.$this->search.'%')
+                ->orWhere('agent_code', 'LIKE', '%'.$this->search.'%');
+            });
         })
         ->where('active', 'Y')
         ->orderBy('name', 'ASC')

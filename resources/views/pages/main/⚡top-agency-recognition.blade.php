@@ -55,9 +55,15 @@ new class extends Component
             'ma.name as achievement_name',
         )
         ->whereIn('ma.id', [46,47,170,171,50,51,52,53,54,55,56,39,57,58,59,60,61,62,63,172,173,37,64,65,66,67,68,69,70,31,40,3,18,30,180,181])
-        ->when($this->search!='', function($q){
-            $q->where('ag.name', 'LIKE', '%'.$this->search.'%')
-            ->orWhere('ag.agent_code', 'LIKE', '%'.$this->search.'%');
+        // ->when($this->search!='', function($q){
+        //     $q->where('ag.name', 'LIKE', '%'.$this->search.'%')
+        //     ->orWhere('ag.agent_code', 'LIKE', '%'.$this->search.'%');
+        // })
+        ->when($this->search!='', function($query){
+            $query->where(function($query1) {
+                $query1->where('ag.name', 'LIKE', '%'.$this->search.'%')
+                ->orWhere('ag.agent_code', 'LIKE', '%'.$this->search.'%');
+            });
         })
         ->where('mst_agent_achievements.active', 'Y')
         ->where('ag.active', 'Y')
