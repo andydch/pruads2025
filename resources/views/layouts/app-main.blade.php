@@ -165,40 +165,47 @@
             border: 1px solid #dc3545;
             height: 50px;
 
-            content: '\25BC'; /* Kode unik untuk simbol panah bawah ▼ */
+            /* content: '\25BC';*/
+
+            background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpolygon points='0,2 10,2 5,8' fill='%23000000'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 90px center;
+            background-size: 10px;
         }
 
         /* Perubahan warna saat kotak select diklik/fokus */
         .flat-select:focus, .flat-select:hover {
-            background-color: #dc3545; 
+            /* background-color: #dc3545; 
 			color: #fff;
-            border: 1px solid #dc3545;
+            border: 1px solid #dc3545; */
+
+            background-color: #dc3545;
+            color: #fff;
+            background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpolygon points='0,2 10,2 5,8' fill='%23ffffff'/%3E%3C/svg%3E");
         }
 
         /* Membuat Ikon Panah Kustom (Flat) */
         /* Karena panah bawaan browser dimatikan, kita buat panah sendiri menggunakan CSS */
-        .flat-select-container::before {
-            content: '\25BC'; /* Kode unik untuk simbol panah bawah ▼ */
+        /* .flat-select-container::before {
+            content: '\25BC';
             position: absolute;
             top: 50%;
             right: 70px;
             transform: translateY(-50%);
-            color: #656565; /* Warna aksen hijau toska */
+            color: #656565;
             font-size: 14px;
-            /* Penting: Agar klik tembus ke elemen select di bawahnya */
             pointer-events: none; 
         }
         .flat-select-container::after {
-            content: '\25BC'; /* Kode unik untuk simbol panah bawah ▼ */
+            content: '\25BC';
             position: absolute;
             top: 50%;
             right: 70px;
             transform: translateY(-50%);
-            color: #fff; /* Warna aksen hijau toska */
+            color: #fff;
             font-size: 14px;
-            /* Penting: Agar klik tembus ke elemen select di bawahnya */
             pointer-events: none; 
-        }
+        } */
 
         /* Desain untuk anak (Option) */
         .flat-select:focus, .flat-select:hover option {
