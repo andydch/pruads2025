@@ -135,7 +135,7 @@ new class extends Component
             'agents' => $agents,
         ])
         ->layout('layouts::app-main')
-        ->title('TOP REGIONAL');
+        ->title('TOP REGION');
     }
 };
 ?>

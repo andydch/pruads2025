@@ -33,7 +33,7 @@
             <li><a class="dropdown-item" href="{{ route('presidents-cabinets-club') }}">President's Cabinet's Club  </a></li>
             <li><a class="dropdown-item" href="{{ route('double-star-club') }}">Double Star Club  </a></li>
             <li><a class="dropdown-item" href="{{ route('star-club') }}">Star Club  </a></li>
-            <li><a class="dropdown-item" href="{{ route('top-regional') }}">Top Regional </a></li>
+            <li><a class="dropdown-item" href="{{ route('top-regional') }}">Top Region </a></li>
             <li><a class="dropdown-item" href="{{ route('promotion') }}">Promotion </a></li>
         </ul>
     </div> 
