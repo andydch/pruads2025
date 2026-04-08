@@ -310,7 +310,7 @@
                 
                 <div class="project-panel-area"></div>
                 <div class="project-section-2__area btn-wrap pb-50 pt-50">
-                    <a href="#" class="rr-btn before-btn">Download Production Ad 2025</a>
+                    <a href="{{ url('/assets/FA_PRUAD_PRU2025_download.pdf') }}" download="" class="rr-btn before-btn">Download Production Ad 2025</a>
                 </div>
                 <div class="project-panel-area"></div>
                 
