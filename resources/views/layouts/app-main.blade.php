@@ -339,8 +339,8 @@
             </div>
 
             <!-- Modal body -->
-            <div class="modal-body" id="area-download-photo">
-                <div class="row">
+            <div class="modal-body">
+                <div class="row" id="area-download-photo" style="overflow: hidden;">
                     <div class="testimonial-4__wrapper col-md-6 m-auto popup-width" style="background:url(assets/imgs/bg_popup2.png); background-size:cover;background-position: center;">
                         <div align="center" class="m-auto" >
                             <div><img src="assets/imgs/logo_popup.png" width="50%" class="mb-5" alt=""></div>
@@ -375,7 +375,7 @@
                             <input id="url-agent-link" type="text" class=" form-control text-center" value="">
                         </form>&nbsp;&nbsp;
                         <img onclick="myCopyFunction('url-agent-link');" src="assets/imgs/b_copylink.png" width="120" alt="" style="cursor: pointer;" />&nbsp;
-                        <img id="download-photo" onClick="dowloadImage('download-photo');" src="assets/imgs/b_download.png" width="120" alt="" style="cursor: pointer;" />
+                        <img id="download-photo" onClick="dowloadImage2('download-photo');" src="assets/imgs/b_download.png" width="120" alt="" style="cursor: pointer;" />
                     </div>
                                             
                 </div>
@@ -498,6 +498,29 @@
         html2canvas(document.getElementById("area-"+elID), {
             allowTaint: true,
             useCORS: true
+        }).then(
+            canvas => {
+                $(window).scrollTop(scrollPos);
+                canvas.toBlob(function(blob) {
+                    saveAs(blob, "profile-agent-"+elID+".png");
+                });
+        });
+        return false;
+    }
+
+    function dowloadImage2(elID){
+        let scrollPos = $(window).scrollTop();
+        $(window).scrollTop(0);
+
+        let targetArea = document.getElementById("area-" + elID);
+
+        html2canvas(targetArea, {
+            allowTaint: true,
+            useCORS: true,
+            width: targetArea.offsetWidth,    // Kunci lebar persis sebesar elemen
+            height: targetArea.offsetHeight,  // Kunci tinggi persis sebesar elemen
+            scrollX: 0, 
+            scrollY: 0
         }).then(
             canvas => {
                 $(window).scrollTop(scrollPos);
