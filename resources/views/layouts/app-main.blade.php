@@ -148,6 +148,7 @@
             -moz-appearance: none;
             appearance: none;
             
+            font-family:'FSAlbertPro';
             width: 100%;
             background-color: #fff; /* Warna dasar solid (Midnight Blue) */
             color: #656565; /* Teks putih */
