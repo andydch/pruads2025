@@ -155,7 +155,8 @@
             padding: 10px 45px 15px 20px;
             font-size: 16px;
             font-weight: 500;
-            text-align: center;
+            text-align: left;
+            /* text-align: center; */
             
             /* Rata: Tanpa border, tanpa shadow, sudut lancip 0px */
             border: none;
@@ -170,7 +171,8 @@
 
             background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpolygon points='0,2 10,2 5,8' fill='%23656565'/%3E%3C/svg%3E");
             background-repeat: no-repeat;
-            background-position: right 90px center;
+            background-position: right 20px center;
+            /* background-position: right 90px center; */
             background-size: 10px;
         }
 
