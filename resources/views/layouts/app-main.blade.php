@@ -404,6 +404,14 @@
 
 @livewireScripts
 <!-- JS here -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2XLM0F3V7N"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2XLM0F3V7N');
+</script>
 <script src="{{ url('/assets/js/vendor/jquery-3.7.1.min.js') }}" data-navigate-track></script>
 <script src="{{ url('/assets/js/vendor/chroma.min.js') }}" data-navigate-track></script>
 <script src="{{ url('/assets/js/plugins/waypoints.min.js') }}" data-navigate-track></script>
