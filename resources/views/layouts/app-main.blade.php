@@ -365,7 +365,7 @@
                 <div class="row" id="area-download-photo" style="overflow: hidden;">
                     <div class="testimonial-4__wrapper col-md-6 m-auto popup-width" style="background:url(assets/imgs/bg_popup2.png); background-size:cover;background-position: center;">
                         <div align="center" class="m-auto" >
-                            <div><img src="assets/imgs/logo_popup.png" width="50%" class="mb-5" alt=""></div>
+                            <div><img src="assets/imgs/logo_popup.png" width="50%" class="mb-5 mt-5" alt=""></div>
                             <span id="photo-agent"></span>
                         </div>
                                                     
