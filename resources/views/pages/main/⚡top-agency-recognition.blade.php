@@ -116,54 +116,56 @@ new class extends Component
             </div>
 
             <div class="team-section__wrapper pl-5 pr-5 pb-15">
-                <div class="row m-auto">
-                    <div class="col-lg-2 col-md-2 col-sm-3 col-6 m-auto" style="justify-content: center;display: grid;">
-                        <div class="team-section__item mb-30">
-                            <div class="team-section__thumb" >
-                                <img src="{{ Storage::disk('public')->exists('agents/'.$agentAOY->photo)?asset('storage/agents/'.$agentAOY->photo):asset('assets/images/blank.png') }}"
-                                    alt="{{ $agentAOY->photo }}" width="100">
-                            </div>
-                            @php
-                                $photo = Storage::disk('public')->exists('agents/'.$agentAOY->photo)?asset('storage/agents/'.$agentAOY->photo):asset('assets/images/blank.png');
-                                $ach = '';
-                                $br = '';
-                                $achCounter = 0;
-                                $achievements = \App\Models\Mst_agent_achievement::leftJoin('mst_achievements AS ma', 'mst_agent_achievements.achievement_id', '=', 'ma.id')
-                                ->select(
-                                    'ma.id AS achievement_id',
-                                    'ma.name AS achievement_name',
-                                )
-                                ->where('mst_agent_achievements.agent_id', '=', $agentAOY->agent_id)
-                                ->where('mst_agent_achievements.active', '=', 'Y')
-                                ->where('ma.active', '=', 'Y')
-                                ->orderBy('ma.order_no', 'ASC')
-                                ->get();
-                            @endphp
-                            @foreach ($achievements as $achievement)
-                                @php
-                                    $ach .= $achievement->achievement_name.'<br/>';
-                                    // $ach .= ucwords(strtolower($achievement->achievement_name)).'<br/>';
-                                    $achCounter++;
-                                @endphp
-                            @endforeach
-                            @php
-                                $ach = str_replace("'","\'",$ach);
-                            @endphp
-                            @for($i=0;$i<5-$achCounter;$i++)
-                                @php
-                                    $br .= '&nbsp;<br/>';
-                                @endphp
-                            @endfor
-                            <a onclick="displayModal('{{ $agentAOY->agent_name }}', '{{ $ach.$br }}', '{{ $agentAOY->agent_slug }}', '{{ $photo }}')" style="cursor: pointer;">
-                                <div class="team-section__content">
-                                    <h3 class="team-section__title">{{ $agentAOY->agent_name }}</h3>
-                                    <p class="team-section__position">{{ $agentAOY->achievement_name }}</p>
-                                    {{-- <p class="team-section__position">{{ ucwords(strtolower($agentAOY->achievement_name)) }}</p> --}}
+                @if ($this->search=='')
+                    <div class="row m-auto">
+                        <div class="col-lg-2 col-md-2 col-sm-3 col-6 m-auto" style="justify-content: center;display: grid;">
+                            <div class="team-section__item mb-30">
+                                <div class="team-section__thumb" >
+                                    <img src="{{ Storage::disk('public')->exists('agents/'.$agentAOY->photo)?asset('storage/agents/'.$agentAOY->photo):asset('assets/images/blank.png') }}"
+                                        alt="{{ $agentAOY->photo }}" width="100">
                                 </div>
-                            </a>
+                                @php
+                                    $photo = Storage::disk('public')->exists('agents/'.$agentAOY->photo)?asset('storage/agents/'.$agentAOY->photo):asset('assets/images/blank.png');
+                                    $ach = '';
+                                    $br = '';
+                                    $achCounter = 0;
+                                    $achievements = \App\Models\Mst_agent_achievement::leftJoin('mst_achievements AS ma', 'mst_agent_achievements.achievement_id', '=', 'ma.id')
+                                    ->select(
+                                        'ma.id AS achievement_id',
+                                        'ma.name AS achievement_name',
+                                    )
+                                    ->where('mst_agent_achievements.agent_id', '=', $agentAOY->agent_id)
+                                    ->where('mst_agent_achievements.active', '=', 'Y')
+                                    ->where('ma.active', '=', 'Y')
+                                    ->orderBy('ma.order_no', 'ASC')
+                                    ->get();
+                                @endphp
+                                @foreach ($achievements as $achievement)
+                                    @php
+                                        $ach .= $achievement->achievement_name.'<br/>';
+                                        // $ach .= ucwords(strtolower($achievement->achievement_name)).'<br/>';
+                                        $achCounter++;
+                                    @endphp
+                                @endforeach
+                                @php
+                                    $ach = str_replace("'","\'",$ach);
+                                @endphp
+                                @for($i=0;$i<5-$achCounter;$i++)
+                                    @php
+                                        $br .= '&nbsp;<br/>';
+                                    @endphp
+                                @endfor
+                                <a onclick="displayModal('{{ $agentAOY->agent_name }}', '{{ $ach.$br }}', '{{ $agentAOY->agent_slug }}', '{{ $photo }}')" style="cursor: pointer;">
+                                    <div class="team-section__content">
+                                        <h3 class="team-section__title">{{ $agentAOY->agent_name }}</h3>
+                                        <p class="team-section__position">{{ $agentAOY->achievement_name }}</p>
+                                        {{-- <p class="team-section__position">{{ ucwords(strtolower($agentAOY->achievement_name)) }}</p> --}}
+                                    </div>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                @endif
 
                 <div class="row m-auto">
                     @forelse ($agents as $agent)
