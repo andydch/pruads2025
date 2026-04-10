@@ -32,12 +32,20 @@ new class extends Component
             'slug as agent_slug',
             'photo',
         )
-        ->whereIn('id', function($q){
-            $q->select('agent_id')
-            ->from('mst_agent_categories')
-            ->where('category_id', 4)
-            ->where('active', 'Y');
+        ->when($this->search=='', function($query){
+            $query->whereIn('id', function($q){
+                $q->select('agent_id')
+                ->from('mst_agent_categories')
+                ->where('category_id', 4)
+                ->where('active', 'Y');
+            });
         })
+        // ->whereIn('id', function($q){
+        //     $q->select('agent_id')
+        //     ->from('mst_agent_categories')
+        //     ->where('category_id', 4)
+        //     ->where('active', 'Y');
+        // })
         ->when($this->search!='', function($query){
             $query->where(function($query1) {
                 $query1->where('name', 'LIKE', '%'.$this->search.'%')

@@ -38,38 +38,72 @@ new class extends Component
             'slug as agent_slug',
             'photo',
         )
-        ->when($this->q=='cot', function($query) {
-            $query->whereIn('id', function($query1) {
-                $query1->select('agent_id')
-                ->from('mst_agent_achievements')
-                ->where('achievement_id', 9)
-                ->where('active', 'Y');
+        ->when($this->search=='', function($query){
+            $query->when($this->q=='cot', function($query1) {
+                $query1->whereIn('id', function($query1a) {
+                    $query1a->select('agent_id')
+                    ->from('mst_agent_achievements')
+                    ->where('achievement_id', 9)
+                    ->where('active', 'Y');
+                });
+            })
+            ->when($this->q=='mdrt', function($query1) {
+                $query1->whereIn('id', function($query1a) {
+                    $query1a->select('agent_id')
+                    ->from('mst_agent_achievements')
+                    ->where('achievement_id', 12)
+                    ->where('active', 'Y');
+                });
+            })
+            ->when($this->q=='tot', function($query1) {
+                $query1->whereIn('id', function($query1a) {
+                    $query1a->select('agent_id')
+                    ->from('mst_agent_achievements')
+                    ->where('achievement_id', 44)
+                    ->where('active', 'Y');
+                });
+            })
+            ->when($this->q!='tot' && $this->q!='cot' && $this->q!='mdrt', function($query1) {
+                $query1->whereIn('id', function($query1a) {
+                    $query1a->select('agent_id')
+                    ->from('mst_agent_achievements')
+                    ->whereIn('achievement_id', [9, 12, 44])
+                    ->where('active', 'Y');
+                });
             });
         })
-        ->when($this->q=='mdrt', function($query) {
-            $query->whereIn('id', function($query1) {
-                $query1->select('agent_id')
-                ->from('mst_agent_achievements')
-                ->where('achievement_id', 12)
-                ->where('active', 'Y');
-            });
-        })
-        ->when($this->q=='tot', function($query) {
-            $query->whereIn('id', function($query1) {
-                $query1->select('agent_id')
-                ->from('mst_agent_achievements')
-                ->where('achievement_id', 44)
-                ->where('active', 'Y');
-            });
-        })
-        ->when($this->q!='tot' && $this->q!='cot' && $this->q!='mdrt', function($query) {
-            $query->whereIn('id', function($query1) {
-                $query1->select('agent_id')
-                ->from('mst_agent_achievements')
-                ->whereIn('achievement_id', [9, 12, 44])
-                ->where('active', 'Y');
-            });
-        })
+        // ->when($this->q=='cot', function($query) {
+        //     $query->whereIn('id', function($query1) {
+        //         $query1->select('agent_id')
+        //         ->from('mst_agent_achievements')
+        //         ->where('achievement_id', 9)
+        //         ->where('active', 'Y');
+        //     });
+        // })
+        // ->when($this->q=='mdrt', function($query) {
+        //     $query->whereIn('id', function($query1) {
+        //         $query1->select('agent_id')
+        //         ->from('mst_agent_achievements')
+        //         ->where('achievement_id', 12)
+        //         ->where('active', 'Y');
+        //     });
+        // })
+        // ->when($this->q=='tot', function($query) {
+        //     $query->whereIn('id', function($query1) {
+        //         $query1->select('agent_id')
+        //         ->from('mst_agent_achievements')
+        //         ->where('achievement_id', 44)
+        //         ->where('active', 'Y');
+        //     });
+        // })
+        // ->when($this->q!='tot' && $this->q!='cot' && $this->q!='mdrt', function($query) {
+        //     $query->whereIn('id', function($query1) {
+        //         $query1->select('agent_id')
+        //         ->from('mst_agent_achievements')
+        //         ->whereIn('achievement_id', [9, 12, 44])
+        //         ->where('active', 'Y');
+        //     });
+        // })
         ->when($this->search!='', function($query){
             $query->where(function($query1) {
                 $query1->where('name', 'LIKE', '%'.$this->search.'%')

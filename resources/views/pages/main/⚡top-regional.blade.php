@@ -38,83 +38,162 @@ new class extends Component
             'slug as agent_slug',
             'photo',
         )
-        ->whereIn('id', function($query){
-            $query->select('agent_id')
-            ->from('mst_agent_achievements')
-            ->when($this->q=='reg01', function($query1) {
-                $query1->whereIn('achievement_id', [135, 131, 130, 126]);
-            })
-            ->when($this->q=='reg02', function($query1) {
-                $query1->whereIn('achievement_id', [134, 133, 124, 107, 98, 73]);
-            })
-            ->when($this->q=='reg03', function($query1) {
-                $query1->whereIn('achievement_id', [175, 158, 157, 128, 112, 88, 74]);
-            })
-            ->when($this->q=='reg04', function($query1) {
-                $query1->whereIn('achievement_id', [176, 162, 156, 151, 108, 99, 84]);
-            })
-            ->when($this->q=='reg05', function($query1) {
-                $query1->whereIn('achievement_id', [177, 174, 152, 123, 95, 77]);
-            })
-            ->when($this->q=='reg06', function($query1) {
-                $query1->whereIn('achievement_id', [160, 148, 142, 120, 113, 103, 93, 76]);
-            })
-            ->when($this->q=='reg07', function($query1) {
-                $query1->whereIn('achievement_id', [147, 141, 129, 115, 97, 85]);
-            })
-            ->when($this->q=='reg08', function($query1) {
-                $query1->whereIn('achievement_id', [159, 149, 139, 114, 92, 81]);
-            })
-            ->when($this->q=='reg09', function($query1) {
-                $query1->whereIn('achievement_id', [138, 137, 122, 118, 101, 79]);
-            })
-            ->when($this->q=='reg10', function($query1) {
-                $query1->whereIn('achievement_id', [155, 154, 127, 110, 100, 80]);
-            })
-            ->when($this->q=='reg11', function($query1) {
-                $query1->whereIn('achievement_id', [178, 145, 144, 140, 116, 91, 75]);
-            })
-            ->when($this->q=='reg12', function($query1) {
-                $query1->whereIn('achievement_id', [165, 164, 132, 121, 106, 105, 90, 83]);
-            })
-            ->when($this->q=='reg13', function($query1) {
-                $query1->whereIn('achievement_id', [179, 163, 150, 125, 109, 89, 86]);
-            })
-            ->when($this->q=='reg14', function($query1) {
-                $query1->whereIn('achievement_id', [161, 153, 146, 111, 96, 78]);
-            })
-            ->when($this->q=='reg15', function($query1) {
-                $query1->whereIn('achievement_id', [169, 167, 166, 117, 102, 87]);
-            })
-            ->when($this->q!='reg01' && 
-                $this->q!='reg02' &&
-                $this->q!='reg03' &&
-                $this->q!='reg04' &&
-                $this->q!='reg05' &&
-                $this->q!='reg06' &&
-                $this->q!='reg07' &&
-                $this->q!='reg08' &&
-                $this->q!='reg09' &&
-                $this->q!='reg10' &&
-                $this->q!='reg11' &&
-                $this->q!='reg12' &&
-                $this->q!='reg13' &&
-                $this->q!='reg14' &&
-                $this->q!='reg15', 
-                function($query1) {
-                $query1->whereIn('achievement_id', [
-                    135, 131, 130, 126, 134, 133, 124, 107, 98, 73, 
-                    175, 158, 157, 128, 112, 88, 74, 176, 162, 156, 151, 108, 99, 84, 
-                    177, 174, 152, 123, 95, 77, 160, 148, 142, 120, 113, 103, 93, 76, 
-                    147, 141, 129, 115, 97, 85, 159, 149, 139, 114, 92, 81, 
-                    138, 137, 122, 118, 101, 79, 155, 154, 127, 110, 100, 80, 
-                    178, 145, 144, 140, 116, 91, 75, 165, 164, 132, 121, 106, 105, 90, 83, 
-                    179, 163, 150, 125, 109, 89, 86, 161, 153, 146, 111, 96, 78, 
-                    169, 167, 166, 117, 102, 87
-                ]);
-            })
-            ->where('active', 'Y');
+        ->when($this->search=='', function($query){
+            $query->whereIn('id', function($query1){
+                $query1->select('agent_id')
+                ->from('mst_agent_achievements')
+                ->when($this->q=='reg01', function($query1a) {
+                    $query1a->whereIn('achievement_id', [135, 131, 130, 126]);
+                })
+                ->when($this->q=='reg02', function($query1a) {
+                    $query1a->whereIn('achievement_id', [134, 133, 124, 107, 98, 73]);
+                })
+                ->when($this->q=='reg03', function($query1a) {
+                    $query1a->whereIn('achievement_id', [175, 158, 157, 128, 112, 88, 74]);
+                })
+                ->when($this->q=='reg04', function($query1a) {
+                    $query1a->whereIn('achievement_id', [176, 162, 156, 151, 108, 99, 84]);
+                })
+                ->when($this->q=='reg05', function($query1a) {
+                    $query1a->whereIn('achievement_id', [177, 174, 152, 123, 95, 77]);
+                })
+                ->when($this->q=='reg06', function($query1a) {
+                    $query1a->whereIn('achievement_id', [160, 148, 142, 120, 113, 103, 93, 76]);
+                })
+                ->when($this->q=='reg07', function($query1a) {
+                    $query1a->whereIn('achievement_id', [147, 141, 129, 115, 97, 85]);
+                })
+                ->when($this->q=='reg08', function($query1a) {
+                    $query1a->whereIn('achievement_id', [159, 149, 139, 114, 92, 81]);
+                })
+                ->when($this->q=='reg09', function($query1a) {
+                    $query1a->whereIn('achievement_id', [138, 137, 122, 118, 101, 79]);
+                })
+                ->when($this->q=='reg10', function($query1a) {
+                    $query1a->whereIn('achievement_id', [155, 154, 127, 110, 100, 80]);
+                })
+                ->when($this->q=='reg11', function($query1a) {
+                    $query1a->whereIn('achievement_id', [178, 145, 144, 140, 116, 91, 75]);
+                })
+                ->when($this->q=='reg12', function($query1a) {
+                    $query1a->whereIn('achievement_id', [165, 164, 132, 121, 106, 105, 90, 83]);
+                })
+                ->when($this->q=='reg13', function($query1a) {
+                    $query1a->whereIn('achievement_id', [179, 163, 150, 125, 109, 89, 86]);
+                })
+                ->when($this->q=='reg14', function($query1a) {
+                    $query1a->whereIn('achievement_id', [161, 153, 146, 111, 96, 78]);
+                })
+                ->when($this->q=='reg15', function($query1a) {
+                    $query1a->whereIn('achievement_id', [169, 167, 166, 117, 102, 87]);
+                })
+                ->when($this->q!='reg01' && 
+                    $this->q!='reg02' &&
+                    $this->q!='reg03' &&
+                    $this->q!='reg04' &&
+                    $this->q!='reg05' &&
+                    $this->q!='reg06' &&
+                    $this->q!='reg07' &&
+                    $this->q!='reg08' &&
+                    $this->q!='reg09' &&
+                    $this->q!='reg10' &&
+                    $this->q!='reg11' &&
+                    $this->q!='reg12' &&
+                    $this->q!='reg13' &&
+                    $this->q!='reg14' &&
+                    $this->q!='reg15', 
+                    function($query1a) {
+                    $query1a->whereIn('achievement_id', [
+                        135, 131, 130, 126, 134, 133, 124, 107, 98, 73, 
+                        175, 158, 157, 128, 112, 88, 74, 176, 162, 156, 151, 108, 99, 84, 
+                        177, 174, 152, 123, 95, 77, 160, 148, 142, 120, 113, 103, 93, 76, 
+                        147, 141, 129, 115, 97, 85, 159, 149, 139, 114, 92, 81, 
+                        138, 137, 122, 118, 101, 79, 155, 154, 127, 110, 100, 80, 
+                        178, 145, 144, 140, 116, 91, 75, 165, 164, 132, 121, 106, 105, 90, 83, 
+                        179, 163, 150, 125, 109, 89, 86, 161, 153, 146, 111, 96, 78, 
+                        169, 167, 166, 117, 102, 87
+                    ]);
+                })
+                ->where('active', 'Y');
+            });
         })
+        // ->whereIn('id', function($query){
+        //     $query->select('agent_id')
+        //     ->from('mst_agent_achievements')
+        //     ->when($this->q=='reg01', function($query1) {
+        //         $query1->whereIn('achievement_id', [135, 131, 130, 126]);
+        //     })
+        //     ->when($this->q=='reg02', function($query1) {
+        //         $query1->whereIn('achievement_id', [134, 133, 124, 107, 98, 73]);
+        //     })
+        //     ->when($this->q=='reg03', function($query1) {
+        //         $query1->whereIn('achievement_id', [175, 158, 157, 128, 112, 88, 74]);
+        //     })
+        //     ->when($this->q=='reg04', function($query1) {
+        //         $query1->whereIn('achievement_id', [176, 162, 156, 151, 108, 99, 84]);
+        //     })
+        //     ->when($this->q=='reg05', function($query1) {
+        //         $query1->whereIn('achievement_id', [177, 174, 152, 123, 95, 77]);
+        //     })
+        //     ->when($this->q=='reg06', function($query1) {
+        //         $query1->whereIn('achievement_id', [160, 148, 142, 120, 113, 103, 93, 76]);
+        //     })
+        //     ->when($this->q=='reg07', function($query1) {
+        //         $query1->whereIn('achievement_id', [147, 141, 129, 115, 97, 85]);
+        //     })
+        //     ->when($this->q=='reg08', function($query1) {
+        //         $query1->whereIn('achievement_id', [159, 149, 139, 114, 92, 81]);
+        //     })
+        //     ->when($this->q=='reg09', function($query1) {
+        //         $query1->whereIn('achievement_id', [138, 137, 122, 118, 101, 79]);
+        //     })
+        //     ->when($this->q=='reg10', function($query1) {
+        //         $query1->whereIn('achievement_id', [155, 154, 127, 110, 100, 80]);
+        //     })
+        //     ->when($this->q=='reg11', function($query1) {
+        //         $query1->whereIn('achievement_id', [178, 145, 144, 140, 116, 91, 75]);
+        //     })
+        //     ->when($this->q=='reg12', function($query1) {
+        //         $query1->whereIn('achievement_id', [165, 164, 132, 121, 106, 105, 90, 83]);
+        //     })
+        //     ->when($this->q=='reg13', function($query1) {
+        //         $query1->whereIn('achievement_id', [179, 163, 150, 125, 109, 89, 86]);
+        //     })
+        //     ->when($this->q=='reg14', function($query1) {
+        //         $query1->whereIn('achievement_id', [161, 153, 146, 111, 96, 78]);
+        //     })
+        //     ->when($this->q=='reg15', function($query1) {
+        //         $query1->whereIn('achievement_id', [169, 167, 166, 117, 102, 87]);
+        //     })
+        //     ->when($this->q!='reg01' && 
+        //         $this->q!='reg02' &&
+        //         $this->q!='reg03' &&
+        //         $this->q!='reg04' &&
+        //         $this->q!='reg05' &&
+        //         $this->q!='reg06' &&
+        //         $this->q!='reg07' &&
+        //         $this->q!='reg08' &&
+        //         $this->q!='reg09' &&
+        //         $this->q!='reg10' &&
+        //         $this->q!='reg11' &&
+        //         $this->q!='reg12' &&
+        //         $this->q!='reg13' &&
+        //         $this->q!='reg14' &&
+        //         $this->q!='reg15', 
+        //         function($query1) {
+        //         $query1->whereIn('achievement_id', [
+        //             135, 131, 130, 126, 134, 133, 124, 107, 98, 73, 
+        //             175, 158, 157, 128, 112, 88, 74, 176, 162, 156, 151, 108, 99, 84, 
+        //             177, 174, 152, 123, 95, 77, 160, 148, 142, 120, 113, 103, 93, 76, 
+        //             147, 141, 129, 115, 97, 85, 159, 149, 139, 114, 92, 81, 
+        //             138, 137, 122, 118, 101, 79, 155, 154, 127, 110, 100, 80, 
+        //             178, 145, 144, 140, 116, 91, 75, 165, 164, 132, 121, 106, 105, 90, 83, 
+        //             179, 163, 150, 125, 109, 89, 86, 161, 153, 146, 111, 96, 78, 
+        //             169, 167, 166, 117, 102, 87
+        //         ]);
+        //     })
+        //     ->where('active', 'Y');
+        // })
         ->when($this->search!='', function($query){
             $query->where(function($query1) {
                 $query1->where('name', 'LIKE', '%'.$this->search.'%')

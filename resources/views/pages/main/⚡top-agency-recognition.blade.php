@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Mst_agent_achievement;
+use App\Models\Mst_agent;
 use Livewire\Component;
 use Livewire\WithPagination;
 use Livewire\Attributes\Url;
@@ -44,33 +45,49 @@ new class extends Component
         ->orderBy('ma.order_no', 'ASC')
         ->first();
 
-        $agents = Mst_agent_achievement::leftJoin('mst_agents as ag', 'mst_agent_achievements.agent_id', '=', 'ag.id')
-        ->leftJoin('mst_achievements as ma', 'mst_agent_achievements.achievement_id', '=', 'ma.id')
-        ->select(
-            'ag.id as agent_id',
-            'ag.agent_code as agent_code',
-            'ag.slug as agent_slug',
-            'ag.photo as photo',
-            'ag.name as agent_name',
-            'ma.name as achievement_name',
-        )
-        ->whereIn('ma.id', [46,47,170,171,50,51,52,53,54,55,56,39,57,58,59,60,61,62,63,172,173,37,64,65,66,67,68,69,70,31,40,3,18,30,180,181])
-        // ->when($this->search!='', function($q){
-        //     $q->where('ag.name', 'LIKE', '%'.$this->search.'%')
-        //     ->orWhere('ag.agent_code', 'LIKE', '%'.$this->search.'%');
-        // })
-        ->when($this->search!='', function($query){
-            $query->where(function($query1) {
-                $query1->where('ag.name', 'LIKE', '%'.$this->search.'%')
-                ->orWhere('ag.agent_code', 'LIKE', '%'.$this->search.'%');
-            });
-        })
-        ->where('mst_agent_achievements.active', 'Y')
-        ->where('ag.active', 'Y')
-        ->where('ma.active', 'Y')
-        ->orderBy('ma.order_no', 'ASC')
-        ->orderBy('ag.name', 'ASC')
-        ->paginate(18);
+        if ($this->search==''){
+            $agents = Mst_agent_achievement::leftJoin('mst_agents as ag', 'mst_agent_achievements.agent_id', '=', 'ag.id')
+            ->leftJoin('mst_achievements as ma', 'mst_agent_achievements.achievement_id', '=', 'ma.id')
+            ->select(
+                'ag.id as agent_id',
+                'ag.agent_code as agent_code',
+                'ag.slug as agent_slug',
+                'ag.photo as photo',
+                'ag.name as agent_name',
+                'ma.name as achievement_name',
+            )
+            ->whereIn('ma.id', [46,47,170,171,50,51,52,53,54,55,56,39,57,58,59,60,61,62,63,172,173,37,64,65,66,67,68,69,70,31,40,3,18,30,180,181])
+            // ->when($this->search!='', function($query){
+            //     $query->where(function($query1) {
+            //         $query1->where('ag.name', 'LIKE', '%'.$this->search.'%')
+            //         ->orWhere('ag.agent_code', 'LIKE', '%'.$this->search.'%');
+            //     });
+            // })
+            ->where('mst_agent_achievements.active', 'Y')
+            ->where('ag.active', 'Y')
+            ->where('ma.active', 'Y')
+            ->orderBy('ma.order_no', 'ASC')
+            ->orderBy('ag.name', 'ASC')
+            ->paginate(18);
+        }else{
+            $agents = Mst_agent::select(
+                'id as agent_id',
+                'agent_code',
+                'name as agent_name',
+                'slug as agent_slug',
+                'photo',
+                'agent_code as achievement_name',
+            )
+            ->when($this->search!='', function($query){
+                $query->where(function($query1) {
+                    $query1->where('name', 'LIKE', '%'.$this->search.'%')
+                    ->orWhere('agent_code', 'LIKE', '%'.$this->search.'%');
+                });
+            })
+            ->where('active', 'Y')
+            ->orderBy('name', 'ASC')
+            ->paginate(18);
+        }
 
         $agents->appends([
             'search' => $this->search,
@@ -190,7 +207,7 @@ new class extends Component
                                 <a onclick="displayModal('{{ $agent->agent_name }}', '{{ $ach.$br }}', '{{ $agent->agent_slug }}', '{{ $photo }}')" style="cursor: pointer;">
                                     <div class="team-section__content">
                                         <h3 class="team-section__title">{{ $agent->agent_name }}</h3>
-                                        <p class="team-section__position">{{ $agent->achievement_name }}</p>
+                                        <p class="team-section__position">{{ $this->search!=''?'':$agent->achievement_name }}</p>
                                         {{-- <p class="team-section__position">{{ ucwords(strtolower($agent->achievement_name)) }}</p> --}}
                                     </div>
                                 </a>

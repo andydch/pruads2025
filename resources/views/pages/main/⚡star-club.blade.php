@@ -38,20 +38,36 @@ new class extends Component
             'slug as agent_slug',
             'photo',
         )
-        ->whereIn('id', function($query){
-            $query->select('agent_id')
-            ->from('mst_agent_categories')
-            ->when($this->q=='l', function($query1) {
-                $query1->where('category_id', 8);
-            })
-            ->when($this->q=='p', function($query1) {
-                $query1->where('category_id', 9);
-            })
-            ->when($this->q!='l' && $this->q!='p', function($query1) {
-                $query1->whereIn('category_id', [8, 9]);
-            })
-            ->where('active', 'Y');
+        ->when($this->search=='', function($query){
+            $query->whereIn('id', function($query1){
+                $query1->select('agent_id')
+                ->from('mst_agent_categories')
+                ->when($this->q=='l', function($query1a) {
+                    $query1a->where('category_id', 8);
+                })
+                ->when($this->q=='p', function($query1a) {
+                    $query1a->where('category_id', 9);
+                })
+                ->when($this->q!='l' && $this->q!='p', function($query1a) {
+                    $query1a->whereIn('category_id', [8, 9]);
+                })
+                ->where('active', 'Y');
+            });
         })
+        // ->whereIn('id', function($query){
+        //     $query->select('agent_id')
+        //     ->from('mst_agent_categories')
+        //     ->when($this->q=='l', function($query1) {
+        //         $query1->where('category_id', 8);
+        //     })
+        //     ->when($this->q=='p', function($query1) {
+        //         $query1->where('category_id', 9);
+        //     })
+        //     ->when($this->q!='l' && $this->q!='p', function($query1) {
+        //         $query1->whereIn('category_id', [8, 9]);
+        //     })
+        //     ->where('active', 'Y');
+        // })
         ->when($this->search!='', function($query){
             $query->where(function($query1) {
                 $query1->where('name', 'LIKE', '%'.$this->search.'%')
@@ -60,8 +76,6 @@ new class extends Component
         })
         ->where('active', 'Y')
         ->orderBy('name', 'ASC')
-        // ->toSQL();
-        // dd($agents);
         ->paginate(18);
 
         $agents->appends([

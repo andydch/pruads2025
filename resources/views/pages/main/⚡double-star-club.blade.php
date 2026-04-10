@@ -38,20 +38,36 @@ new class extends Component
             'slug as agent_slug',
             'photo',
         )
-        ->whereIn('id', function($query){
-            $query->select('agent_id')
-            ->from('mst_agent_categories')
-            ->when($this->q=='l', function($query1) {
-                $query1->where('category_id', 1);
-            })
-            ->when($this->q=='p', function($query1) {
-                $query1->where('category_id', 2);
-            })
-            ->when($this->q!='l' && $this->q!='p', function($query1) {
-                $query1->whereIn('category_id', [1, 2]);
-            })
-            ->where('active', 'Y');
+        ->when($this->search=='', function($query){
+            $query->whereIn('id', function($query1){
+                $query1->select('agent_id')
+                ->from('mst_agent_categories')
+                ->when($this->q=='l', function($query1a) {
+                    $query1a->where('category_id', 1);
+                })
+                ->when($this->q=='p', function($query1a) {
+                    $query1a->where('category_id', 2);
+                })
+                ->when($this->q!='l' && $this->q!='p', function($query1a) {
+                    $query1a->whereIn('category_id', [1, 2]);
+                })
+                ->where('active', 'Y');
+            });
         })
+        // ->whereIn('id', function($query){
+        //     $query->select('agent_id')
+        //     ->from('mst_agent_categories')
+        //     ->when($this->q=='l', function($query1) {
+        //         $query1->where('category_id', 1);
+        //     })
+        //     ->when($this->q=='p', function($query1) {
+        //         $query1->where('category_id', 2);
+        //     })
+        //     ->when($this->q!='l' && $this->q!='p', function($query1) {
+        //         $query1->whereIn('category_id', [1, 2]);
+        //     })
+        //     ->where('active', 'Y');
+        // })
         ->when($this->search!='', function($query){
             $query->where(function($query1) {
                 $query1->where('name', 'LIKE', '%'.$this->search.'%')

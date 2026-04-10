@@ -7,10 +7,9 @@ use App\Http\Middleware\CheckAuthMiddleware;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-Route::livewire('/', 'pages::main.top-agency-recognition');
+Route::get('/', function () {
+    return redirect()->route('top-agency-recognition');
+});
 Route::livewire('/tar', 'pages::main.top-agency-recognition')->name('top-agency-recognition');
 Route::livewire('/mbb', 'pages::main.multibillion-builder')->name('multibillion-builders');
 Route::livewire('/tpc', 'pages::main.the-presidents-club')->name('the-presidents-club');
