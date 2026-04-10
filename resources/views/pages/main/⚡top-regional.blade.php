@@ -225,59 +225,61 @@ new class extends Component
             <x-search-agent />
 
             <x-menu />
-            
-            <div align="center" class="mb-30">
-                <img src="assets/imgs/b_tr.png" class="tulisan_tac" alt=""/> 
-            </div>
 
-            {{-- <div class="d-flex justify-content-center align-items-center mb-30">
-                <div class="dropdown">
-                    <button class="btn btn-outline-danger dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-expanded="false">
-                        <span>Please Select</span>&nbsp;&nbsp;
-                        <i class="fa fa-caret-down"></i>
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="{{ route('top-regional').'?q=reg05' }}">{{ ucwords(strtolower('JAKARTA 1')) }} </a></li>
-                        <li><a class="dropdown-item" href="{{ route('top-regional').'?q=reg06' }}">{{ ucwords(strtolower('JAKARTA 2')) }} </a></li>
-                        <li><a class="dropdown-item" href="{{ route('top-regional').'?q=reg07' }}">{{ ucwords(strtolower('JAKARTA 3')) }} </a></li>
-                        <li><a class="dropdown-item" href="{{ route('top-regional').'?q=reg08' }}">{{ ucwords(strtolower('JAKARTA 4')) }} </a></li>
-                        <li><a class="dropdown-item" href="{{ route('top-regional').'?q=reg09' }}">{{ ucwords(strtolower('JAKARTA 5')) }} </a></li>
-                        <li><a class="dropdown-item" href="{{ route('top-regional').'?q=reg10' }}">{{ ucwords(strtolower('JAKARTA 6')) }} </a></li>
-                        <li><a class="dropdown-item" href="{{ route('top-regional').'?q=reg11' }}">{{ ucwords(strtolower('JAKARTA 7')) }} </a></li>
-                        <li><a class="dropdown-item" href="{{ route('top-regional').'?q=reg15' }}">{{ ucwords(strtolower('JAKARTA SYARIAH')) }} </a></li>
-                        <li><a class="dropdown-item" href="{{ route('top-regional').'?q=reg14' }}">{{ ucwords(strtolower('WEST JAVA')) }} </a></li>
-                        <li><a class="dropdown-item" href="{{ route('top-regional').'?q=reg02' }}">{{ ucwords(strtolower('CENTRAL JAVA & KALIMANTAN')) }} </a></li>
-                        <li><a class="dropdown-item" href="{{ route('top-regional').'?q=reg03' }}">{{ ucwords(strtolower('EAST JAVA 1')) }} </a></li>
-                        <li><a class="dropdown-item" href="{{ route('top-regional').'?q=reg04' }}">{{ ucwords(strtolower('EAST JAVA 2')) }} </a></li>
-                        <li><a class="dropdown-item" href="{{ route('top-regional').'?q=reg12' }}">{{ ucwords(strtolower('SUMATERA 1')) }} </a></li>
-                        <li><a class="dropdown-item" href="{{ route('top-regional').'?q=reg13' }}">{{ ucwords(strtolower('SUMATERA 2')) }} </a></li>
-                        <li><a class="dropdown-item" href="{{ route('top-regional').'?q=reg01' }}">{{ ucwords(strtolower('BALI EAST ISLANDS')) }} </a></li>
-                    </ul>
-                </div> 
-            </div> --}}
-
-            <div class="d-flex justify-content-center align-items-center mb-30">
-                <div class="flat-select-container">
-                    <select id="top-regional-area" class="flat-select" name="kategori_pilihan" onchange="goRegionalArea(this.value);">
-                        <option value="" disabled selected>Please Select Area</option>
-                        <option {{ $q=='reg05'?'selected':'' }} value="5">{{ ucwords(strtolower('JAKARTA 1')) }}</option>
-                        <option {{ $q=='reg06'?'selected':'' }} value="6">{{ ucwords(strtolower('JAKARTA 2')) }}</option>
-                        <option {{ $q=='reg07'?'selected':'' }} value="7">{{ ucwords(strtolower('JAKARTA 3')) }}</option>
-                        <option {{ $q=='reg08'?'selected':'' }} value="8">{{ ucwords(strtolower('JAKARTA 4')) }}</option>
-                        <option {{ $q=='reg09'?'selected':'' }} value="9">{{ ucwords(strtolower('JAKARTA 5')) }}</option>
-                        <option {{ $q=='reg10'?'selected':'' }} value="10">{{ ucwords(strtolower('JAKARTA 6')) }}</option>
-                        <option {{ $q=='reg11'?'selected':'' }} value="11">{{ ucwords(strtolower('JAKARTA 7')) }}</option>
-                        <option {{ $q=='reg15'?'selected':'' }} value="15">{{ ucwords(strtolower('JAKARTA SYARIAH')) }}</option>
-                        <option {{ $q=='reg14'?'selected':'' }} value="14">{{ ucwords(strtolower('WEST JAVA')) }}</option>
-                        <option {{ $q=='reg02'?'selected':'' }} value="2">{{ ucwords(strtolower('CENTRAL JAVA & KALIMANTAN')) }}</option>
-                        <option {{ $q=='reg03'?'selected':'' }} value="3">{{ ucwords(strtolower('EAST JAVA 1')) }}</option>
-                        <option {{ $q=='reg04'?'selected':'' }} value="4">{{ ucwords(strtolower('EAST JAVA 2')) }}</option>
-                        <option {{ $q=='reg12'?'selected':'' }} value="12">{{ ucwords(strtolower('SUMATERA 1')) }}</option>
-                        <option {{ $q=='reg13'?'selected':'' }} value="13">{{ ucwords(strtolower('SUMATERA 2')) }}</option>
-                        <option {{ $q=='reg01'?'selected':'' }} value="1">{{ ucwords(strtolower('BALI EAST ISLANDS')) }}</option>
-                    </select>
+            @if ($this->search=='')
+                <div align="center" class="mb-30">
+                    <img src="assets/imgs/b_tr.png" class="tulisan_tac" alt=""/> 
                 </div>
-            </div>
+
+                {{-- <div class="d-flex justify-content-center align-items-center mb-30">
+                    <div class="dropdown">
+                        <button class="btn btn-outline-danger dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-expanded="false">
+                            <span>Please Select</span>&nbsp;&nbsp;
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="{{ route('top-regional').'?q=reg05' }}">{{ ucwords(strtolower('JAKARTA 1')) }} </a></li>
+                            <li><a class="dropdown-item" href="{{ route('top-regional').'?q=reg06' }}">{{ ucwords(strtolower('JAKARTA 2')) }} </a></li>
+                            <li><a class="dropdown-item" href="{{ route('top-regional').'?q=reg07' }}">{{ ucwords(strtolower('JAKARTA 3')) }} </a></li>
+                            <li><a class="dropdown-item" href="{{ route('top-regional').'?q=reg08' }}">{{ ucwords(strtolower('JAKARTA 4')) }} </a></li>
+                            <li><a class="dropdown-item" href="{{ route('top-regional').'?q=reg09' }}">{{ ucwords(strtolower('JAKARTA 5')) }} </a></li>
+                            <li><a class="dropdown-item" href="{{ route('top-regional').'?q=reg10' }}">{{ ucwords(strtolower('JAKARTA 6')) }} </a></li>
+                            <li><a class="dropdown-item" href="{{ route('top-regional').'?q=reg11' }}">{{ ucwords(strtolower('JAKARTA 7')) }} </a></li>
+                            <li><a class="dropdown-item" href="{{ route('top-regional').'?q=reg15' }}">{{ ucwords(strtolower('JAKARTA SYARIAH')) }} </a></li>
+                            <li><a class="dropdown-item" href="{{ route('top-regional').'?q=reg14' }}">{{ ucwords(strtolower('WEST JAVA')) }} </a></li>
+                            <li><a class="dropdown-item" href="{{ route('top-regional').'?q=reg02' }}">{{ ucwords(strtolower('CENTRAL JAVA & KALIMANTAN')) }} </a></li>
+                            <li><a class="dropdown-item" href="{{ route('top-regional').'?q=reg03' }}">{{ ucwords(strtolower('EAST JAVA 1')) }} </a></li>
+                            <li><a class="dropdown-item" href="{{ route('top-regional').'?q=reg04' }}">{{ ucwords(strtolower('EAST JAVA 2')) }} </a></li>
+                            <li><a class="dropdown-item" href="{{ route('top-regional').'?q=reg12' }}">{{ ucwords(strtolower('SUMATERA 1')) }} </a></li>
+                            <li><a class="dropdown-item" href="{{ route('top-regional').'?q=reg13' }}">{{ ucwords(strtolower('SUMATERA 2')) }} </a></li>
+                            <li><a class="dropdown-item" href="{{ route('top-regional').'?q=reg01' }}">{{ ucwords(strtolower('BALI EAST ISLANDS')) }} </a></li>
+                        </ul>
+                    </div> 
+                </div> --}}
+
+                <div class="d-flex justify-content-center align-items-center mb-30">
+                    <div class="flat-select-container">
+                        <select id="top-regional-area" class="flat-select" name="kategori_pilihan" onchange="goRegionalArea(this.value);">
+                            <option value="" disabled selected>Please Select Area</option>
+                            <option {{ $q=='reg05'?'selected':'' }} value="5">{{ ucwords(strtolower('JAKARTA 1')) }}</option>
+                            <option {{ $q=='reg06'?'selected':'' }} value="6">{{ ucwords(strtolower('JAKARTA 2')) }}</option>
+                            <option {{ $q=='reg07'?'selected':'' }} value="7">{{ ucwords(strtolower('JAKARTA 3')) }}</option>
+                            <option {{ $q=='reg08'?'selected':'' }} value="8">{{ ucwords(strtolower('JAKARTA 4')) }}</option>
+                            <option {{ $q=='reg09'?'selected':'' }} value="9">{{ ucwords(strtolower('JAKARTA 5')) }}</option>
+                            <option {{ $q=='reg10'?'selected':'' }} value="10">{{ ucwords(strtolower('JAKARTA 6')) }}</option>
+                            <option {{ $q=='reg11'?'selected':'' }} value="11">{{ ucwords(strtolower('JAKARTA 7')) }}</option>
+                            <option {{ $q=='reg15'?'selected':'' }} value="15">{{ ucwords(strtolower('JAKARTA SYARIAH')) }}</option>
+                            <option {{ $q=='reg14'?'selected':'' }} value="14">{{ ucwords(strtolower('WEST JAVA')) }}</option>
+                            <option {{ $q=='reg02'?'selected':'' }} value="2">{{ ucwords(strtolower('CENTRAL JAVA & KALIMANTAN')) }}</option>
+                            <option {{ $q=='reg03'?'selected':'' }} value="3">{{ ucwords(strtolower('EAST JAVA 1')) }}</option>
+                            <option {{ $q=='reg04'?'selected':'' }} value="4">{{ ucwords(strtolower('EAST JAVA 2')) }}</option>
+                            <option {{ $q=='reg12'?'selected':'' }} value="12">{{ ucwords(strtolower('SUMATERA 1')) }}</option>
+                            <option {{ $q=='reg13'?'selected':'' }} value="13">{{ ucwords(strtolower('SUMATERA 2')) }}</option>
+                            <option {{ $q=='reg01'?'selected':'' }} value="1">{{ ucwords(strtolower('BALI EAST ISLANDS')) }}</option>
+                        </select>
+                    </div>
+                </div>
+            @endif
 
             <div class="team-section__wrapper pl-5 pr-5 pb-5">
                 <div class="row m-auto">

@@ -136,34 +136,37 @@ new class extends Component
 
             <x-menu />
             
-            <div align="center" class="mb-30">
-                <img src="assets/imgs/b_mdrt.png" class="tulisan_tac" alt=""/> 
-            </div>
-
-            {{-- <div class="d-flex justify-content-center align-items-center mb-30">
-                <div class="dropdown">
-                    <button class="btn btn-outline-danger dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-expanded="false">
-                        <span>Please Select</span>&nbsp;&nbsp;
-                        <i class="fa fa-caret-down"></i>
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="{{ route('million-dollar-round-table').'?q=tot' }}">Top of The Table </a></li>
-                        <li><a class="dropdown-item" href="{{ route('million-dollar-round-table').'?q=cot' }}">Court of The Table </a></li>
-                        <li><a class="dropdown-item" href="{{ route('million-dollar-round-table').'?q=mdrt' }}">Million Dollar Round Table </a></li>
-                    </ul>
-                </div> 
-            </div> --}}
-
-            <div class="d-flex justify-content-center align-items-center mb-30">
-                <div class="flat-select-container">
-                    <select id="top-regional-area" class="flat-select" name="kategori_pilihan" onchange="goSubCategory('{{ route('million-dollar-round-table').'?q=' }}'+this.value);">
-                        <option value="" disabled selected>Please Select</option>
-                        <option {{ $q=='tot'?'selected':'' }} value="tot">{{ ucwords(strtolower('TOP OF THE TABLE')) }}</option>
-                        <option {{ $q=='cot'?'selected':'' }} value="cot">{{ ucwords(strtolower('COURT OF THE TABLE')) }}</option>
-                        <option {{ $q=='mdrt'?'selected':'' }} value="mdrt">{{ ucwords(strtolower('MILLION DOLLAR ROUND TABLE')) }}</option>
-                    </select>
+            @if ($this->search=='')
+                <div align="center" class="mb-30">
+                    <img src="assets/imgs/b_mdrt.png" class="tulisan_tac" alt=""/> 
                 </div>
-            </div>
+                
+                {{-- <div class="d-flex justify-content-center align-items-center mb-30">
+                    <div class="dropdown">
+                        <button class="btn btn-outline-danger dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-expanded="false">
+                            <span>Please Select</span>&nbsp;&nbsp;
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="{{ route('million-dollar-round-table').'?q=tot' }}">Top of The Table </a></li>
+                            <li><a class="dropdown-item" href="{{ route('million-dollar-round-table').'?q=cot' }}">Court of The Table </a></li>
+                            <li><a class="dropdown-item" href="{{ route('million-dollar-round-table').'?q=mdrt' }}">Million Dollar Round Table </a></li>
+                        </ul>
+                    </div> 
+                </div> --}}
+    
+                <div class="d-flex justify-content-center align-items-center mb-30">
+                    <div class="flat-select-container">
+                        <select id="top-regional-area" class="flat-select" name="kategori_pilihan" onchange="goSubCategory('{{ route('million-dollar-round-table').'?q=' }}'+this.value);">
+                            <option value="" disabled selected>Please Select</option>
+                            <option {{ $q=='tot'?'selected':'' }} value="tot">{{ ucwords(strtolower('TOP OF THE TABLE')) }}</option>
+                            <option {{ $q=='cot'?'selected':'' }} value="cot">{{ ucwords(strtolower('COURT OF THE TABLE')) }}</option>
+                            <option {{ $q=='mdrt'?'selected':'' }} value="mdrt">{{ ucwords(strtolower('MILLION DOLLAR ROUND TABLE')) }}</option>
+                        </select>
+                    </div>
+                </div>
+            @endif
+
 
             <div class="team-section__wrapper pl-5 pr-5 pb-15">
                 <div class="row m-auto">

@@ -100,32 +100,35 @@ new class extends Component
 
             <x-menu />
             
-            <div align="center" class="mb-30">
-                <img src="assets/imgs/b_dsc.png" class="tulisan_tac" alt=""/> 
-            </div>
-
-            {{-- <div class="d-flex justify-content-center align-items-center mb-30">
-                <div class="dropdown">
-                    <button class="btn btn-outline-danger dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-expanded="false">
-                        <span>Please Select</span>&nbsp;&nbsp;
-                        <i class="fa fa-caret-down"></i>
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="{{ route('double-star-club').'?q=l' }}">Leader </a></li>
-                        <li><a class="dropdown-item" href="{{ route('double-star-club').'?q=p' }}">Producer </a></li>
-                    </ul>
-                </div> 
-            </div> --}}
-
-            <div class="d-flex justify-content-center align-items-center mb-30">
-                <div class="flat-select-container">
-                    <select id="top-regional-area" class="flat-select" name="kategori_pilihan" onchange="goSubCategory('{{ route('double-star-club').'?q=' }}'+this.value);">
-                        <option value="" disabled selected>Please Select</option>
-                        <option {{ $q=='l'?'selected':'' }} value="l">{{ ucwords(strtolower('LEADER')) }}</option>
-                        <option {{ $q=='p'?'selected':'' }} value="p">{{ ucwords(strtolower('PRODUCER')) }}</option>
-                    </select>
+            @if ($this->search=='')
+                <div align="center" class="mb-30">
+                    <img src="assets/imgs/b_dsc.png" class="tulisan_tac" alt=""/> 
                 </div>
-            </div>
+                
+                {{-- <div class="d-flex justify-content-center align-items-center mb-30">
+                    <div class="dropdown">
+                        <button class="btn btn-outline-danger dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-expanded="false">
+                            <span>Please Select</span>&nbsp;&nbsp;
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="{{ route('double-star-club').'?q=l' }}">Leader </a></li>
+                            <li><a class="dropdown-item" href="{{ route('double-star-club').'?q=p' }}">Producer </a></li>
+                        </ul>
+                    </div> 
+                </div> --}}
+    
+                <div class="d-flex justify-content-center align-items-center mb-30">
+                    <div class="flat-select-container">
+                        <select id="top-regional-area" class="flat-select" name="kategori_pilihan" onchange="goSubCategory('{{ route('double-star-club').'?q=' }}'+this.value);">
+                            <option value="" disabled selected>Please Select</option>
+                            <option {{ $q=='l'?'selected':'' }} value="l">{{ ucwords(strtolower('LEADER')) }}</option>
+                            <option {{ $q=='p'?'selected':'' }} value="p">{{ ucwords(strtolower('PRODUCER')) }}</option>
+                        </select>
+                    </div>
+                </div>
+            @endif
+
 
             <div class="team-section__wrapper pl-5 pr-5 pb-15">
                 <div class="row m-auto">

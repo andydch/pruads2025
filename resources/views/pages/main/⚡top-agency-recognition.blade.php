@@ -111,9 +111,11 @@ new class extends Component
 
             <x-menu />
             
-            <div align="center" class="mb-30">
-                <img src="assets/imgs/img_text_top_agent_recognition.png" class="tulisan_tac" alt=""/> 
-            </div>
+            @if ($this->search=='')
+                <div align="center" class="mb-30">
+                    <img src="assets/imgs/img_text_top_agent_recognition.png" class="tulisan_tac" alt=""/> 
+                </div>
+            @endif
 
             <div class="team-section__wrapper pl-5 pr-5 pb-15">
                 @if ($this->search=='')

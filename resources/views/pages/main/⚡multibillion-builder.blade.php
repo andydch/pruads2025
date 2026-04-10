@@ -77,9 +77,11 @@ new class extends Component
 
             <x-menu />
             
-            <div align="center" class="mb-30">
-                <img src="assets/imgs/b_mbb.png" class="tulisan_tac" alt=""/> 
-            </div>
+            @if ($this->search=='')
+                <div align="center" class="mb-30">
+                    <img src="assets/imgs/b_mbb.png" class="tulisan_tac" alt=""/> 
+                </div>
+            @endif
 
             <div class="team-section__wrapper pl-5 pr-5 pb-15">
                 <div class="row m-auto">
