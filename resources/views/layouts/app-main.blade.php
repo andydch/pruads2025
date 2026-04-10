@@ -351,7 +351,7 @@
 <!-- Modal -->
 <!-- The Modal -->
 <div class="modal" id="agentModal">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
 
             <!-- Modal Header -->
