@@ -594,17 +594,17 @@
     
 
     // Custom Cursor
-    $("body").append('<div class="mt-cursor"></div>');
-    var cursor = $(".mt-cursor"),
-        linksCursor = $("a, .swiper-nav, button, .cursor-effect"),
-        crossCursor = $(".cross-cursor");
+    // $("body").append('<div class="mt-cursor"></div>');
+    // var cursor = $(".mt-cursor"),
+    //     linksCursor = $("a, .swiper-nav, button, .cursor-effect"),
+    //     crossCursor = $(".cross-cursor");
 
-    $(window).on("mousemove", function (e) {
-        cursor.css({
-            transform: "translate(" + (e.clientX - 15) + "px," + (e.clientY - 15) + "px)",
-            visibility: "inherit",
-        });
-    });
+    // $(window).on("mousemove", function (e) {
+    //     cursor.css({
+    //         transform: "translate(" + (e.clientX - 15) + "px," + (e.clientY - 15) + "px)",
+    //         visibility: "inherit",
+    //     });
+    // });
 
     // Page Scroll Percentage
     function scrollTopPercentage() {

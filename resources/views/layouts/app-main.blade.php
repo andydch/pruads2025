@@ -121,7 +121,7 @@
             /* .popup-width {width:90%;} */
         }
     
-        @media only screen and (max-device-width: 480px) {
+        /* @media only screen and (max-device-width: 480px) {
             .cari { font-size:13px; width:150px;}
             .bg_ucapan {background: url(assets/imgs/img_bg_board.png) bottom; background-size:contain;padding-top:20px;}
             .bg_thanks {background: url(assets/imgs/bg_thanks.png) bottom center no-repeat; background-size:cover;}
@@ -131,7 +131,19 @@
             .ucapan {text-align:center;width:100%;}
             .besarboard {width:30%; margin: auto; display: block; }
             .tulisan_tac {width:80%;}
-            /* .popup-width {width:90%;} */
+            / .popup-width {width:90%;} /
+        } */
+
+        @media only screen and (max-device-width: 480px) {
+            .cari { font-size:13px; width:150px;}
+            .bg_ucapan {background: url(assets/imgs/img_bg_board.png) bottom; background-size:contain;padding-top:20px;}
+            .bg_thanks {background: url(assets/imgs/bg_thanks.png) bottom center no-repeat; background-size:cover;}
+            .bg_agen {background: url(assets/imgs/bgrd_pruad_mobile01.jpg) top center;}
+            .lebarthanks {width:100%; margin-top:0;}
+            .lebarlogo {width:80%;}
+            .ucapan {text-align:center;width:100%;}
+            .besarboard {width:30%; margin: auto; display: block; }
+            .tulisan_tac {height:25px;}
         }
 
         /* dropdown di top regional */
