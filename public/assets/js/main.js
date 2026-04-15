@@ -1045,28 +1045,30 @@ window.addEventListener('resize', () => {
 
     
     // project panel start
-   // gsap.registerPlugin(ScrollTrigger);
+    // gsap.registerPlugin(ScrollTrigger);
+    // console.log(window.innerWidth);
 
-   // if (window.innerWidth > 600) { 
-   //     let projectPanels = document.querySelectorAll('.project-panel');
+    // if (window.innerWidth > 600) { 
+    //     let projectPanels = document.querySelectorAll('.project-panel');
 
-      //  projectPanels.forEach((section) => {
-        //    gsap.to(section, {
-        //        scrollTrigger: {
-         //           trigger: section,           
-         //           pin: section,              
-          //          scrub: 1,                  
-          //          start: 'top 50%',           
-           //         end: 'bottom 90%',          
-            //        endTrigger: '.project-panel-area', 
-             //       pinSpacing: false,          
-              //      markers: false              
-              //  },
-           // });
-       // });
-   // } else {
-        console.log("Scroll animation is disabled for mobile devices.");
-   // }
+    //     projectPanels.forEach((section) => {
+    //         gsap.to(section, {
+    //             scrollTrigger: {
+    //                 trigger: section,           
+    //                 pin: section,              
+    //                 scrub: 1,                  
+    //                 start: 'top 50%',           
+    //                 end: 'bottom 90%',          
+    //                 endTrigger: '.project-panel-area', 
+    //                 pinSpacing: false,          
+    //                 markers: false              
+    //             },
+    //         });
+    //     });
+    //     console.log("Scroll animation is enabled for mobile devices.");
+    // } else {
+    //     console.log("Scroll animation is disabled for mobile devices.");
+    // }
     // project panel end
 	
 	
