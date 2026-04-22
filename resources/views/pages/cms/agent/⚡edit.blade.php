@@ -513,7 +513,7 @@ new class extends Component
                         </div>
 
                         <button type="submit" class="btn btn-md btn-primary">UPDATE</button>
-                        <a href="/{{ ENV('CMS_FOLDER') }}/agent-index" wire:navigate class="btn btn-md btn-secondary">BACK</a>
+                        <a href="/{{ ENV('CMS_FOLDER') }}/agents-index" wire:navigate class="btn btn-md btn-secondary">BACK</a>
                     </form>
                 </div>
             </div>
