@@ -321,6 +321,11 @@ new class extends Component
                                             EDIT
                                         </a> --}}
 
+                                        <a href="/{{ ENV('CMS_FOLDER').'/agent-edit/'.$agent->id }}" wire:navigate
+                                            class="btn btn-sm btn-warning">
+                                            EDIT
+                                        </a>
+
                                         <button
                                             class="btn btn-sm btn-danger"
                                             onclick="confirm('Yakin ingin menghapus data ini?') || event.stopImmediatePropagation()"
