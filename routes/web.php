@@ -1,11 +1,14 @@
 <?php
 
+use App\Exports\HalbilUnairExport;
 use App\Http\Controllers\cms\LogoutController;
 use App\Http\Controllers\dbg\MergeImageController;
 use App\Http\Controllers\main\DisplayAgentController;
+use App\Http\Controllers\oth\AlumniUnairImportController;
 use App\Http\Middleware\CheckAuthMiddleware;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
+use Maatwebsite\Excel\Facades\Excel;
 
 Route::get('/', function () {
     return redirect()->route('top-agency-recognition');
@@ -68,6 +71,11 @@ Route::group(
         });
 
         Route::livewire('/view-agent', 'pages::oth.view-agent');
+        Route::livewire('/registrasi-halbil-unair', 'pages::oth.unair.reg');
+        Route::get('/import-alumni-unair',[AlumniUnairImportController::class, 'index']);
+        Route::get('/export-alumni-unair',function() {
+            return Excel::download(new HalbilUnairExport(), 'ReportHalBilUnair2026.xlsx');
+        });
     }
 );
 
