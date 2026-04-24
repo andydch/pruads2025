@@ -36,8 +36,8 @@ Route::group(
 
         // agents
         Route::livewire('/agents-index', 'pages::cms.agent.index')->name('agent.index');
-        // Route::livewire('/agents-create', 'pages::cms.agent.create')->name('cms.agent.create');
-        Route::livewire('/agent-edit/{id}', 'pages::cms.agent.edit')->name('agent.edit');
+        Route::livewire('/agents-create', 'pages::cms.agent.create')->name('agent.create');
+        Route::livewire('/agents-edit/{id}', 'pages::cms.agent.edit')->name('agent.edit');
 
         // category
         Route::livewire('/category-index', 'pages::cms.category.index')->name('category.index');

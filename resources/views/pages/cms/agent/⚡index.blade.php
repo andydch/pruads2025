@@ -249,6 +249,10 @@ new class extends Component
                     <option value="50">50</option>
                     <option value="100">100</option>
                 </select>
+                <a href="/{{ ENV('CMS_FOLDER').'/agents-create' }}" wire:navigate
+                    class="btn btn-md btn-success rounded shadow-sm border-0 mb-3" style="height: 37px;">
+                    ADD NEW AGENT
+                </a>
             </div>
 
             <div class="card border-0 rounded shadow-sm">
@@ -316,12 +320,7 @@ new class extends Component
                                     </td>
                                     <td>{{ $agent->active }}</td>
                                     <td class="text-center">
-                                        {{-- <a href="/edit/{{ $agent->id }}" wire:navigate
-                                            class="btn btn-sm btn-primary">
-                                            EDIT
-                                        </a> --}}
-
-                                        <a href="/{{ ENV('CMS_FOLDER').'/agent-edit/'.$agent->id }}" wire:navigate
+                                        <a href="/{{ ENV('CMS_FOLDER').'/agents-edit/'.$agent->id }}" wire:navigate
                                             class="btn btn-sm btn-warning">
                                             EDIT
                                         </a>
