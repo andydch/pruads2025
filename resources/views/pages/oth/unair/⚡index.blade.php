@@ -35,104 +35,6 @@ new class extends Component
         $this->resetPage();
     }
 
-    // public function uplAgents(){
-    //     $rules = [
-    //         'xlsFileAgents'=>'required|file|max:2048|mimetypes:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-    //     ];
-    //     $messages = [
-    //         'xlsFileAgents.required' => 'Please select the file to upload.',
-    //         'xlsFileAgents.file' => 'Please select the file to upload.',
-    //         'xlsFileAgents.max' => 'The file size is too large. Max 2MB.',
-    //         'xlsFileAgents.mimetypes' => 'The file must be a file of type: xlsx.',
-    //     ];
-    //     $validated = $this->validate($rules,$messages);
-
-    //     $realpath = '';
-    //     $newFilename = '';
-    //     $oriExt = $this->xlsFileAgents->extension();
-    //     $newFilename = uniqid().'_'.strtotime('now').'.'.$oriExt;
-    //     $this->xlsFileAgents->storeAs(path: 'xls', name: $newFilename);
-    //     $realpath = $_SERVER['DOCUMENT_ROOT'].'/storage/xls/';
-
-    //     Excel::import(new AgentImport, $realpath.$newFilename);
-    //     if (file_exists($realpath.$newFilename)) {
-    //         // jalankan hapus file
-    //         unlink($realpath.$newFilename);
-    //     }
-
-    //     session()->flash('message','Data Agent uploaded successfully');
-    // }
-
-    // public function uplAchievementAgents(){
-    //     $rules = [
-    //         'xlsFileAgentsAchievement'=>'required|file|max:2048|mimetypes:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-    //     ];
-    //     $messages = [
-    //         'xlsFileAgentsAchievement.required' => 'Please select the file to upload.',
-    //         'xlsFileAgentsAchievement.file' => 'Please select the file to upload.',
-    //         'xlsFileAgentsAchievement.max' => 'The file size is too large. Max 2MB.',
-    //         'xlsFileAgentsAchievement.mimetypes' => 'The file must be a file of type: xlsx.',
-    //     ];
-    //     $validated = $this->validate($rules,$messages);
-
-    //     $realpath = '';
-    //     $newFilename = '';
-    //     $oriExt = $this->xlsFileAgentsAchievement->extension();
-    //     $newFilename = uniqid().'_'.strtotime('now').'.'.$oriExt;
-    //     $this->xlsFileAgentsAchievement->storeAs(path: 'xls', name: $newFilename);
-    //     $realpath = $_SERVER['DOCUMENT_ROOT'].'/storage/xls/';
-
-    //     Excel::import(new AgentAchievementImport, $realpath.$newFilename);
-    //     if (file_exists($realpath.$newFilename)) {
-    //         // jalankan hapus file
-    //         unlink($realpath.$newFilename);
-    //     }
-
-    //     session()->flash('message','Data Agent Achievement uploaded successfully');
-    // }
-
-    // public function uplCategoryAgents(){
-    //     $rules = [
-    //         'xlsFileAgentsCategory'=>'required|file|max:2048|mimetypes:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-    //     ];
-    //     $messages = [
-    //         'xlsFileAgentsCategory.required' => 'Please select the file to upload.',
-    //         'xlsFileAgentsCategory.file' => 'Please select the file to upload.',
-    //         'xlsFileAgentsCategory.max' => 'The file size is too large. Max 2MB.',
-    //         'xlsFileAgentsCategory.mimetypes' => 'The file must be a file of type: xlsx.',
-    //     ];
-    //     $validated = $this->validate($rules,$messages);
-
-    //     $realpath = '';
-    //     $newFilename = '';
-    //     $oriExt = $this->xlsFileAgentsCategory->extension();
-    //     $newFilename = uniqid().'_'.strtotime('now').'.'.$oriExt;
-    //     $this->xlsFileAgentsCategory->storeAs(path: 'xls', name: $newFilename);
-    //     $realpath = $_SERVER['DOCUMENT_ROOT'].'/storage/xls/';
-
-    //     Excel::import(new AgentCategoryImport, $realpath.$newFilename);
-    //     if (file_exists($realpath.$newFilename)) {
-    //         // jalankan hapus file
-    //         unlink($realpath.$newFilename);
-    //     }
-
-    //     session()->flash('message','Data Agent Category uploaded successfully');
-    // }
-
-    // public function delete($id)
-    // {
-    //     $a = Mst_agent::findOrFail($id);
-
-    //     // delete data
-    //     $a->where('id', '=', $id)
-    //     ->update([
-    //         'active' => 'N',
-    //     ]);
-
-    //     // flash message
-    //     session()->flash('message', 'Data Agent Berhasil Dihapus.');
-    // }
-
     public function sort($columnName){
         $this->sortColumn = $columnName;
         $this->sortDirection = ($this->sortDirection=='asc'?'desc':'asc');
@@ -187,64 +89,6 @@ new class extends Component
             @endif
             <!-- end flash message -->
 
-            {{-- <div class="card border-0 rounded shadow-sm">
-                <div class="card-body">
-                    <form wire:submit.prevent="uplAgents" enctype="multipart/form-data">
-                        <div class="mb-3">
-                            <label class="form-label">Upload Agent <span style="font-size: small;">(Format: Agent Code|Agent Name|Photo File Name|Active Status (without column header))</span></label>
-                            <input type="file" class="form-control" wire:model="xlsFileAgents">
-                            @error('xlsFileAgents')
-                                <div class="alert alert-danger mt-2">
-                                    {{ $message }}
-                                </div>
-                            @enderror
-                        </div>
-                        <button type="submit" class="btn btn-md btn-primary" wire:loading.attr="disabled">
-                            <span wire:loading wire:target="uplAgents()" class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
-                            UPLOAD
-                        </button>
-                    </form>
-                </div>
-            </div> --}}
-            {{-- <div class="card border-0 rounded shadow-sm">
-                <div class="card-body">
-                    <form wire:submit.prevent="uplCategoryAgents" enctype="multipart/form-data">
-                        <div class="mb-3">
-                            <label class="form-label">Upload Agent Category <span style="font-size: small;">(Format: Agent Code|Category ID|Active Status (without column header))</span></label>
-                            <input type="file" class="form-control" wire:model="xlsFileAgentsCategory">
-                            @error('xlsFileAgentsCategory')
-                                <div class="alert alert-danger mt-2">
-                                    {{ $message }}
-                                </div>
-                            @enderror
-                        </div>
-                        <button type="submit" class="btn btn-md btn-primary" wire:loading.attr="disabled">
-                            <span wire:loading wire:target="uplCategoryAgents()" class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
-                            UPLOAD
-                        </button>
-                    </form>
-                </div>
-            </div> --}}
-            {{-- <div class="card border-0 rounded shadow-sm">
-                <div class="card-body">
-                    <form wire:submit.prevent="uplAchievementAgents" enctype="multipart/form-data">
-                        <div class="mb-3">
-                            <label class="form-label">Upload Agent Achievement <span style="font-size: small;">(Format: Agent Code|Achievement ID|Active Status (without column header))</span></label>
-                            <input type="file" class="form-control" wire:model="xlsFileAgentsAchievement">
-                            @error('xlsFileAgentsAchievement')
-                                <div class="alert alert-danger mt-2">
-                                    {{ $message }}
-                                </div>
-                            @enderror
-                        </div>
-                        <button type="submit" class="btn btn-md btn-primary" wire:loading.attr="disabled">
-                            <span wire:loading wire:target="uplAchievementAgents()" class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
-                            UPLOAD
-                        </button>
-                    </form>
-                </div>
-            </div> --}}
-
             <div wire:key="searchV" style="display: flex;gap: 5px;padding-top: 10px;padding-bottom: 10px;">
                 <input id="search" type="text" placeholder="search..." class="form-control" wire:model.live.debounce.300ms="search" 
                     style="width: 300px;height:37px;" value="{{ $search }}">
@@ -262,7 +106,7 @@ new class extends Component
                     <table class="table table-bordered table-sortable">
                         <thead class="bg-dark text-white">
                             <tr>
-                                <th scope="col" class="sort @if($sortColumn=='name'){{ $sortDirection }}@endif" wire:click="sort('name')">Nama</th>
+                                <th scope="col" class="sort @if($sortColumn=='nama'){{ $sortDirection }}@endif" wire:click="sort('nama')">Nama</th>
                                 <th scope="col">No HP</th>
                                 <th scope="col">Tanggal/Jam Konfirmasi</th>
                             </tr>
