@@ -262,7 +262,7 @@ new class extends Component
                     <table class="table table-bordered table-sortable">
                         <thead class="bg-dark text-white">
                             <tr>
-                                <th scope="col" class="sort @if($sortColumn=='name'){{ $sortDirection }}@endif" wire:click="sort('name')">Name</th>
+                                <th scope="col" class="sort @if($sortColumn=='name'){{ $sortDirection }}@endif" wire:click="sort('name')">Nama</th>
                                 <th scope="col">No HP</th>
                                 <th scope="col">Tanggal/Jam Konfirmasi</th>
                             </tr>
