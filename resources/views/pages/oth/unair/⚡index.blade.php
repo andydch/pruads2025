@@ -19,9 +19,6 @@ new class extends Component
 
     public $sortColumn = 'nama';
     public $sortDirection = 'asc';
-    // public $xlsFileAgents;
-    // public $xlsFileAgentsCategory;
-    // public $xlsFileAgentsAchievement;
 
     // public function mount(){
     //     $this->search = '';
@@ -114,7 +111,7 @@ new class extends Component
                         <tbody>
                             @forelse ($alumni as $a)
                                 <tr>
-                                    <td>{{ $a->nama }}</td>
+                                    <td>{{ $a->nama }}&nbsp;(<a href="{{ url('oth/confirm-halbil-unair/'.$a->id) }}">konfirmasi</a>)</td>
                                     <td>{{ $a->no_hp }}</td>
                                     @php
                                         $date = new DateTime($a->confirmDate);

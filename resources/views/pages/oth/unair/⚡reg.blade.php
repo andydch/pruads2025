@@ -23,9 +23,9 @@ new class extends Component
 
     public function goLgn()
     {
-        $this->validate();// insert data
+        $this->validate();
 
-        $qAlumni = HalbilUnairModel::whereRaw('REPLACE(REPLACE(no_hp, \'-\', \'\'), \' \', \'\')=\''.$this->no_hp_alumni.'\'')
+        $qAlumni = HalbilUnairModel::whereRaw('REPLACE(REPLACE(REPLACE(no_hp, "‘", \'\'), \'-\', \'\'), \' \', \'\')=\''.$this->no_hp_alumni.'\'')
         ->first();
         if ($qAlumni){
             $this->nama = $qAlumni->nama;

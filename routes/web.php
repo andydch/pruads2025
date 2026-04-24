@@ -5,6 +5,7 @@ use App\Http\Controllers\cms\LogoutController;
 use App\Http\Controllers\dbg\MergeImageController;
 use App\Http\Controllers\main\DisplayAgentController;
 use App\Http\Controllers\oth\AlumniUnairImportController;
+use App\Http\Controllers\oth\SetConfirmAlumniController;
 use App\Http\Middleware\CheckAuthMiddleware;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
@@ -75,6 +76,7 @@ Route::group(
         // unair
         Route::livewire('/daftar-halbil-unair', 'pages::oth.unair.index');
         Route::livewire('/registrasi-halbil-unair', 'pages::oth.unair.reg');
+        Route::get('/confirm-halbil-unair/{id}',[SetConfirmAlumniController::class, 'show']);
         Route::get('/import-alumni-unair',[AlumniUnairImportController::class, 'index']);
         Route::get('/export-alumni-unair',function() {
             return Excel::download(new HalbilUnairExport(), 'ReportHalBilUnair2026.xlsx');
