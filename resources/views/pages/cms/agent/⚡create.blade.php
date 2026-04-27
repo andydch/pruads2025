@@ -458,6 +458,7 @@ new class extends Component
 
                         <div wire:ignore>
                             {{-- pastikan ada wire:ignore agar bagian ini tidak di-render ulang setiap ada perubahan data --}}
+                            <label class="form-label">Tambahan</label>
                             <select id="category-select-select2" class="form-control w-full" style="width: 100%;">
                                 <option value="">Pilih Kategori...</option>
                                 {{-- @foreach($categoriesSelect2 as $key => $category)
