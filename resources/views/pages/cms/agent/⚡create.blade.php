@@ -31,6 +31,7 @@ new class extends Component
     public array $achievementsSelected = []; 
     public array $achievements1 = []; 
     public array $achievements2 = []; 
+    public array $categoriesSelect2 = []; 
     
     // Properti untuk menampung nilai yang sedang dipilih user pada dropdown
     public string $selectedCategory = '';
@@ -39,6 +40,9 @@ new class extends Component
     public string $selectedAchievement = '';
     public string $selectedAchievement1 = '';
     public string $selectedAchievement2 = '';
+
+    // Properti ini akan menyimpan nilai yang dipilih - select2
+    public $selectedCategorySelect2 = '';
 
     public function mount()
     {
@@ -55,6 +59,15 @@ new class extends Component
 
         // ambil pencapaian yg belum dipilih
         $this->achievements = Mst_achievement::select(
+            'id',
+            'name'
+        )
+        ->where('active', 'Y')
+        ->orderBy('name', 'ASC')
+        ->get()
+        ->toArray();
+
+        $this->categoriesSelect2 = Mst_category::select(
             'id',
             'name'
         )
@@ -286,6 +299,18 @@ new class extends Component
 
     public function render()
     {
+        // // Contoh data
+        // $categoriesSelect2 = [
+        //     '1' => 'Teknologi',
+        //     '2' => 'Bisnis',
+        //     '3' => 'Hiburan',
+        //     '4' => 'Pendidikan'
+        // ];
+
+        // return $this->view(compact('categoriesSelect2'))
+        // ->layout('layouts::app')
+        // ->title('Create Agent');
+
         return $this->view()
         ->layout('layouts::app')
         ->title('Create Agent');
@@ -431,6 +456,23 @@ new class extends Component
                             </div>
                         </div>
 
+                        <div wire:ignore>
+                            {{-- pastikan ada wire:ignore agar bagian ini tidak di-render ulang setiap ada perubahan data --}}
+                            <select id="category-select-select2" class="form-control w-full" style="width: 100%;">
+                                <option value="">Pilih Kategori...</option>
+                                {{-- @foreach($categoriesSelect2 as $key => $category)
+                                    <option value="{{ $key }}">{{ $category }}</option>
+                                @endforeach --}}
+                                @foreach($categoriesSelect2 as $category)
+                                    <option value="{{ $category['id'] }}">{{ $category['name'] }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
+                        <div class="mt-4">
+                            Kategori Terpilih: <strong>{{ $selectedCategorySelect2 ?: 'Belum ada' }}</strong>
+                        </div>
+
                         <div class="mb-3">
                             <label class="form-label">Active</label>
                             <input wire:model="isActive" type="checkbox" name="isActive">
@@ -444,3 +486,30 @@ new class extends Component
         </div>
     </div>
 </div>
+
+@assets
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+@endassets
+
+@script
+<script>
+    $(document).ready(function() {
+        // Inisialisasi Select2
+        $('#category-select-select2').select2({
+            placeholder: "Pilih Kategori...",
+            allowClear: true
+        });
+
+        // Tangkap event 'change' dari Select2
+        $('#category-select-select2').on('change', function (e) {
+            // Ambil value yang baru saja dipilih user
+            let data = $(this).val();
+            
+            // Update properti 'selectedCategory' ke backend PHP
+            $wire.set('selectedCategorySelect2', data);
+        });
+    });
+</script>
+@endscript
