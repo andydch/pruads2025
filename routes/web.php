@@ -74,13 +74,13 @@ Route::group(
         Route::livewire('/view-agent', 'pages::oth.view-agent');
 
         // unair
-        Route::livewire('/daftar-halbil-unair', 'pages::oth.unair.index');
-        Route::livewire('/registrasi-halbil-unair', 'pages::oth.unair.reg');
-        Route::get('/confirm-halbil-unair/{id}',[SetConfirmAlumniController::class, 'show']);
-        Route::get('/import-alumni-unair',[AlumniUnairImportController::class, 'index']);
-        Route::get('/export-alumni-unair',function() {
-            return Excel::download(new HalbilUnairExport(), 'ReportHalBilUnair2026.xlsx');
-        });
+        // Route::livewire('/daftar-halbil-unair', 'pages::oth.unair.index');
+        // Route::livewire('/registrasi-halbil-unair', 'pages::oth.unair.reg');
+        // Route::get('/confirm-halbil-unair/{id}',[SetConfirmAlumniController::class, 'show']);
+        // Route::get('/import-alumni-unair',[AlumniUnairImportController::class, 'index']);
+        // Route::get('/export-alumni-unair',function() {
+        //     return Excel::download(new HalbilUnairExport(), 'ReportHalBilUnair2026.xlsx');
+        // });
     }
 );
 
